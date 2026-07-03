@@ -198,11 +198,6 @@
     background: var(--card-bg, var(--surface)); border: 1px solid var(--rule); border-radius: 20px;
     padding: 24px; display: flex; flex-direction: column; min-height: 210px;
   }
-  .card-shot {
-    margin: -24px -24px 18px; height: 190px; overflow: hidden;
-    border-radius: 20px 20px 0 0; border-bottom: 1px solid var(--rule);
-  }
-  .card-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
   .card .status {
     font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700;
     color: var(--card-accent, var(--muted)); background: var(--bg); display: inline-block;
@@ -254,8 +249,7 @@
     border: 1px solid var(--rule); border-radius: 18px; padding: 26px; background: var(--surface);
     border-top: 3px solid var(--accent);
   }
-  .role-card strong { display: block; font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-  .role-card p { font-size: 14.5px; color: var(--muted); margin-bottom: 0; }
+  .role-card p { font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0; }
   .location-note { text-align: center; margin-top: 28px; font-size: 15px; color: var(--muted); }
 
   /* Contact */
@@ -428,7 +422,6 @@
       <div class="carousel" id="carousel">
 
         <article class="card c1">
-          <div class="card-shot"><img src="assets/screenshots/cozy-home.jpg" alt="Cozy app home screen" loading="lazy"></div>
           <span class="status">iOS &middot; App Store review</span>
           <h3>Cozy</h3>
           <p>A chore app for people who want a calm home, not a guilt trip.</p>
@@ -436,7 +429,6 @@
         </article>
 
         <article class="card c2">
-          <div class="card-shot"><img src="assets/screenshots/roam-home.jpg" alt="Roam app home screen" loading="lazy"></div>
           <span class="status">iOS &middot; App Store review</span>
           <h3>Roam</h3>
           <p>A Bay Area wellness resource directory for people who need support and don't know where to start.</p>
@@ -531,16 +523,13 @@
     </div>
     <div class="role-grid">
       <div class="role-card">
-        <strong>Product Specialist</strong>
-        <p>The bridge between a product and the people using it.</p>
+        <p>Being the bridge between a product and the people using it.</p>
       </div>
       <div class="role-card">
-        <strong>Customer Insights / Member Experience</strong>
-        <p>Listening to users and turning it into something a team can act on.</p>
+        <p>Listening to users and turning what they say into something a team can act on.</p>
       </div>
       <div class="role-card">
-        <strong>Content Strategist</strong>
-        <p>Writing that moves people through hard decisions in a human voice.</p>
+        <p>Writing that moves people through hard decisions, in a human voice.</p>
       </div>
     </div>
     <p class="location-note">SF Bay Area, hybrid or in-person.</p>
