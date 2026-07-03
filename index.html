@@ -153,18 +153,25 @@
   .section-head p.intro a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .section-head p.intro a:hover { text-decoration: underline; }
 
-  /* What I Bring */
-  .bring-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .bring-item {
+  /* The Translation */
+  .translate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .translate-item {
     background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 26px;
+    display: flex; flex-direction: column;
   }
-  .bring-item .num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 30px; height: 30px; border-radius: 50%; background: var(--bg); border: 1px solid var(--rule);
-    font-weight: 700; color: var(--accent); font-size: 13px; margin-bottom: 16px;
+  .translate-item .tag {
+    display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 10px;
   }
-  .bring-item strong { display: block; font-size: 17px; margin-bottom: 8px; font-weight: 700; }
-  .bring-item p { font-size: 15px; color: var(--muted); margin: 0; }
+  .translate-item .from-tag { color: var(--muted); }
+  .translate-item .to-tag { color: var(--accent); }
+  .translate-item .from-text { font-size: 14.5px; color: var(--muted); margin: 0 0 20px; }
+  .translate-item .to-text { font-size: 15px; color: var(--ink); font-weight: 500; margin: 0; }
+  .translate-item .arrow-badge {
+    display: flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%; background: var(--bg); border: 1px solid var(--rule);
+    color: var(--accent); font-weight: 700; font-size: 14px; margin: 0 0 20px;
+  }
 
   /* Experience */
   .exp-list { display: grid; gap: 16px; }
@@ -278,7 +285,7 @@
     .topbar nav { gap: 14px; flex-wrap: wrap; }
     .hero { padding: 44px 0 56px; }
     section.block { padding: 52px 0; }
-    .bring-grid { grid-template-columns: 1fr; }
+    .translate-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 8px; }
     .role-grid { grid-template-columns: 1fr; }
     .card { flex-basis: 240px; }
@@ -303,7 +310,7 @@
     </a>
     <div class="nav-right">
       <nav>
-        <a href="#work">What I Bring</a>
+        <a href="#translation">The Translation</a>
         <a href="#built">Things I've Built</a>
         <a href="#looking">Looking For</a>
         <a href="#contact">Contact</a>
@@ -332,36 +339,45 @@
       build things that actually help.
     </p>
     <div class="cta-row">
-      <a href="#work" class="btn primary">How I work</a>
+      <a href="#translation" class="btn primary">How this translates</a>
       <a href="#contact" class="btn accent">Get in touch</a>
     </div>
   </section>
 
-  <section class="block" id="work">
+  <section class="block" id="translation">
     <div class="section-head">
-      <div class="label">What I Bring</div>
-      <h2>Five years in trauma-informed care taught me things a product background doesn't.</h2>
+      <div class="label">The Translation</div>
+      <h2>Here's exactly how five years in mental health became product and AI work.</h2>
+      <p class="intro">Not a metaphor. The actual mechanics of the job carried over, one for one.</p>
     </div>
-    <div class="bring-grid">
-      <div class="bring-item">
-        <span class="num">1</span>
-        <strong>I know users the hard way.</strong>
-        <p>For five-plus years I was a lead peer mentor working with youth and families in trauma-informed care. I talked with people every day about what was and wasn't working for them. That's user research, done live, with real stakes.</p>
+    <div class="translate-grid">
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health</span>
+        <p class="from-text">For five-plus years I was a lead peer mentor, talking with youth and families every day about what was and wasn't working for them, with real stakes attached to getting it right.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">In product &amp; AI</span>
+        <p class="to-text">User research, done live. I don't need a research plan to get real signal out of a hard conversation, or to tell you what a person actually needs versus what they said in the interview.</p>
       </div>
-      <div class="bring-item">
-        <span class="num">2</span>
-        <strong>I translate.</strong>
-        <p>In that work I sat between families, clinicians, case managers, and schools. Everyone spoke a different language. My job was making sure they understood each other. That's the same job as sitting between users and a product team.</p>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health</span>
+        <p class="from-text">I sat between families, clinicians, case managers, and schools. Everyone spoke a different language, and my job was making sure they understood each other well enough to act.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">In product &amp; AI</span>
+        <p class="to-text">Cross-functional translation. The same job as sitting between users and a product team, or between what a model actually does and what a person experiences when they use it.</p>
       </div>
-      <div class="bring-item">
-        <span class="num">3</span>
-        <strong>I write for people in hard moments.</strong>
-        <p>Enrollment, onboarding, asking for help. I know how to write so a stressed person can actually follow it.</p>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health</span>
+        <p class="from-text">I wrote instructions and safety plans for people in enrollment, in crisis, in the hardest moments of their week. That writing had to work correctly the first time.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">In product &amp; AI</span>
+        <p class="to-text">Product and UX writing for people who are stressed, confused, or in a hurry. Onboarding, error states, the exact moments where clarity isn't optional.</p>
       </div>
-      <div class="bring-item">
-        <span class="num">4</span>
-        <strong>I work with AI every day.</strong>
-        <p>I use Claude and other AI tools to research, build, and write. I know what these systems do well and where they fail people, especially in mental health, where the people most likely to lean on AI are the ones most hurt when it gets things wrong.</p>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health</span>
+        <p class="from-text">I watched where care systems failed the people who most needed them to work, and had to notice it fast enough to intervene.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">In product &amp; AI</span>
+        <p class="to-text">AI product judgment. I use Claude and other AI tools daily, and I know where they help and where they quietly fail the people most likely to lean on them, especially in mental health.</p>
       </div>
     </div>
   </section>
