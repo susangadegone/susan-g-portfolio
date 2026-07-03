@@ -243,6 +243,17 @@
   }
   .carousel-nav button:hover { border-color: var(--accent); color: var(--accent); }
 
+  /* Case studies */
+  .case-studies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+  .role-card.case-card { border-top: 3px dashed var(--rule); }
+  .case-card .status {
+    font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700;
+    color: var(--muted); background: var(--bg); display: inline-block;
+    padding: 5px 10px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .case-card p { font-size: 15px; color: var(--muted); margin: 0; }
+  .case-card strong { color: var(--ink); font-weight: 700; }
+
   /* Looking for */
   .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .role-card {
@@ -287,6 +298,7 @@
     .translate-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 8px; }
     .role-grid { grid-template-columns: 1fr; }
+    .case-studies { grid-template-columns: 1fr; }
     .card { flex-basis: 240px; }
     footer.foot .foot-wrap { flex-direction: column; align-items: flex-start; padding: 0 20px; }
   }
@@ -516,22 +528,37 @@
         <button type="button" id="nextBtn" aria-label="Scroll right">&rarr;</button>
       </div>
     </div>
+
+    <div class="case-studies">
+      <div class="role-card case-card">
+        <span class="status">Case study &middot; coming soon</span>
+        <p><strong>Cozy</strong> &mdash; designing a chore app that doesn't run on guilt, and what I stripped out of v1 to get there.</p>
+      </div>
+      <div class="role-card case-card">
+        <span class="status">Case study &middot; coming soon</span>
+        <p><strong>Roam</strong> &mdash; building a resource directory for people who need support and don't know where to start looking.</p>
+      </div>
+      <div class="role-card case-card">
+        <span class="status">Case study &middot; coming soon</span>
+        <p><strong>Cal Mood Tracker</strong> &mdash; why a mood tracker should work like the calendar you already have, not a new habit to maintain.</p>
+      </div>
+    </div>
   </section>
 
   <section class="block" id="looking">
     <div class="section-head">
       <div class="label">What I'm Looking For</div>
-      <h2>A role at an AI or digital health company where understanding people is the actual job.</h2>
+      <h2>What I want next is simple: product work, in health, where I still get to build.</h2>
     </div>
     <div class="role-grid">
       <div class="role-card">
-        <p>Being the bridge between a product and the people using it.</p>
+        <p>Product, end to end. Not research or writing in isolation &mdash; owning what gets built, why, and whether it actually worked for the people using it.</p>
       </div>
       <div class="role-card">
-        <p>Listening to users and turning what they say into something a team can act on.</p>
+        <p>Health, specifically. Digital health, mental health, or care-adjacent products, where getting it right isn't optional and the person on the other end is often having a hard day.</p>
       </div>
       <div class="role-card">
-        <p>Writing that moves people through hard decisions, in a human voice.</p>
+        <p>Building, not just planning. I ship my own apps. I want to work somewhere that still gets close to the actual product, not just the roadmap.</p>
       </div>
     </div>
     <p class="location-note">SF Bay Area, hybrid or in-person.</p>
