@@ -136,6 +136,7 @@
   .hero p.lede {
     font-size: 17px; line-height: 1.65; max-width: 560px; margin: 0 auto 34px; color: var(--muted);
   }
+  .hero p.lede strong { color: var(--ink); font-weight: 700; }
   .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
   section.block { padding: 72px 0; border-top: 1px solid var(--rule); }
@@ -152,6 +153,16 @@
   .section-head p.intro { font-size: 16px; color: var(--muted); margin-top: 14px; }
   .section-head p.intro a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .section-head p.intro a:hover { text-decoration: underline; }
+
+  /* About */
+  .about-prose {
+    max-width: 700px; margin: 0 auto; display: grid; gap: 18px;
+    font-size: 16.5px; line-height: 1.7; color: var(--muted);
+  }
+  .about-prose strong { color: var(--ink); font-weight: 700; }
+  .about-prose em { font-style: italic; }
+  .about-prose a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .about-prose a:hover { text-decoration: underline; }
 
   /* The Translation */
   .translate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -197,6 +208,11 @@
     scroll-snap-align: start; flex: 0 0 268px;
     background: var(--card-bg, var(--surface)); border: 1px solid var(--rule); border-radius: 20px;
     padding: 24px; display: flex; flex-direction: column; min-height: 210px;
+  }
+  .card img.shot {
+    width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
+    border-radius: 12px; border: 1px solid var(--rule); margin-bottom: 14px;
+    background: var(--bg);
   }
   .card .status {
     font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700;
@@ -321,6 +337,7 @@
     </a>
     <div class="nav-right">
       <nav>
+        <a href="#about">About</a>
         <a href="#translation">The Translation</a>
         <a href="#built">Things I've Built</a>
         <a href="#looking">Looking For</a>
@@ -344,15 +361,31 @@
     <div class="greeting">Hi, I'm Susan</div>
     <h1>Product and <span class="accent-text">trust and safety</span> work.</h1>
     <p class="lede">
-      As a peer mentor, I had to decide when a safety concern needed to go
-      further up and when it didn't, knowing a wrong call either way could hurt
-      someone. This past year, I've been building products with that same care.
-      I'm already doing this work. What I want next is to do it at a scale I
-      can't reach alone.
+      I came to product to <strong>help people at scale</strong>, not one at a
+      time, and keep them <strong>safe</strong> getting there &mdash; the work I
+      did for years as a peer counselor. I want to do it through
+      <strong>trust and safety</strong>, for more people, longer term. I'm
+      <strong>skeptical of AI</strong>. I also <strong>believe it can help</strong>.
+      Both are true.
     </p>
     <div class="cta-row">
       <a href="#translation" class="btn primary">How this translates</a>
       <a href="#contact" class="btn accent">Get in touch</a>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="section-head">
+      <div class="label">About</div>
+      <h2>I know your user before they open the app.</h2>
+    </div>
+    <div class="about-prose">
+      <p>Technology and AI are becoming mental health advocates in their own right. They're reaching people the care system never could. I want to be the person who makes sure those tools are actually ready for the people using them &mdash; not just ready to ship.</p>
+      <p>I spent years in behavioral health sitting with young people through some of the hardest moments of their lives. That gave me something most product people don't have: <strong>I know what it looks like when someone is in crisis and the tool they're reaching for isn't working.</strong> You can't learn that from a persona.</p>
+      <p>That's why I care about trust and safety. Not as a policy checkbox, but as the real question of who gets hurt if this goes wrong. I've seen what happens when systems fail the people who needed them most. I know what &ldquo;safe&rdquo; means to someone in crisis, not just what it means on paper.</p>
+      <p>I've watched technology promise real care and give people something hollow instead. I've also seen what happens when someone in the room asks who this could hurt <em>before</em> it launches, not after. That's the difference between a tool that actually helps and one that just says it does. <strong>I want to be that person in the room.</strong></p>
+      <p>I bring trauma-informed thinking into product decisions as a practical lens, not a philosophy. It shapes how I think about retention mechanics, crisis features, notification ethics, and what trust actually means when your user is struggling. I've built wellness and productivity apps from scratch using Cursor, Claude, Google AI Studio, Replit, and Vercel, and I write about digital health product design on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>.</p>
+      <p>If you're building something that helps people get care they wouldn't otherwise have access to, and you want someone asking who this could hurt before it ships, <a href="#contact">I want to talk</a>.</p>
     </div>
   </section>
 
@@ -364,32 +397,60 @@
     </div>
     <div class="translate-grid">
       <div class="translate-item">
-        <span class="tag from-tag">Five years in mental health</span>
-        <p class="from-text">Reading whether someone in crisis was about to disengage, often before they said a word, because I'd learned exactly what that looked like.</p>
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Decided when a safety concern had to go up the chain and when it didn't, knowing a wrong call in either direction could hurt someone.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">In a churn review, I don't stop at the drop-off chart. I pull five real user sessions from the week before they left and tell you which left because of a bug, and which left because the product made them feel stupid or judged.</p>
+        <p class="to-text">When your trust and safety team debates where the line is for self-harm content, I've made that call with a real person in front of me. I help write severity policy that holds up at 2am, not just in the review meeting.</p>
       </div>
       <div class="translate-item">
-        <span class="tag from-tag">Five years in mental health</span>
-        <p class="from-text">Sat in rooms where clinicians, schools, and families each had a different read on the same kid, and my job was getting the room to agree on what to do next.</p>
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Explained confidentiality and its limits to scared teenagers before they'd tell me anything, and lived by hard rules about what I could share, with whom, and when.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">In a roadmap debate where engineering wants to ship fast, design wants to protect the experience, and support is fielding angry tickets, I can translate all three into one decision by finding what's actually true about the user underneath each argument.</p>
+        <p class="to-text">When the growth team wants to use mood data for personalization, I know the difference between consent someone understood and consent someone clicked through. That difference is your users' trust.</p>
       </div>
       <div class="translate-item">
-        <span class="tag from-tag">Five years in mental health</span>
-        <p class="from-text">Wrote safety plans and enrollment paperwork a scared, overwhelmed person had to get right on the first read, with no one there to explain it to them.</p>
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Practiced trauma-informed care, where you never use shame or fear as a lever, because the person in front of you has had enough of both.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">When onboarding drop-off spikes, I don't start with button copy A/B tests. I read what the screen assumes the person already knows, and rewrite it for someone reading it once, stressed, on a phone, at 11pm.</p>
+        <p class="to-text">Streaks, red badges, &ldquo;we miss you&rdquo; notifications &mdash; I can tell you which mechanics motivate your user and which punish them for having a bad week. I built Cozy, a chore app, by stripping the guilt out.</p>
       </div>
       <div class="translate-item">
-        <span class="tag from-tag">Five years in mental health</span>
-        <p class="from-text">Watched, in real time, where a care system's good intentions turned into a person falling through the cracks &mdash; and had to notice it fast enough to catch them.</p>
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Trained and led a team of peer mentors, teaching people to make consistent calls in ambiguous, high-stakes situations.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">When your team debates whether an AI feature should escalate to a human, I'm the one who's actually sat with someone in the moment that needed a human being, and can tell you specifically where that line is and what it costs to get it wrong.</p>
+        <p class="to-text">Scaling judgment is the hardest problem in trust and safety. I've done it the analog way: turning my own instincts into guidance a new mentor could follow when I wasn't in the room. That's what good policy is.</p>
+      </div>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Read when someone in crisis was about to disengage, often before they said a word, because I'd learned exactly what that looked like.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">At your company</span>
+        <p class="to-text">In a churn review, I don't stop at the drop-off chart. I pull real user sessions from the week before they left and tell you who left because of a bug, and who left because the product made them feel stupid or judged.</p>
+      </div>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Sat in rooms where clinicians, schools, and families each had a different read on the same kid, and my job was getting the room to one decision.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">At your company</span>
+        <p class="to-text">When engineering wants speed, design wants polish, and support is fielding angry tickets, I find what's actually true about the user underneath each argument and turn three positions into one decision.</p>
+      </div>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Wrote safety plans a scared, overwhelmed person had to get right on the first read, with no one there to explain it to them.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">At your company</span>
+        <p class="to-text">When onboarding drop-off spikes, I don't start with A/B tests on button copy. I read what the screen assumes the person already knows, and rewrite it for someone reading it once, stressed, on a phone, at 11pm.</p>
+      </div>
+      <div class="translate-item">
+        <span class="tag from-tag">In mental health work</span>
+        <p class="from-text">Watched, in real time, where a care system's good intentions turned into a person falling through the cracks, and had to notice fast enough to catch them.</p>
+        <span class="arrow-badge" aria-hidden="true">&darr;</span>
+        <span class="tag to-tag">At your company</span>
+        <p class="to-text">When your team debates whether an AI feature should hand off to a human, I've sat with someone in the moment that needed a human being. I can tell you where that line is and what it costs to get it wrong.</p>
       </div>
     </div>
     <p class="location-note">If your team needs this, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
@@ -405,7 +466,7 @@
         <div class="when">5+ years &middot; San Francisco</div>
         <div>
           <h3>Lead Peer Mentor, trauma-informed care</h3>
-          <p>Worked directly with youth and families in San Francisco. Led a team of peer partners. Coordinated across clinical, school, and legal systems. Learned to listen for what people actually need, not just what they say.</p>
+          <p>Worked directly with youth and families in San Francisco. Led and trained a team of peer partners. Made escalation calls on safety concerns and coordinated across clinical, school, and legal systems. Learned to listen for what people actually need, not just what they say.</p>
         </div>
       </div>
       <div class="exp-item">
@@ -429,13 +490,14 @@
     <div class="section-head">
       <div class="label">Things I've Built</div>
       <h2>I build to understand products from the inside.</h2>
-      <p class="intro">These are all on my <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>. Scroll to see more.</p>
+      <p class="intro">Wellness and productivity apps, built from scratch with Cursor, Claude, Google AI Studio, Replit, and Vercel. All on my <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>. Scroll to see more.</p>
     </div>
 
     <div class="carousel-wrap">
       <div class="carousel" id="carousel">
 
         <article class="card c1">
+          <img class="shot" src="assets/shots/cozy.png" alt="Cozy app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">iOS &middot; App Store review</span>
           <h3>Cozy</h3>
           <p>A chore app for people who want a calm home, not a guilt trip.</p>
@@ -443,6 +505,7 @@
         </article>
 
         <article class="card c2">
+          <img class="shot" src="assets/shots/roam.png" alt="Roam app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">iOS &middot; App Store review</span>
           <h3>Roam</h3>
           <p>A Bay Area wellness resource directory for people who need support and don't know where to start.</p>
@@ -450,6 +513,7 @@
         </article>
 
         <article class="card c3">
+          <img class="shot" src="assets/shots/cal-mood-tracker.png" alt="Cal Mood Tracker screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">Shipped</span>
           <h3>Cal Mood Tracker</h3>
           <p>A simple wellness tool for checking in with yourself, built around the calendar you already keep.</p>
@@ -457,6 +521,7 @@
         </article>
 
         <article class="card c4">
+          <img class="shot" src="assets/shots/india-festivals.png" alt="India Festivals app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">Shipped</span>
           <h3>India Festivals</h3>
           <p>A cultural calendar app for learning the festivals and traditions of India.</p>
@@ -464,6 +529,7 @@
         </article>
 
         <article class="card c5">
+          <img class="shot" src="assets/shots/present-breathwork.png" alt="Present Breathwork app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">In progress</span>
           <h3>Present Breathwork</h3>
           <p>A lightweight, responsive web app for guided breathing and staying present in the moment.</p>
@@ -471,6 +537,7 @@
         </article>
 
         <article class="card c6">
+          <img class="shot" src="assets/shots/sf-tour-reserve.png" alt="SF Tour Reserve app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">In progress</span>
           <h3>SF Tour Reserve</h3>
           <p>A booking app for reserving tours around San Francisco.</p>
@@ -478,6 +545,7 @@
         </article>
 
         <article class="card c1">
+          <img class="shot" src="assets/shots/accountability.png" alt="Accountability app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">In progress</span>
           <h3>Accountability App</h3>
           <p>A tool for tracking milestones and staying accountable across work and life.</p>
@@ -485,6 +553,7 @@
         </article>
 
         <article class="card c2">
+          <img class="shot" src="assets/shots/focus-allowlist.png" alt="Focus Allowlist app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">In progress</span>
           <h3>Focus Allowlist</h3>
           <p>A tool for keeping only the apps and sites you actually need in view while you work.</p>
@@ -492,6 +561,7 @@
         </article>
 
         <article class="card c3">
+          <img class="shot" src="assets/shots/calendar-productivity.png" alt="Calendar Productivity app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">Prototype</span>
           <h3>Calendar Productivity</h3>
           <p>A calendar-first take on staying on top of daily tasks.</p>
@@ -499,6 +569,7 @@
         </article>
 
         <article class="card c4">
+          <img class="shot" src="assets/shots/mood-tracker-early.png" alt="Mood Tracker early build screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">Prototype</span>
           <h3>Mood Tracker (early build)</h3>
           <p>An earlier exploration of the mood tracking concept that became Cal Mood Tracker.</p>
@@ -506,6 +577,7 @@
         </article>
 
         <article class="card c5">
+          <img class="shot" src="assets/shots/game-1.png" alt="Game 1 Productivity app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">Prototype</span>
           <h3>Game 1: Productivity App</h3>
           <p>An experiment in gamifying everyday productivity.</p>
@@ -513,6 +585,7 @@
         </article>
 
         <article class="card c6">
+          <img class="shot" src="assets/shots/dog-meal-menu.png" alt="Dog Meal Menu app screenshot" loading="lazy" onerror="this.remove()">
           <span class="status">Prototype</span>
           <h3>Dog Meal Menu</h3>
           <p>A small app for planning out a dog's meals.</p>
