@@ -10,38 +10,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #faf8f3;
+    --bg: #f3f1ea;
     --surface: #ffffff;
-    --ink: #17140f;
-    --muted: #6b6255;
-    --rule: #e8e1d2;
-    --accent: #d98e2b;
-    --accent-ink: #17140f;
-    --footer-bg: #17140f;
-    --footer-ink: #f2ede2;
+    --ink: #202b34;
+    --muted: #66788a;
+    --rule: #dde3e7;
+    --accent: #4f7691;
+    --accent-ink: #f7f5ef;
+    --footer-bg: #1c2530;
+    --footer-ink: #f0ede4;
   }
   :root[data-theme="dark"] {
-    --bg: #15130f;
-    --surface: #1e1b15;
-    --ink: #f3efe6;
-    --muted: #b3a996;
-    --rule: #322d24;
-    --accent: #e8a33d;
-    --accent-ink: #15130f;
-    --footer-bg: #0e0c09;
-    --footer-ink: #f2ede2;
+    --bg: #131a21;
+    --surface: #1b2530;
+    --ink: #eef1ec;
+    --muted: #93a4ac;
+    --rule: #2b3742;
+    --accent: #82abc4;
+    --accent-ink: #10161c;
+    --footer-bg: #0b1116;
+    --footer-ink: #f0ede4;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #15130f;
-      --surface: #1e1b15;
-      --ink: #f3efe6;
-      --muted: #b3a996;
-      --rule: #322d24;
-      --accent: #e8a33d;
-      --accent-ink: #15130f;
-      --footer-bg: #0e0c09;
-      --footer-ink: #f2ede2;
+      --bg: #131a21;
+      --surface: #1b2530;
+      --ink: #eef1ec;
+      --muted: #93a4ac;
+      --rule: #2b3742;
+      --accent: #82abc4;
+      --accent-ink: #10161c;
+      --footer-bg: #0b1116;
+      --footer-ink: #f0ede4;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -155,10 +155,10 @@
   .section-head p.intro a:hover { text-decoration: underline; }
 
   /* About */
-  :root { --about-bg: #f4e2d8; }
-  :root[data-theme="dark"] { --about-bg: #2b2019; }
+  :root { --about-bg: #dbe3e6; }
+  :root[data-theme="dark"] { --about-bg: #1c262e; }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --about-bg: #2b2019; }
+    :root:not([data-theme="light"]) { --about-bg: #1c262e; }
   }
   .about-block {
     width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
@@ -167,6 +167,7 @@
   .about-prose {
     max-width: 700px; margin: 0 auto; font-size: 17px; line-height: 1.7; color: var(--ink);
   }
+  .about-prose p + p { margin-top: 18px; }
   .about-prose strong { font-weight: 700; }
   .about-prose a { color: var(--accent); font-weight: 600; text-decoration: none; }
   .about-prose a:hover { text-decoration: underline; }
@@ -428,6 +429,18 @@
       </div>
       <p class="location-note">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
     </div>
+  </section>
+
+  <section class="block" id="why-trust-safety">
+    <div class="section-head">
+      <div class="label">Why Trust and Safety</div>
+      <h2>I've seen what happens when a product doesn't have someone's back.</h2>
+    </div>
+    <div class="about-prose">
+      <p>Several of the young adults I mentored went on to try online dating, and I watched, up close, what happens when the product isn't built to protect them: a catfish that took months to untangle, a match that turned out to be a script running a scam, someone talked into sending money before they'd ever met the person in real life. None of that gets fixed with better microcopy. It's a trust and safety problem, and it's exactly the kind of thing five years of peer mentor work trained me to see coming, not clean up after.</p>
+      <p>Online dating asks people to be adventurous with strangers, on purpose &mdash; that's the whole draw. The adventure only holds up if what someone shares along the way, a photo, a location, a real name, is protected by people who understand what's actually at stake for them. I don't think products need to be cautious to the point of boring to be safe. I think they need people in the room, before launch, who know what unsafe looks like in someone's actual life. That's the seat I want at the table.</p>
+    </div>
+    <p class="location-note">If your product asks people to trust a stranger, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
   </section>
 
   <section class="block" id="translation">
