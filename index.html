@@ -265,24 +265,39 @@
   .screens-head { text-align: center; max-width: 640px; margin: 56px auto 28px; }
   .screens-head h3 { font-weight: 700; font-size: 22px; margin-bottom: 8px; }
   .screens-head p { font-size: 15px; color: var(--muted); }
-  .screens-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 22px; }
-  .screen-item { display: flex; flex-direction: column; gap: 10px; }
-  .screen-item img {
-    width: 100%; display: block; border-radius: 16px; border: 1px solid var(--rule);
-    background: var(--surface);
+
+  .screens-group { margin-top: 36px; }
+  .screens-group:first-of-type { margin-top: 0; }
+  .screens-group-head {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px;
+    padding-bottom: 14px; margin-bottom: 22px; border-bottom: 1px solid var(--rule);
   }
-  .screen-item figcaption { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
-  .screen-tag {
-    font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
-    padding: 4px 10px; border-radius: 999px; border: 1px solid var(--rule); background: var(--bg);
+  .screens-group-head .group-dot {
+    width: 10px; height: 10px; border-radius: 50%; align-self: center; flex-shrink: 0;
   }
-  .screen-tag.cozy { color: #9c7228; }
-  .screen-tag.roam { color: #b25b3e; }
-  :root[data-theme="dark"] .screen-tag.cozy { color: #e0b463; }
-  :root[data-theme="dark"] .screen-tag.roam { color: #e08b6c; }
+  .group-dot.cozy-dot { background: #9c7228; }
+  .group-dot.roam-dot { background: #b25b3e; }
+  :root[data-theme="dark"] .group-dot.cozy-dot { background: #e0b463; }
+  :root[data-theme="dark"] .group-dot.roam-dot { background: #e08b6c; }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .screen-tag.cozy { color: #e0b463; }
-    :root:not([data-theme="light"]) .screen-tag.roam { color: #e08b6c; }
+    :root:not([data-theme="light"]) .group-dot.cozy-dot { background: #e0b463; }
+    :root:not([data-theme="light"]) .group-dot.roam-dot { background: #e08b6c; }
+  }
+  .screens-group-head h4 { font-weight: 700; font-size: 17px; }
+  .screens-group-head .group-sub { font-size: 13.5px; color: var(--muted); }
+
+  .screens-row { display: flex; flex-wrap: wrap; gap: 24px; }
+  .screen-item {
+    display: flex; flex-direction: column; gap: 10px;
+    flex: 0 1 160px; width: 160px;
+  }
+  .screen-item img {
+    width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; display: block;
+    border-radius: 18px; border: 1px solid var(--rule); background: var(--surface);
+    box-shadow: 0 10px 24px -14px rgba(23, 20, 15, 0.35);
+  }
+  .screen-item figcaption {
+    text-align: center; font-size: 12.5px; font-weight: 600; color: var(--muted);
   }
 
   /* Case studies */
@@ -342,6 +357,8 @@
     .role-grid { grid-template-columns: 1fr; }
     .case-studies { grid-template-columns: 1fr; }
     .card { flex-basis: 240px; }
+    .screens-row { justify-content: center; }
+    .screen-item { flex-basis: 42%; width: 42%; min-width: 128px; }
     footer.foot .foot-wrap { flex-direction: column; align-items: flex-start; padding: 0 20px; }
   }
 
@@ -407,7 +424,7 @@
         <h2>I know your user before they open the app.</h2>
       </div>
       <div class="about-prose">
-        <p>For five years, I worked as a lead peer mentor in trauma-informed care in San Francisco, working directly with 25 to 75 youth and families depending on the year and leading and training a team of four to eight peer partners. Part of that job was deciding, case by case, whether a safety concern needed to go up the chain or stay between me and the person in front of me &mdash; a call I made routinely, for five years, and taught every new peer mentor how to make too. Now I bring that same judgment to trust and safety work in AI and digital health products, built from scratch with Cursor, Claude, Google AI Studio, Replit, and Vercel, and written about on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>.</p>
+        <p>I went into product to help people at scale, not one at a time. That comes from five-plus years of trauma-informed peer mentor work with youth and families, where I learned what safety actually requires when someone is in crisis. I brought that into building three wellness apps, and now into trust and safety, where the question is how you protect people at scale while the systems meant to help them keep changing. I'm skeptical of AI and I believe it can help, both at once, and I don't try to resolve that. That combination of caution and belief is what makes me useful on a team, whether the role is product, trust and safety, or something between the two.</p>
       </div>
       <p class="location-note">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
     </div>
@@ -416,7 +433,7 @@
   <section class="block" id="translation">
     <div class="section-head">
       <div class="label">The Translation</div>
-      <h2>Product leaders keep asking how mental health experience becomes product instinct. Here's exactly what it looks like in the room.</h2>
+      <h2>Product and trust and safety leaders keep asking how peer mentor work becomes product instinct. Here's exactly what it looks like in the room.</h2>
       <p class="intro">Not hypotheticals. This is what I'd actually be doing on your team, in your meetings, on your roadmap.</p>
     </div>
     <div class="translate-grid">
@@ -432,35 +449,35 @@
         <p class="from-text">Explained confidentiality and its limits to scared teenagers before they'd tell me anything, and lived by hard rules about what I could share, with whom, and when.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">When the growth team wants to use mood data for personalization, I know the difference between consent someone understood and consent someone clicked through. That difference is your users' trust.</p>
+        <p class="to-text">When the growth team wants to use mood data for personalization, I know the difference between consent someone understood and consent someone clicked through. That's the exact line trust and safety review boards spend weeks debating, and I've lived on both sides of it.</p>
       </div>
       <div class="translate-item">
         <span class="tag from-tag">In mental health work</span>
         <p class="from-text">Practiced trauma-informed care, where you never use shame or fear as a lever, because the person in front of you has had enough of both.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">Streaks, red badges, &ldquo;we miss you&rdquo; notifications &mdash; I can tell you which mechanics motivate your user and which punish them for having a bad week. I built Cozy, a chore app, by stripping the guilt out.</p>
+        <p class="to-text">Streaks, red badges, &ldquo;we miss you&rdquo; notifications &mdash; I can tell you which mechanics motivate your user and which tip into the dark patterns trust and safety ends up cleaning up later. I built Cozy, one of my three wellness apps, by stripping the guilt out from the start.</p>
       </div>
       <div class="translate-item">
         <span class="tag from-tag">In mental health work</span>
         <p class="from-text">Trained and led a team of peer mentors, teaching people to make consistent calls in ambiguous, high-stakes situations.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">Scaling judgment is the hardest problem in trust and safety. I've done it the analog way: turning my own instincts into guidance a new mentor could follow when I wasn't in the room. That's what good policy is.</p>
+        <p class="to-text">Scaling judgment is the hardest problem in trust and safety, especially when the AI systems making first-pass calls keep changing under you. I've done it the analog way: turning my own instincts into guidance a new mentor could follow when I wasn't in the room. That's what good policy is.</p>
       </div>
       <div class="translate-item">
         <span class="tag from-tag">In mental health work</span>
         <p class="from-text">Read when someone in crisis was about to disengage, often before they said a word, because I'd learned exactly what that looked like.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">In a churn review, I don't stop at the drop-off chart. I pull real user sessions from the week before they left and tell you who left because of a bug, and who left because the product made them feel stupid or judged.</p>
+        <p class="to-text">In a churn review, I don't stop at the drop-off chart. I pull real user sessions from the week before they left and tell you who left because of a bug, and who left because the product, or an AI feature inside it, made them feel unsafe, stupid, or judged &mdash; the distinction trust and safety needs to act on.</p>
       </div>
       <div class="translate-item">
         <span class="tag from-tag">In mental health work</span>
         <p class="from-text">Wrote safety plans a scared, overwhelmed person had to get right on the first read, with no one there to explain it to them.</p>
         <span class="arrow-badge" aria-hidden="true">&darr;</span>
         <span class="tag to-tag">At your company</span>
-        <p class="to-text">When onboarding drop-off spikes, I don't start with A/B tests on button copy. I read what the screen assumes the person already knows, and rewrite it for someone reading it once, stressed, on a phone, at 11pm.</p>
+        <p class="to-text">When onboarding drop-off spikes, I don't start with A/B tests on button copy. I read what the screen, and any AI-generated instructions inside it, assumes the person already knows, and rewrite it for someone reading it once, stressed, on a phone, at 11pm &mdash; before trust and safety hears about it as a complaint.</p>
       </div>
     </div>
     <p class="location-note">If your team needs this, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
@@ -619,35 +636,53 @@
       <h3>A closer look</h3>
       <p>Screens from Cozy and Roam, live on the App Store.</p>
     </div>
-    <div class="screens-grid">
-      <figure class="screen-item">
-        <img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy">
-        <figcaption><span class="screen-tag cozy">Cozy</span> Home</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="assets/shots/cozy-chores.png" alt="Cozy chore library screen" loading="lazy">
-        <figcaption><span class="screen-tag cozy">Cozy</span> Chore Library</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="assets/shots/cozy-profile.png" alt="Cozy profile screen" loading="lazy">
-        <figcaption><span class="screen-tag cozy">Cozy</span> Profile</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy">
-        <figcaption><span class="screen-tag roam">Roam</span> Home</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="assets/shots/roam-checkin.png" alt="Roam check-in screen" loading="lazy">
-        <figcaption><span class="screen-tag roam">Roam</span> Check-in</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="assets/shots/roam-coping.png" alt="Roam coping skills screen" loading="lazy">
-        <figcaption><span class="screen-tag roam">Roam</span> Coping Skills</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy">
-        <figcaption><span class="screen-tag roam">Roam</span> Map</figcaption>
-      </figure>
+
+    <div class="screens-group">
+      <div class="screens-group-head">
+        <span class="group-dot cozy-dot" aria-hidden="true"></span>
+        <h4>Cozy</h4>
+        <span class="group-sub">A chore app for people who want a calm home, not a guilt trip &middot; 3 screens</span>
+      </div>
+      <div class="screens-row">
+        <figure class="screen-item">
+          <img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy">
+          <figcaption>Home</figcaption>
+        </figure>
+        <figure class="screen-item">
+          <img src="assets/shots/cozy-chores.png" alt="Cozy chore library screen" loading="lazy">
+          <figcaption>Chore Library</figcaption>
+        </figure>
+        <figure class="screen-item">
+          <img src="assets/shots/cozy-profile.png" alt="Cozy profile screen" loading="lazy">
+          <figcaption>Profile</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="screens-group">
+      <div class="screens-group-head">
+        <span class="group-dot roam-dot" aria-hidden="true"></span>
+        <h4>Roam</h4>
+        <span class="group-sub">A Bay Area wellness resource directory for people who don't know where to start &middot; 4 screens</span>
+      </div>
+      <div class="screens-row">
+        <figure class="screen-item">
+          <img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy">
+          <figcaption>Home</figcaption>
+        </figure>
+        <figure class="screen-item">
+          <img src="assets/shots/roam-checkin.png" alt="Roam check-in screen" loading="lazy">
+          <figcaption>Check-in</figcaption>
+        </figure>
+        <figure class="screen-item">
+          <img src="assets/shots/roam-coping.png" alt="Roam coping skills screen" loading="lazy">
+          <figcaption>Coping Skills</figcaption>
+        </figure>
+        <figure class="screen-item">
+          <img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy">
+          <figcaption>Map</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
