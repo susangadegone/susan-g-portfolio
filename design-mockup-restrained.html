@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Susan Gadegone</title>
+<meta name="description" content="Product and trust and safety work. Susan Gadegone. San Francisco Bay Area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --ink: #17140f;
+    --muted: #6e675a;
+    --rule: #e2ddd0;
+    --accent: #a8452b;
+  }
+  :root[data-theme="dark"] {
+    --bg: #14120e;
+    --ink: #f2efe6;
+    --muted: #a89f8e;
+    --rule: #2c2820;
+    --accent: #d97a52;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14120e; --ink: #f2efe6; --muted: #a89f8e; --rule: #2c2820; --accent: #d97a52;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    background: var(--bg); color: var(--ink); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  /* Nav */
+  .topbar {
+    padding: 26px 0; display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--rule);
+  }
+  .brand { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--ink); }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .topbar nav { display: flex; gap: 20px; }
+  .topbar nav a {
+    font-family: 'IBM Plex Mono', monospace; color: var(--muted); text-decoration: none; font-size: 12px;
+    transition: color 0.15s;
+  }
+  .topbar nav a:hover { color: var(--accent); }
+  .theme-toggle {
+    width: 30px; height: 30px; border: none; background: none; cursor: pointer;
+    color: var(--muted); display: flex; align-items: center; justify-content: center;
+  }
+  .theme-toggle:hover { color: var(--accent); }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .theme-toggle .sun { display: none; }
+  :root[data-theme="dark"] .theme-toggle .moon { display: none; }
+  :root[data-theme="dark"] .theme-toggle .sun { display: block; }
+
+  /* Hero */
+  .hero { padding: 76px 0 64px; }
+  .hero .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted); margin-bottom: 22px;
+  }
+  .hero .id-row { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+  .hero .id-row img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .hero .id-row .who { font-size: 14px; color: var(--muted); }
+  .hero .id-row .who strong { color: var(--ink); font-weight: 700; }
+  .hero h1 {
+    font-weight: 800; letter-spacing: -0.02em; font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.2; margin-bottom: 26px; max-width: 600px;
+  }
+  .hero h1 .accent-text { color: var(--accent); }
+  .hero p.lede { font-size: 17px; line-height: 1.7; max-width: 540px; color: var(--muted); margin-bottom: 30px; }
+  .hero p.lede strong { color: var(--ink); font-weight: 700; }
+  .hero .cta-row { display: flex; gap: 26px; align-items: center; }
+  .link-cta {
+    font-size: 14px; font-weight: 700; text-decoration: none; color: var(--ink);
+    border-bottom: 1.5px solid var(--ink); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s;
+  }
+  .link-cta:hover { color: var(--accent); border-color: var(--accent); }
+  .link-cta.quiet { color: var(--muted); border-color: var(--rule); }
+  .link-cta.quiet:hover { color: var(--accent); border-color: var(--accent); }
+
+  section.block { padding: 56px 0; border-top: 1px solid var(--rule); }
+  .section-head { margin-bottom: 34px; display: flex; align-items: baseline; gap: 14px; }
+  .section-head .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); }
+  .section-head h2 { font-weight: 800; letter-spacing: -0.01em; font-size: clamp(21px, 2.6vw, 27px); line-height: 1.3; }
+  .section-head p.intro { font-size: 15px; color: var(--muted); margin-top: 6px; }
+  p.intro a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  p.intro a:hover { text-decoration: underline; }
+
+  .prose { font-size: 16.5px; line-height: 1.75; color: var(--ink); }
+  .prose p + p { margin-top: 16px; }
+  .prose strong { font-weight: 700; }
+  .prose a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .prose a:hover { text-decoration: underline; }
+
+  .followup { margin-top: 22px; font-size: 14.5px; color: var(--muted); }
+  .followup a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .followup a:hover { text-decoration: underline; }
+
+  /* Translation: plain rows, not cards */
+  .translate-list { display: flex; flex-direction: column; }
+  .translate-row { padding: 22px 0; border-top: 1px solid var(--rule); }
+  .translate-row:last-child { border-bottom: 1px solid var(--rule); }
+  .translate-row .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .translate-row .from { font-size: 14.5px; color: var(--muted); margin-bottom: 10px; }
+  .translate-row .to { font-size: 15.5px; color: var(--ink); }
+  .translate-row .to .to-lbl { color: var(--accent); font-weight: 700; }
+
+  /* Experience: plain rows */
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item { display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 20px 0; border-top: 1px solid var(--rule); }
+  .exp-list .exp-item:last-child { border-bottom: 1px solid var(--rule); }
+  .exp-item .when { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); padding-top: 3px; }
+  .exp-item h3 { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .exp-item p { font-size: 14.5px; color: var(--muted); }
+  .exp-item p a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .exp-item p a:hover { text-decoration: underline; }
+
+  /* Built: plain numbered list */
+  .work-list { display: flex; flex-direction: column; }
+  .work-row {
+    display: grid; grid-template-columns: 36px 1fr auto; gap: 18px; align-items: baseline;
+    padding: 20px 0; border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
+  }
+  .work-list .work-row:last-child { border-bottom: 1px solid var(--rule); }
+  .work-row .n { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+  .work-row .name { font-weight: 700; font-size: 16.5px; }
+  .work-row .status { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+  .work-row .desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .work-row .go { font-size: 13px; color: var(--accent); opacity: 0; transition: opacity 0.15s; white-space: nowrap; }
+  .work-row:hover .go { opacity: 1; }
+  .work-row:hover .name { color: var(--accent); }
+  .work-more { margin-top: 20px; font-size: 14px; color: var(--muted); }
+  .work-more a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .work-more a:hover { text-decoration: underline; }
+
+  /* Screens */
+  .screens-group { margin-top: 40px; }
+  .screens-group:first-of-type { margin-top: 8px; }
+  .screens-group-head { margin-bottom: 18px; }
+  .screens-group-head .app-name { font-weight: 700; font-size: 15px; }
+  .screens-group-head .app-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-left: 8px; }
+  .screens-row { display: flex; flex-wrap: wrap; gap: 20px; }
+  .screen-item { display: flex; flex-direction: column; gap: 8px; flex: 0 1 140px; width: 140px; }
+  .screen-item img {
+    width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; display: block;
+    border-radius: 10px; border: 1px solid var(--rule);
+  }
+  .screen-item figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); text-align: center; }
+
+  /* Looking for: plain list */
+  .role-list { display: flex; flex-direction: column; }
+  .role-row { padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; }
+  .role-list .role-row:last-child { border-bottom: 1px solid var(--rule); }
+  .role-row .role-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 6px; }
+
+  /* Contact: plain list */
+  .contact-list { display: flex; flex-direction: column; }
+  .contact-row {
+    display: flex; justify-content: space-between; align-items: center; padding: 16px 0;
+    border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
+  }
+  .contact-list .contact-row:last-child { border-bottom: 1px solid var(--rule); }
+  .contact-row .key { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+  .contact-row .val { font-size: 15px; font-weight: 600; }
+  .contact-row .arrow { color: var(--accent); opacity: 0; transition: opacity 0.15s; }
+  .contact-row:hover .arrow { opacity: 1; }
+  .contact-row:hover .val { color: var(--accent); }
+
+  footer.foot { padding: 30px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; }
+  footer.foot a { color: var(--muted); text-decoration: none; }
+  footer.foot a:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .exp-item { grid-template-columns: 1fr; gap: 4px; }
+    .work-row { grid-template-columns: 24px 1fr; }
+    .work-row .go { display: none; }
+    footer.foot { flex-direction: column; gap: 8px; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="topbar">
+    <a href="#top" class="brand">Susan Gadegone</a>
+    <div class="nav-right">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#translation">Translation</a>
+        <a href="#built">Built</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="eyebrow mono">San Francisco Bay Area &middot; Open to work</div>
+    <div class="id-row">
+      <img src="assets/susan.jpg" alt="Susan Gadegone">
+      <div class="who">Hi, I'm <strong>Susan</strong></div>
+    </div>
+    <h1>Product and <span class="accent-text">trust and safety</span> work.</h1>
+    <p class="lede">
+      I came to product to <strong>help people at scale</strong>, not one at a time,
+      and keep them <strong>safe</strong> getting there &mdash; the work I did for years
+      as a peer counselor. I'm <strong>skeptical of AI</strong>. I also
+      <strong>believe it can help</strong>. Both are true.
+    </p>
+    <div class="cta-row">
+      <a href="#translation" class="link-cta">How this translates</a>
+      <a href="#contact" class="link-cta quiet">Get in touch</a>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="section-head">
+      <span class="num mono">01</span>
+      <h2>I know your user before they open the app.</h2>
+    </div>
+    <div class="prose">
+      <p>I went into product to help people at scale, not one at a time. That comes from five-plus years of trauma-informed peer mentor work with youth and families, where I learned what safety actually requires when someone is in crisis. I brought that into building three wellness apps, and now into trust and safety, where the question is how you protect people at scale while the systems meant to help them keep changing. I'm skeptical of AI and I believe it can help, both at once, and I don't try to resolve that. That combination of caution and belief is what makes me useful on a team, whether the role is product, trust and safety, or something between the two.</p>
+    </div>
+    <p class="followup">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact">let's talk</a>.</p>
+  </section>
+
+  <section class="block" id="why">
+    <div class="section-head">
+      <span class="num mono">02</span>
+      <h2>I've seen what happens when a product doesn't have someone's back.</h2>
+    </div>
+    <div class="prose">
+      <p>Several of the young adults I mentored went on to try online dating, and I watched, up close, what happens when the product isn't built to protect them: a catfish that took months to untangle, a match that turned out to be a script running a scam, someone talked into sending money before they'd ever met the person in real life. None of that gets fixed with better microcopy. It's a trust and safety problem, and it's exactly the kind of thing five years of peer mentor work trained me to see coming, not clean up after.</p>
+      <p>Online dating asks people to be adventurous with strangers, on purpose &mdash; that's the whole draw. The adventure only holds up if what someone shares along the way is protected by people who understand what's actually at stake for them. I don't think products need to be cautious to the point of boring to be safe. I think they need people in the room, before launch, who know what unsafe looks like in someone's actual life.</p>
+    </div>
+    <p class="followup">If your product asks people to trust a stranger, <a href="#contact">let's talk</a>.</p>
+  </section>
+
+  <section class="block" id="translation">
+    <div class="section-head">
+      <span class="num mono">03</span>
+      <h2>How peer mentor work becomes product instinct.</h2>
+    </div>
+    <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">Not hypotheticals. This is what I'd actually be doing on your team.</p>
+    <div class="translate-list">
+      <div class="translate-row">
+        <div class="idx mono">01 &middot; Safety escalation</div>
+        <div class="from">Decided when a safety concern had to go up the chain and when it didn't, knowing a wrong call in either direction could hurt someone.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> When your trust and safety team debates where the line is for self-harm content, I've made that call with a real person in front of me.</div>
+      </div>
+      <div class="translate-row">
+        <div class="idx mono">02 &middot; Consent</div>
+        <div class="from">Explained confidentiality and its limits to scared teenagers before they'd tell me anything.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> I know the difference between consent someone understood and consent someone clicked through &mdash; the line trust and safety review boards spend weeks debating.</div>
+      </div>
+      <div class="translate-row">
+        <div class="idx mono">03 &middot; Dark patterns</div>
+        <div class="from">Practiced trauma-informed care, where you never use shame or fear as a lever.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> I can tell you which mechanics motivate your user and which tip into the dark patterns trust and safety ends up cleaning up later.</div>
+      </div>
+      <div class="translate-row">
+        <div class="idx mono">04 &middot; Scaling judgment</div>
+        <div class="from">Trained a team of peer mentors to make consistent calls in ambiguous, high-stakes situations.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> Scaling judgment is the hardest problem in trust and safety, especially as the AI systems making first-pass calls keep changing under you.</div>
+      </div>
+    </div>
+    <p class="followup">If your team needs this, <a href="#contact">let's talk</a>.</p>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="section-head">
+      <span class="num mono">04</span>
+      <h2>Where this comes from.</h2>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="when">5+ YRS &middot; SF</div>
+        <div>
+          <h3>Lead Peer Mentor, trauma-informed care</h3>
+          <p>Worked directly with youth and families in San Francisco. Led and trained a team of peer partners. Made escalation calls on safety concerns.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="when">ONGOING</div>
+        <div>
+          <h3>Product writer and analyst</h3>
+          <p>Writes about digital mental health and AI products on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="when">2024&ndash;</div>
+        <div>
+          <h3>Recognition</h3>
+          <p>2024 Neolth Innovation Challenge winner. Stanford AI for Good cohort. BA in Psychology, ASU.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="built">
+    <div class="section-head">
+      <span class="num mono">05</span>
+      <h2>I build to understand products from the inside.</h2>
+    </div>
+    <p class="intro" style="margin-top: -18px; margin-bottom: 10px;">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
+
+    <div class="work-list">
+      <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
+        <span class="n mono">01</span>
+        <span>
+          <span class="name">Cozy</span>
+          <div class="desc">A chore app for people who want a calm home, not a guilt trip.</div>
+        </span>
+        <span class="go">View &rarr;</span>
+      </a>
+      <a class="work-row" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">
+        <span class="n mono">02</span>
+        <span>
+          <span class="name">Roam</span>
+          <div class="desc">A Bay Area wellness resource directory for people who don't know where to start.</div>
+        </span>
+        <span class="go">View &rarr;</span>
+      </a>
+      <a class="work-row" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">
+        <span class="n mono">03</span>
+        <span>
+          <span class="name">Cal Mood Tracker</span>
+          <div class="desc">A wellness tool for checking in with yourself, built around the calendar you already keep.</div>
+        </span>
+        <span class="go">View &rarr;</span>
+      </a>
+    </div>
+    <p class="work-more">Plus 9 more prototypes and in-progress builds &mdash; <a href="https://github.com/susangadegone" target="_blank" rel="noopener">see them all on GitHub</a>.</p>
+
+    <div class="screens-group">
+      <div class="screens-group-head">
+        <span class="app-name">Cozy</span><span class="app-sub mono">3 screens</span>
+      </div>
+      <div class="screens-row">
+        <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/cozy-chores.png" alt="Cozy chore library screen" loading="lazy"><figcaption>Chores</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/cozy-profile.png" alt="Cozy profile screen" loading="lazy"><figcaption>Profile</figcaption></figure>
+      </div>
+    </div>
+    <div class="screens-group">
+      <div class="screens-group-head">
+        <span class="app-name">Roam</span><span class="app-sub mono">4 screens</span>
+      </div>
+      <div class="screens-row">
+        <figure class="screen-item"><img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/roam-checkin.png" alt="Roam check-in screen" loading="lazy"><figcaption>Check-in</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/roam-coping.png" alt="Roam coping skills screen" loading="lazy"><figcaption>Coping</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy"><figcaption>Map</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="looking">
+    <div class="section-head">
+      <span class="num mono">06</span>
+      <h2>What I want next is simple.</h2>
+    </div>
+    <div class="role-list">
+      <div class="role-row"><span class="role-lbl mono">PRODUCT, END TO END</span>Not research or writing in isolation &mdash; owning what gets built, why, and whether it worked.</div>
+      <div class="role-row"><span class="role-lbl mono">HEALTH, SPECIFICALLY</span>Digital health, mental health, or care-adjacent products, where getting it right isn't optional.</div>
+      <div class="role-row"><span class="role-lbl mono">BUILDING, NOT JUST PLANNING</span>I ship my own apps. I want to stay close to the actual product.</div>
+    </div>
+    <p class="followup">SF Bay Area, hybrid or in-person.</p>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="section-head">
+      <span class="num mono">07</span>
+      <h2>I'd love to hear from you.</h2>
+    </div>
+    <div class="contact-list">
+      <a class="contact-row" href="mailto:spgadegone@gmail.com">
+        <span><span class="key mono">EMAIL</span><br><span class="val">spgadegone@gmail.com</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="contact-row" href="https://linkedin.com/in/susannapage" target="_blank" rel="noopener">
+        <span><span class="key mono">LINKEDIN</span><br><span class="val">linkedin.com/in/susannapage</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="contact-row" href="https://github.com/susangadegone" target="_blank" rel="noopener">
+        <span><span class="key mono">GITHUB</span><br><span class="val">github.com/susangadegone</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="contact-row" href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">
+        <span><span class="key mono">SUBSTACK</span><br><span class="val">@suzanhi2products</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer class="foot">
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>Susan Gadegone &middot; San Francisco Bay Area</span>
+    <a href="mailto:spgadegone@gmail.com">spgadegone@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('section.block');
+  reveals.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const stored = localStorage.getItem('theme');
+  if (stored) root.setAttribute('data-theme', stored);
+  themeToggle.addEventListener('click', () => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const current = root.getAttribute('data-theme') || (prefersDark ? 'dark' : 'light');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+</body>
+</html>
