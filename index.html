@@ -4,386 +4,207 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Susan Gadegone</title>
-<meta name="description" content="Product thinking shaped by five years in mental health. Susan Gadegone. San Francisco Bay Area.">
+<meta name="description" content="Trust and safety work, built on real product instinct. Susan Gadegone. San Francisco Bay Area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f3f1ea;
-    --surface: #ffffff;
-    --ink: #202b34;
-    --muted: #66788a;
-    --rule: #dde3e7;
-    --accent: #4f7691;
-    --accent-ink: #f7f5ef;
-    --footer-bg: #1c2530;
-    --footer-ink: #f0ede4;
+    --bg: #f7f5f0;
+    --ink: #17140f;
+    --muted: #6e675a;
+    --rule: #e2ddd0;
+    --accent: #a8452b;
   }
   :root[data-theme="dark"] {
-    --bg: #131a21;
-    --surface: #1b2530;
-    --ink: #eef1ec;
-    --muted: #93a4ac;
-    --rule: #2b3742;
-    --accent: #82abc4;
-    --accent-ink: #10161c;
-    --footer-bg: #0b1116;
-    --footer-ink: #f0ede4;
+    --bg: #14120e;
+    --ink: #f2efe6;
+    --muted: #a89f8e;
+    --rule: #2c2820;
+    --accent: #d97a52;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #131a21;
-      --surface: #1b2530;
-      --ink: #eef1ec;
-      --muted: #93a4ac;
-      --rule: #2b3742;
-      --accent: #82abc4;
-      --accent-ink: #10161c;
-      --footer-bg: #0b1116;
-      --footer-ink: #f0ede4;
+      --bg: #14120e; --ink: #f2efe6; --muted: #a89f8e; --rule: #2c2820; --accent: #d97a52;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter Tight', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.55;
+    background: var(--bg); color: var(--ink); line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    transition: background 0.25s ease, color 0.25s ease;
+    transition: background 0.2s ease, color 0.2s ease;
   }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
   a { color: inherit; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
 
   /* Nav */
   .topbar {
-    padding: 22px 0;
-    display: flex; justify-content: space-between; align-items: center;
+    padding: 26px 0; display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--rule);
   }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand .mark {
-    width: 34px; height: 34px; border-radius: 9px; background: var(--ink); color: var(--bg);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 13px; letter-spacing: -0.02em; flex-shrink: 0;
-  }
-  .brand .name { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; color: var(--ink); }
-  .nav-right { display: flex; align-items: center; gap: 22px; }
+  .brand { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--ink); }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .topbar nav { display: flex; gap: 20px; }
   .topbar nav a {
-    color: var(--muted); text-decoration: none; font-size: 12.5px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s;
+    font-family: 'IBM Plex Mono', monospace; color: var(--muted); text-decoration: none; font-size: 12px;
+    transition: color 0.15s;
   }
-  .topbar nav a:hover { color: var(--ink); }
-  .topbar nav { display: flex; gap: 22px; }
+  .topbar nav a:hover { color: var(--accent); }
   .theme-toggle {
-    width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rule);
-    background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center;
-    color: var(--ink); flex-shrink: 0; transition: border-color 0.2s;
+    width: 30px; height: 30px; border: none; background: none; cursor: pointer;
+    color: var(--muted); display: flex; align-items: center; justify-content: center;
   }
-  .theme-toggle:hover { border-color: var(--accent); }
+  .theme-toggle:hover { color: var(--accent); }
   .theme-toggle svg { width: 16px; height: 16px; }
   .theme-toggle .sun { display: none; }
   :root[data-theme="dark"] .theme-toggle .moon { display: none; }
   :root[data-theme="dark"] .theme-toggle .sun { display: block; }
 
-  /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 26px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    text-decoration: none; border-radius: 999px; transition: all 0.2s; border: 1px solid transparent;
-  }
-  .btn.primary { background: var(--ink); color: var(--bg); }
-  .btn.primary:hover { opacity: 0.85; }
-  .btn.accent { background: var(--accent); color: var(--accent-ink); }
-  .btn.accent:hover { opacity: 0.85; }
-  .btn.ghost { border-color: var(--rule); color: var(--ink); }
-  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
-
   /* Hero */
-  .hero { padding: 64px 0 84px; text-align: center; }
-  .avatar {
-    width: 152px; height: 152px; border-radius: 50%; margin: 0 auto 28px;
-    background: var(--accent);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .avatar::before {
-    content: ''; position: absolute; inset: -8px; border-radius: 50%;
-    border: 1.5px solid var(--rule); z-index: -1;
-  }
-  .avatar-inner {
-    width: 140px; height: 140px; border-radius: 50%; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--surface);
-  }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
-  .avatar .fallback {
-    display: none; font-weight: 800; font-size: 44px; color: var(--accent);
-  }
+  .hero { padding: 60px 0 48px; }
   .hero .eyebrow {
-    font-size: 12.5px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 14px; font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted); margin-bottom: 22px;
   }
-  .hero .greeting { font-size: 17px; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
+  .hero .id-row { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+  .hero .id-row img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .hero .id-row .who { font-size: 14px; color: var(--muted); }
+  .hero .id-row .who strong { color: var(--ink); font-weight: 700; }
   .hero h1 {
-    font-weight: 800; letter-spacing: -0.02em;
-    font-size: clamp(30px, 4.6vw, 50px);
-    line-height: 1.14; margin: 0 auto 22px; max-width: 780px;
+    font-weight: 800; letter-spacing: -0.02em; font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.2; margin-bottom: 26px; max-width: 600px;
   }
   .hero h1 .accent-text { color: var(--accent); }
-  .hero p.lede {
-    font-size: 17px; line-height: 1.65; max-width: 560px; margin: 0 auto 34px; color: var(--muted);
-  }
+  .hero p.lede { font-size: 17px; line-height: 1.7; max-width: 540px; color: var(--muted); margin-bottom: 30px; }
   .hero p.lede strong { color: var(--ink); font-weight: 700; }
-  .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .hero .cta-row { display: flex; gap: 26px; align-items: center; }
+  .link-cta {
+    font-size: 14px; font-weight: 700; text-decoration: none; color: var(--ink);
+    border-bottom: 1.5px solid var(--ink); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s;
+  }
+  .link-cta:hover { color: var(--accent); border-color: var(--accent); }
+  .link-cta.quiet { color: var(--muted); border-color: var(--rule); }
+  .link-cta.quiet:hover { color: var(--accent); border-color: var(--accent); }
 
-  section.block { padding: 72px 0; border-top: 1px solid var(--rule); }
-  .section-head { text-align: center; max-width: 720px; margin: 0 auto 44px; }
-  .section-head .label {
-    font-size: 12.5px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 14px; font-weight: 700;
-  }
-  .section-head h2 {
-    font-weight: 800; letter-spacing: -0.015em;
-    font-size: clamp(26px, 3.4vw, 38px);
-    line-height: 1.18;
-  }
-  .section-head p.intro { font-size: 16px; color: var(--muted); margin-top: 14px; }
-  .section-head p.intro a { color: var(--accent); text-decoration: none; font-weight: 600; }
-  .section-head p.intro a:hover { text-decoration: underline; }
+  section.block { padding: 40px 0; border-top: 1px solid var(--rule); }
+  .section-head { margin-bottom: 34px; display: flex; align-items: baseline; gap: 14px; }
+  .section-head .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); }
+  .section-head h2 { font-weight: 800; letter-spacing: -0.01em; font-size: clamp(21px, 2.6vw, 27px); line-height: 1.3; }
+  .section-head p.intro { font-size: 15px; color: var(--muted); margin-top: 6px; }
+  p.intro a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  p.intro a:hover { text-decoration: underline; }
 
-  /* About */
-  :root { --about-bg: #dbe3e6; }
-  :root[data-theme="dark"] { --about-bg: #1c262e; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --about-bg: #1c262e; }
-  }
-  .about-block {
-    width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
-    background: var(--about-bg);
-  }
-  .about-prose {
-    max-width: 700px; margin: 0 auto; font-size: 17px; line-height: 1.7; color: var(--ink);
-  }
-  .about-prose p + p { margin-top: 18px; }
-  .about-prose strong { font-weight: 700; }
-  .about-prose a { color: var(--accent); font-weight: 600; text-decoration: none; }
-  .about-prose a:hover { text-decoration: underline; }
+  .prose { font-size: 16.5px; line-height: 1.75; color: var(--ink); }
+  .prose p + p { margin-top: 16px; }
+  .prose strong { font-weight: 700; }
+  .prose a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .prose a:hover { text-decoration: underline; }
 
-  /* The Translation */
-  .translate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .translate-item {
-    background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 26px;
-    display: flex; flex-direction: column;
-  }
-  .translate-item .tag {
-    display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    font-weight: 700; margin-bottom: 10px;
-  }
-  .translate-item .from-tag { color: var(--muted); }
-  .translate-item .to-tag { color: var(--accent); }
-  .translate-item .from-text { font-size: 14.5px; color: var(--muted); margin: 0 0 20px; }
-  .translate-item .to-text { font-size: 15px; color: var(--ink); font-weight: 500; margin: 0; }
-  .translate-item .arrow-badge {
-    display: flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px; border-radius: 50%; background: var(--bg); border: 1px solid var(--rule);
-    color: var(--accent); font-weight: 700; font-size: 14px; margin: 0 0 20px;
-  }
+  .followup { margin-top: 22px; font-size: 14.5px; color: var(--muted); }
+  .followup a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .followup a:hover { text-decoration: underline; }
 
-  /* Experience */
-  .exp-list { display: grid; gap: 16px; }
-  .exp-item {
-    background: var(--surface); border: 1px solid var(--rule); border-radius: 18px;
-    padding: 26px 28px; display: grid; grid-template-columns: 200px 1fr; gap: 24px;
-  }
-  .exp-item .when { font-size: 12.5px; color: var(--accent); letter-spacing: 0.04em; font-weight: 700; text-transform: uppercase; }
-  .exp-item h3 { font-weight: 700; font-size: 17px; margin-bottom: 8px; }
-  .exp-item p { font-size: 15px; color: var(--muted); margin: 0; }
+  /* Translation: plain rows, not cards */
+  .translate-list { display: flex; flex-direction: column; }
+  .translate-row { padding: 22px 0; border-top: 1px solid var(--rule); }
+  .translate-row:last-child { border-bottom: 1px solid var(--rule); }
+  .translate-row .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .translate-row .from { font-size: 14.5px; color: var(--muted); margin-bottom: 10px; }
+  .translate-row .to { font-size: 15.5px; color: var(--ink); }
+  .translate-row .to .to-lbl { color: var(--accent); font-weight: 700; }
+
+  /* Experience: plain rows */
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item { display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 20px 0; border-top: 1px solid var(--rule); }
+  .exp-list .exp-item:last-child { border-bottom: 1px solid var(--rule); }
+  .exp-item .when { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); padding-top: 3px; }
+  .exp-item h3 { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .exp-item p { font-size: 14.5px; color: var(--muted); }
   .exp-item p a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .exp-item p a:hover { text-decoration: underline; }
 
-  /* Carousel */
-  .carousel-wrap { position: relative; }
-  .carousel {
-    display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
-    padding: 4px 4px 8px; -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+  /* Built: plain numbered list */
+  .work-list { display: flex; flex-direction: column; }
+  .work-row {
+    display: grid; grid-template-columns: 36px 1fr auto; gap: 18px; align-items: baseline;
+    padding: 20px 0; border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
   }
-  .carousel::-webkit-scrollbar { display: none; }
-  .card {
-    scroll-snap-align: start; flex: 0 0 268px;
-    background: var(--card-bg, var(--surface)); border: 1px solid var(--rule); border-radius: 20px;
-    padding: 24px; display: flex; flex-direction: column; min-height: 210px;
-  }
-  .card .status {
-    font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700;
-    color: var(--card-accent, var(--muted)); background: var(--bg); display: inline-block;
-    padding: 5px 10px; border-radius: 999px; margin-bottom: 16px; align-self: flex-start;
-  }
-  .card h3 { font-weight: 700; font-size: 19px; margin-bottom: 10px; }
-  .card p { font-size: 14px; color: var(--muted); flex-grow: 1; margin-bottom: 18px; }
-  .card a.repo-link {
-    font-size: 13px; font-weight: 700; text-decoration: none; color: var(--card-accent, var(--accent));
-    align-self: flex-start; display: inline-flex; align-items: center; gap: 4px;
-  }
-  .card a.repo-link:hover { text-decoration: underline; }
+  .work-list .work-row:last-child { border-bottom: 1px solid var(--rule); }
+  .work-row .n { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+  .work-row .name { font-weight: 700; font-size: 16.5px; }
+  .work-row .status { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+  .work-row .desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .work-row .go { font-size: 13px; color: var(--accent); opacity: 0; transition: opacity 0.15s; white-space: nowrap; }
+  .work-row:hover .go { opacity: 1; }
+  .work-row:hover .name { color: var(--accent); }
+  .work-more { margin-top: 20px; font-size: 14px; color: var(--muted); }
+  .work-more a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .work-more a:hover { text-decoration: underline; }
 
-  .c1 { --card-bg: #f4ede1; --card-accent: #9c7228; }
-  .c2 { --card-bg: #f4e2d8; --card-accent: #b25b3e; }
-  .c3 { --card-bg: #e7ecdd; --card-accent: #5f7c4e; }
-  .c4 { --card-bg: #e2e8ec; --card-accent: #46647a; }
-  .c5 { --card-bg: #f7ecc4; --card-accent: #9c7a15; }
-  .c6 { --card-bg: #efdcd0; --card-accent: #a1573c; }
-  :root[data-theme="dark"] .c1 { --card-bg: #2a2418; --card-accent: #e0b463; }
-  :root[data-theme="dark"] .c2 { --card-bg: #2b2019; --card-accent: #e08b6c; }
-  :root[data-theme="dark"] .c3 { --card-bg: #202519; --card-accent: #93b57c; }
-  :root[data-theme="dark"] .c4 { --card-bg: #1c2226; --card-accent: #7ea3bd; }
-  :root[data-theme="dark"] .c5 { --card-bg: #2a2416; --card-accent: #e0c164; }
-  :root[data-theme="dark"] .c6 { --card-bg: #291d17; --card-accent: #dd8e6e; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .c1 { --card-bg: #2a2418; --card-accent: #e0b463; }
-    :root:not([data-theme="light"]) .c2 { --card-bg: #2b2019; --card-accent: #e08b6c; }
-    :root:not([data-theme="light"]) .c3 { --card-bg: #202519; --card-accent: #93b57c; }
-    :root:not([data-theme="light"]) .c4 { --card-bg: #1c2226; --card-accent: #7ea3bd; }
-    :root:not([data-theme="light"]) .c5 { --card-bg: #2a2416; --card-accent: #e0c164; }
-    :root:not([data-theme="light"]) .c6 { --card-bg: #291d17; --card-accent: #dd8e6e; }
-  }
-
-  .carousel-controls {
-    display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 28px;
-  }
-  .carousel-nav { display: flex; gap: 10px; }
-  .carousel-nav button {
-    width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--rule);
-    background: var(--surface); cursor: pointer; font-size: 16px; color: var(--ink);
-    display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-  }
-  .carousel-nav button:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* Screens gallery */
-  .screens-head { text-align: center; max-width: 640px; margin: 56px auto 28px; }
-  .screens-head h3 { font-weight: 700; font-size: 22px; margin-bottom: 8px; }
-  .screens-head p { font-size: 15px; color: var(--muted); }
-
-  .screens-group { margin-top: 36px; }
-  .screens-group:first-of-type { margin-top: 0; }
-  .screens-group-head {
-    display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px;
-    padding-bottom: 14px; margin-bottom: 22px; border-bottom: 1px solid var(--rule);
-  }
-  .screens-group-head .group-dot {
-    width: 10px; height: 10px; border-radius: 50%; align-self: center; flex-shrink: 0;
-  }
-  .group-dot.cozy-dot { background: #9c7228; }
-  .group-dot.roam-dot { background: #b25b3e; }
-  :root[data-theme="dark"] .group-dot.cozy-dot { background: #e0b463; }
-  :root[data-theme="dark"] .group-dot.roam-dot { background: #e08b6c; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .group-dot.cozy-dot { background: #e0b463; }
-    :root:not([data-theme="light"]) .group-dot.roam-dot { background: #e08b6c; }
-  }
-  .screens-group-head h4 { font-weight: 700; font-size: 17px; }
-  .screens-group-head .group-sub { font-size: 13.5px; color: var(--muted); }
-
-  .screens-row { display: flex; flex-wrap: wrap; gap: 24px; }
-  .screen-item {
-    display: flex; flex-direction: column; gap: 10px;
-    flex: 0 1 160px; width: 160px;
-  }
+  /* Screens */
+  .screens-group { margin-top: 40px; }
+  .screens-group:first-of-type { margin-top: 8px; }
+  .screens-group-head { margin-bottom: 18px; }
+  .screens-group-head .app-name { font-weight: 700; font-size: 15px; }
+  .screens-group-head .app-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-left: 8px; }
+  .screens-row { display: flex; flex-wrap: wrap; gap: 20px; }
+  .screen-item { display: flex; flex-direction: column; gap: 8px; flex: 0 1 140px; width: 140px; }
   .screen-item img {
     width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; display: block;
-    border-radius: 18px; border: 1px solid var(--rule); background: var(--surface);
-    box-shadow: 0 10px 24px -14px rgba(23, 20, 15, 0.35);
+    border-radius: 10px; border: 1px solid var(--rule);
   }
-  .screen-item figcaption {
-    text-align: center; font-size: 12.5px; font-weight: 600; color: var(--muted);
-  }
+  .screen-item figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); text-align: center; }
 
-  /* Case studies */
-  .case-studies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
-  .role-card.case-card { border-top: 3px dashed var(--rule); }
-  .case-card .status {
-    font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700;
-    color: var(--muted); background: var(--bg); display: inline-block;
-    padding: 5px 10px; border-radius: 999px; margin-bottom: 14px;
-  }
-  .case-card p { font-size: 15px; color: var(--muted); margin: 0; }
-  .case-card strong { color: var(--ink); font-weight: 700; }
+  /* Looking for: plain list */
+  .role-list { display: flex; flex-direction: column; }
+  .role-row { padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; }
+  .role-list .role-row:last-child { border-bottom: 1px solid var(--rule); }
+  .role-row .role-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 6px; }
 
-  /* Looking for */
-  .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .role-card {
-    border: 1px solid var(--rule); border-radius: 18px; padding: 26px; background: var(--surface);
-    border-top: 3px solid var(--accent);
+  /* Contact: plain list */
+  .contact-list { display: flex; flex-direction: column; }
+  .contact-row {
+    display: flex; justify-content: space-between; align-items: center; padding: 16px 0;
+    border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
   }
-  .role-card p { font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0; }
-  .location-note { text-align: center; margin-top: 28px; font-size: 15px; color: var(--muted); }
+  .contact-list .contact-row:last-child { border-bottom: 1px solid var(--rule); }
+  .contact-row .key { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+  .contact-row .val { font-size: 15px; font-weight: 600; }
+  .contact-row .arrow { color: var(--accent); opacity: 0; transition: opacity 0.15s; }
+  .contact-row:hover .arrow { opacity: 1; }
+  .contact-row:hover .val { color: var(--accent); }
 
-  /* Contact */
-  .contact-block {
-    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
-  }
-  .contact-chip {
-    display: flex; flex-direction: column; gap: 4px;
-    border: 1px solid var(--rule); border-radius: 16px; padding: 16px 22px;
-    background: var(--surface); text-decoration: none; min-width: 200px;
-  }
-  .contact-chip .key {
-    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700;
-  }
-  .contact-chip .val { font-size: 15px; font-weight: 600; color: var(--ink); }
-  .contact-chip:hover { border-color: var(--accent); }
+  footer.foot { padding: 30px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; }
+  footer.foot a { color: var(--muted); text-decoration: none; }
+  footer.foot a:hover { color: var(--accent); }
 
-  footer.foot {
-    background: var(--footer-bg); color: var(--footer-ink);
-    padding: 32px 0; font-size: 13px;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
-  }
-  footer.foot .foot-wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  footer.foot a { color: var(--footer-ink); text-decoration: none; opacity: 0.85; }
-  footer.foot a:hover { opacity: 1; }
-  footer.foot .muted-foot { opacity: 0.6; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11.5px; }
-
-  @media (max-width: 760px) {
-    .wrap { padding: 0 20px; }
-    .topbar { flex-wrap: wrap; gap: 14px; }
-    .nav-right { width: 100%; justify-content: space-between; }
+  @media (max-width: 640px) {
+    .topbar { flex-wrap: wrap; gap: 14px 0; padding: 20px 0; }
+    .topbar .brand { flex: 1 0 auto; }
+    .nav-right { width: 100%; justify-content: space-between; order: 3; }
     .topbar nav { gap: 14px; flex-wrap: wrap; }
-    .hero { padding: 44px 0 56px; }
-    section.block { padding: 52px 0; }
-    .translate-grid { grid-template-columns: 1fr; }
-    .exp-item { grid-template-columns: 1fr; gap: 8px; }
-    .role-grid { grid-template-columns: 1fr; }
-    .case-studies { grid-template-columns: 1fr; }
-    .card { flex-basis: 240px; }
-    .screens-row { justify-content: center; }
-    .screen-item { flex-basis: 42%; width: 42%; min-width: 128px; }
-    footer.foot .foot-wrap { flex-direction: column; align-items: flex-start; padding: 0 20px; }
+    .exp-item { grid-template-columns: 1fr; gap: 4px; }
+    .work-row { grid-template-columns: 24px 1fr; }
+    .work-row .go { display: none; }
+    footer.foot { flex-direction: column; gap: 8px; }
   }
 
-  .reveal {
-    opacity: 0; transform: translateY(16px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
 <div class="wrap">
-
   <header class="topbar">
-    <a href="#top" class="brand">
-      <span class="mark">SG</span>
-      <span class="name">Susan Gadegone</span>
-    </a>
+    <a href="#top" class="brand">Susan Gadegone</a>
     <div class="nav-right">
       <nav>
         <a href="#about">About</a>
-        <a href="#translation">The Translation</a>
-        <a href="#built">Things I've Built</a>
+        <a href="#translation">Translation</a>
+        <a href="#built">Built</a>
         <a href="#looking">Looking For</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -395,132 +216,90 @@
   </header>
 
   <section class="hero" id="top">
-    <div class="avatar" aria-label="Photo of Susan Gadegone">
-      <div class="avatar-inner">
-        <img src="assets/susan.jpg" alt="Susan Gadegone" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
-        <span class="fallback">SG</span>
-      </div>
+    <div class="eyebrow mono">San Francisco Bay Area &middot; Open to work</div>
+    <div class="id-row">
+      <img src="assets/susan.jpg" alt="Susan Gadegone">
+      <div class="who">Hi, I'm <strong>Susan</strong></div>
     </div>
-    <div class="eyebrow">San Francisco Bay Area</div>
-    <div class="greeting">Hi, I'm Susan</div>
-    <h1>Product and <span class="accent-text">trust and safety</span> work.</h1>
+    <h1>Trust and safety work, built on real <span class="accent-text">product instinct</span>.</h1>
     <p class="lede">
-      I came to product to <strong>help people at scale</strong>, not one at a
-      time, and keep them <strong>safe</strong> getting there &mdash; the work I
-      did for years as a peer counselor. I want to do it through
-      <strong>trust and safety</strong>, for more people, longer term. I'm
-      <strong>skeptical of AI</strong>. I also <strong>believe it can help</strong>.
-      Both are true.
+      I came to product to <strong>help people at scale</strong>, not one at a time,
+      and keep them <strong>safe</strong> getting there &mdash; the work I did for years
+      as a peer mentor. I'm <strong>skeptical of AI</strong>. I also
+      <strong>believe it can help</strong>. Both are true.
     </p>
     <div class="cta-row">
-      <a href="#translation" class="btn primary">How this translates</a>
-      <a href="#contact" class="btn accent">Get in touch</a>
+      <a href="#translation" class="link-cta">How this translates</a>
+      <a href="#contact" class="link-cta quiet">Get in touch</a>
     </div>
   </section>
 
-  <section class="block about-block" id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label">About</div>
-        <h2>I know your user before they open the app.</h2>
-      </div>
-      <div class="about-prose">
-        <p>I went into product to help people at scale, not one at a time. That comes from five-plus years of trauma-informed peer mentor work with youth and families, where I learned what safety actually requires when someone is in crisis. I brought that into building three wellness apps, and now into trust and safety, where the question is how you protect people at scale while the systems meant to help them keep changing. I'm skeptical of AI and I believe it can help, both at once, and I don't try to resolve that. That combination of caution and belief is what makes me useful on a team, whether the role is product, trust and safety, or something between the two.</p>
-      </div>
-      <p class="location-note">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
-    </div>
-  </section>
-
-  <section class="block" id="why-trust-safety">
+  <section class="block" id="about">
     <div class="section-head">
-      <div class="label">Why Trust and Safety</div>
+      <span class="num mono">01</span>
+      <h2>I know your user before they open the app.</h2>
+    </div>
+    <div class="prose">
+      <p>I went into product to help people at scale, not one at a time. That comes from five-plus years of trauma-informed peer mentor work with youth and families, where I learned what safety actually requires when someone is in crisis. I brought that into building three wellness apps, and now into trust and safety, where the question is how you protect people at scale while the systems meant to help them keep changing. I'm skeptical of AI and I believe it can help, both at once, and I don't try to resolve that. That combination of caution and belief is what makes me useful on a team, whether the role is product, trust and safety, or something between the two.</p>
+    </div>
+    <p class="followup">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact">let's talk</a>.</p>
+  </section>
+
+  <section class="block" id="why">
+    <div class="section-head">
+      <span class="num mono">02</span>
       <h2>I've seen what happens when a product doesn't have someone's back.</h2>
     </div>
-    <div class="about-prose">
-      <p>Several of the young adults I mentored went on to try online dating, and I watched, up close, what happens when the product isn't built to protect them: a catfish that took months to untangle, a match that turned out to be a script running a scam, someone talked into sending money before they'd ever met the person in real life. None of that gets fixed with better microcopy. It's a trust and safety problem, and it's exactly the kind of thing five years of peer mentor work trained me to see coming, not clean up after.</p>
-      <p>Online dating asks people to be adventurous with strangers, on purpose &mdash; that's the whole draw. The adventure only holds up if what someone shares along the way, a photo, a location, a real name, is protected by people who understand what's actually at stake for them. I don't think products need to be cautious to the point of boring to be safe. I think they need people in the room, before launch, who know what unsafe looks like in someone's actual life. That's the seat I want at the table.</p>
+    <div class="prose">
+      <p>Several of the young adults I mentored went on to try online dating, and I watched, up close, what happens when the product isn't built to protect them: a catfish that took months to untangle, a match running a scam, someone talked into sending money before they'd ever met in real life. None of that gets fixed with better microcopy &mdash; it's a trust and safety problem, exactly the kind of thing five years of peer mentor work trained me to see coming, not clean up after. Online dating asks people to be adventurous with strangers, on purpose. That adventure only holds up if what someone shares along the way is protected by people who know what unsafe actually looks like in someone's life, before launch.</p>
     </div>
-    <p class="location-note">If your product asks people to trust a stranger, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
+    <p class="followup">If your product asks people to trust a stranger, <a href="#contact">let's talk</a>.</p>
   </section>
 
   <section class="block" id="translation">
     <div class="section-head">
-      <div class="label">The Translation</div>
+      <span class="num mono">03</span>
       <h2>How peer mentor work becomes product instinct.</h2>
-      <p class="intro">Not hypotheticals. This is what I'd actually be doing on your team, in your meetings, on your roadmap.</p>
     </div>
-    <div class="translate-grid">
-      <div class="translate-item">
-        <span class="tag from-tag">In mental health work</span>
-        <p class="from-text">Decided when a safety concern had to go up the chain and when it didn't, knowing a wrong call in either direction could hurt someone.</p>
-        <span class="arrow-badge" aria-hidden="true">&darr;</span>
-        <span class="tag to-tag">At your company</span>
-        <p class="to-text">When your trust and safety team debates where the line is for self-harm content, I've made that call with a real person in front of me. I help write severity policy that holds up at 2am, not just in the review meeting.</p>
+    <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">Not hypotheticals. This is what I'd actually be doing on your team.</p>
+    <div class="translate-list">
+      <div class="translate-row">
+        <div class="idx mono">01 &middot; Safety escalation</div>
+        <div class="from">Decided when a safety concern had to go up the chain and when it didn't, knowing a wrong call in either direction could hurt someone.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> When your trust and safety team debates where the line is for self-harm content, I've made that call with a real person in front of me.</div>
       </div>
-      <div class="translate-item">
-        <span class="tag from-tag">In mental health work</span>
-        <p class="from-text">Explained confidentiality and its limits to scared teenagers before they'd tell me anything, and lived by hard rules about what I could share, with whom, and when.</p>
-        <span class="arrow-badge" aria-hidden="true">&darr;</span>
-        <span class="tag to-tag">At your company</span>
-        <p class="to-text">When the growth team wants to use mood data for personalization, I know the difference between consent someone understood and consent someone clicked through. That's the exact line trust and safety review boards spend weeks debating, and I've lived on both sides of it.</p>
+      <div class="translate-row">
+        <div class="idx mono">02 &middot; Consent</div>
+        <div class="from">Explained confidentiality and its limits to scared teenagers before they'd tell me anything.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> I know the difference between consent someone understood and consent someone clicked through &mdash; the line trust and safety review boards spend weeks debating.</div>
       </div>
-      <div class="translate-item">
-        <span class="tag from-tag">In mental health work</span>
-        <p class="from-text">Practiced trauma-informed care, where you never use shame or fear as a lever, because the person in front of you has had enough of both.</p>
-        <span class="arrow-badge" aria-hidden="true">&darr;</span>
-        <span class="tag to-tag">At your company</span>
-        <p class="to-text">Streaks, red badges, &ldquo;we miss you&rdquo; notifications &mdash; I can tell you which mechanics motivate your user and which tip into the dark patterns trust and safety ends up cleaning up later. I built Cozy, one of my three wellness apps, by stripping the guilt out from the start.</p>
-      </div>
-      <div class="translate-item">
-        <span class="tag from-tag">In mental health work</span>
-        <p class="from-text">Trained and led a team of peer mentors, teaching people to make consistent calls in ambiguous, high-stakes situations.</p>
-        <span class="arrow-badge" aria-hidden="true">&darr;</span>
-        <span class="tag to-tag">At your company</span>
-        <p class="to-text">Scaling judgment is the hardest problem in trust and safety, especially when the AI systems making first-pass calls keep changing under you. I've done it the analog way: turning my own instincts into guidance a new mentor could follow when I wasn't in the room. That's what good policy is.</p>
-      </div>
-      <div class="translate-item">
-        <span class="tag from-tag">In mental health work</span>
-        <p class="from-text">Read when someone in crisis was about to disengage, often before they said a word, because I'd learned exactly what that looked like.</p>
-        <span class="arrow-badge" aria-hidden="true">&darr;</span>
-        <span class="tag to-tag">At your company</span>
-        <p class="to-text">In a churn review, I don't stop at the drop-off chart. I pull real user sessions from the week before they left and tell you who left because of a bug, and who left because the product, or an AI feature inside it, made them feel unsafe, stupid, or judged &mdash; the distinction trust and safety needs to act on.</p>
-      </div>
-      <div class="translate-item">
-        <span class="tag from-tag">In mental health work</span>
-        <p class="from-text">Wrote safety plans a scared, overwhelmed person had to get right on the first read, with no one there to explain it to them.</p>
-        <span class="arrow-badge" aria-hidden="true">&darr;</span>
-        <span class="tag to-tag">At your company</span>
-        <p class="to-text">When onboarding drop-off spikes, I don't start with A/B tests on button copy. I read what the screen, and any AI-generated instructions inside it, assumes the person already knows, and rewrite it for someone reading it once, stressed, on a phone, at 11pm &mdash; before trust and safety hears about it as a complaint.</p>
+      <div class="translate-row">
+        <div class="idx mono">03 &middot; Dark patterns</div>
+        <div class="from">Practiced trauma-informed care, where you never use shame or fear as a lever.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> I can tell you which mechanics motivate your user and which tip into the dark patterns trust and safety ends up cleaning up later.</div>
       </div>
     </div>
-    <p class="location-note">If your team needs this, <a href="#contact" style="color: var(--accent); font-weight: 600; text-decoration: none;">let's talk</a>.</p>
+    <p class="followup">If your team needs this, <a href="#contact">let's talk</a>.</p>
   </section>
 
   <section class="block" id="experience">
     <div class="section-head">
-      <div class="label">Experience</div>
+      <span class="num mono">04</span>
       <h2>Where this comes from.</h2>
     </div>
     <div class="exp-list">
       <div class="exp-item">
-        <div class="when">5+ years &middot; San Francisco</div>
+        <div class="when">5+ YRS &middot; SF</div>
         <div>
           <h3>Lead Peer Mentor, trauma-informed care</h3>
-          <p>Worked directly with youth and families in San Francisco. Led and trained a team of peer partners. Made escalation calls on safety concerns and coordinated across clinical, school, and legal systems. Learned to listen for what people actually need, not just what they say.</p>
+          <p>Worked directly with youth and families in San Francisco. Led and trained a team of peer partners. Made escalation calls on safety concerns.</p>
         </div>
       </div>
       <div class="exp-item">
-        <div class="when">Ongoing</div>
+        <div class="when">ONGOING</div>
         <div>
-          <h3>Product writer and analyst</h3>
-          <p>I write about digital mental health and AI products on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>: where they work, where they fall short for the people who need them most, and what I'd do differently.</p>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="when">2024 &ndash; present</div>
-        <div>
-          <h3>Recognition</h3>
-          <p>2024 Neolth Innovation Challenge winner. Stanford AI for Good cohort. BA in Psychology, Arizona State University.</p>
+          <h3>Writer &amp; credentials</h3>
+          <p>Writes about digital mental health and AI products on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. 2024 Neolth Innovation Challenge winner. Stanford AI for Good cohort. BA in Psychology, ASU.</p>
         </div>
       </div>
     </div>
@@ -528,227 +307,100 @@
 
   <section class="block" id="built">
     <div class="section-head">
-      <div class="label">Things I've Built</div>
+      <span class="num mono">05</span>
       <h2>I build to understand products from the inside.</h2>
-      <p class="intro">Wellness and productivity apps, built from scratch with Cursor, Claude, Google AI Studio, Replit, and Vercel. All on my <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>. Scroll to see more.</p>
     </div>
+    <p class="intro" style="margin-top: -18px; margin-bottom: 10px;">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
 
-    <div class="carousel-wrap">
-      <div class="carousel" id="carousel">
-
-        <article class="card c1">
-          <span class="status">iOS &middot; App Store review</span>
-          <h3>Cozy</h3>
-          <p>A chore app for people who want a calm home, not a guilt trip.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c2">
-          <span class="status">iOS &middot; App Store review</span>
-          <h3>Roam</h3>
-          <p>A Bay Area wellness resource directory for people who need support and don't know where to start.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c3">
-          <span class="status">Shipped</span>
-          <h3>Cal Mood Tracker</h3>
-          <p>A simple wellness tool for checking in with yourself, built around the calendar you already keep.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c4">
-          <span class="status">Shipped</span>
-          <h3>India Festivals</h3>
-          <p>A cultural calendar app for learning the festivals and traditions of India.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/Celebrate-India-Festivals" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c5">
-          <span class="status">In progress</span>
-          <h3>Present Breathwork</h3>
-          <p>A lightweight, responsive web app for guided breathing and staying present in the moment.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/Present-Breathwork-APp" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c6">
-          <span class="status">In progress</span>
-          <h3>SF Tour Reserve</h3>
-          <p>A booking app for reserving tours around San Francisco.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/SF-Tour-Reserve-App" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c1">
-          <span class="status">In progress</span>
-          <h3>Accountability App</h3>
-          <p>A tool for tracking milestones and staying accountable across work and life.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/accountability-app" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c2">
-          <span class="status">In progress</span>
-          <h3>Focus Allowlist</h3>
-          <p>A tool for keeping only the apps and sites you actually need in view while you work.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/focus-allowlist" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c3">
-          <span class="status">Prototype</span>
-          <h3>Calendar Productivity</h3>
-          <p>A calendar-first take on staying on top of daily tasks.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/Calendar-Productivity-1" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c4">
-          <span class="status">Prototype</span>
-          <h3>Mood Tracker (early build)</h3>
-          <p>An earlier exploration of the mood tracking concept that became Cal Mood Tracker.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/Mood-Tracker-Cursor" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c5">
-          <span class="status">Prototype</span>
-          <h3>Game 1: Productivity App</h3>
-          <p>An experiment in gamifying everyday productivity.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/Game-1-Productivity-App" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="card c6">
-          <span class="status">Prototype</span>
-          <h3>Dog Meal Menu</h3>
-          <p>A small app for planning out a dog's meals.</p>
-          <a class="repo-link" href="https://github.com/susangadegone/dogmealmenu" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-      </div>
+    <div class="work-list">
+      <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
+        <span class="n mono">01</span>
+        <span>
+          <span class="name">Cozy</span>
+          <div class="desc">A chore app for people who want a calm home, not a guilt trip.</div>
+        </span>
+        <span class="go">View &rarr;</span>
+      </a>
+      <a class="work-row" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">
+        <span class="n mono">02</span>
+        <span>
+          <span class="name">Roam</span>
+          <div class="desc">A Bay Area wellness resource directory for people who don't know where to start.</div>
+        </span>
+        <span class="go">View &rarr;</span>
+      </a>
+      <a class="work-row" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">
+        <span class="n mono">03</span>
+        <span>
+          <span class="name">Cal Mood Tracker</span>
+          <div class="desc">A wellness tool for checking in with yourself, built around the calendar you already keep.</div>
+        </span>
+        <span class="go">View &rarr;</span>
+      </a>
     </div>
-    <div class="carousel-controls">
-      <a href="https://github.com/susangadegone" target="_blank" rel="noopener" class="btn primary">See all on GitHub</a>
-      <div class="carousel-nav">
-        <button type="button" id="prevBtn" aria-label="Scroll left">&larr;</button>
-        <button type="button" id="nextBtn" aria-label="Scroll right">&rarr;</button>
-      </div>
-    </div>
-
-    <div class="case-studies">
-      <div class="role-card case-card">
-        <span class="status">Case study &middot; coming soon</span>
-        <p><strong>Cozy</strong> &mdash; designing a chore app that doesn't run on guilt, and what I stripped out of v1 to get there.</p>
-      </div>
-      <div class="role-card case-card">
-        <span class="status">Case study &middot; coming soon</span>
-        <p><strong>Roam</strong> &mdash; building a resource directory for people who need support and don't know where to start looking.</p>
-      </div>
-      <div class="role-card case-card">
-        <span class="status">Case study &middot; coming soon</span>
-        <p><strong>Cal Mood Tracker</strong> &mdash; why a mood tracker should work like the calendar you already have, not a new habit to maintain.</p>
-      </div>
-    </div>
-
-    <div class="screens-head">
-      <h3>A closer look</h3>
-      <p>Screens from Cozy and Roam, live on the App Store.</p>
-    </div>
+    <p class="work-more">Plus 9 more prototypes and in-progress builds &mdash; <a href="https://github.com/susangadegone" target="_blank" rel="noopener">see them all on GitHub</a>.</p>
 
     <div class="screens-group">
       <div class="screens-group-head">
-        <span class="group-dot cozy-dot" aria-hidden="true"></span>
-        <h4>Cozy</h4>
-        <span class="group-sub">A chore app for people who want a calm home, not a guilt trip &middot; 3 screens</span>
+        <span class="app-name">Cozy</span><span class="app-sub mono">App Store</span>
       </div>
       <div class="screens-row">
-        <figure class="screen-item">
-          <img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy">
-          <figcaption>Home</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="assets/shots/cozy-chores.png" alt="Cozy chore library screen" loading="lazy">
-          <figcaption>Chore Library</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="assets/shots/cozy-profile.png" alt="Cozy profile screen" loading="lazy">
-          <figcaption>Profile</figcaption>
-        </figure>
+        <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/cozy-chores.png" alt="Cozy chore library screen" loading="lazy"><figcaption>Chores</figcaption></figure>
       </div>
     </div>
-
     <div class="screens-group">
       <div class="screens-group-head">
-        <span class="group-dot roam-dot" aria-hidden="true"></span>
-        <h4>Roam</h4>
-        <span class="group-sub">A Bay Area wellness resource directory for people who don't know where to start &middot; 4 screens</span>
+        <span class="app-name">Roam</span><span class="app-sub mono">App Store</span>
       </div>
       <div class="screens-row">
-        <figure class="screen-item">
-          <img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy">
-          <figcaption>Home</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="assets/shots/roam-checkin.png" alt="Roam check-in screen" loading="lazy">
-          <figcaption>Check-in</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="assets/shots/roam-coping.png" alt="Roam coping skills screen" loading="lazy">
-          <figcaption>Coping Skills</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy">
-          <figcaption>Map</figcaption>
-        </figure>
+        <figure class="screen-item"><img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure class="screen-item"><img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy"><figcaption>Map</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section class="block" id="looking">
     <div class="section-head">
-      <div class="label">What I'm Looking For</div>
-      <h2>What I want next is simple: product work, in health, where I still get to build.</h2>
+      <span class="num mono">06</span>
+      <h2>What I want next is simple.</h2>
     </div>
-    <div class="role-grid">
-      <div class="role-card">
-        <p>Product, end to end. Not research or writing in isolation &mdash; owning what gets built, why, and whether it actually worked for the people using it.</p>
-      </div>
-      <div class="role-card">
-        <p>Health, specifically. Digital health, mental health, or care-adjacent products, where getting it right isn't optional and the person on the other end is often having a hard day.</p>
-      </div>
-      <div class="role-card">
-        <p>Building, not just planning. I ship my own apps. I want to work somewhere that still gets close to the actual product, not just the roadmap.</p>
-      </div>
+    <div class="prose">
+      <p><strong>Product, end to end</strong> &mdash; not research or writing in isolation. <strong>Health, specifically</strong> &mdash; digital health, mental health, or care-adjacent, where getting it right isn't optional. <strong>Building, not just planning</strong> &mdash; I ship my own apps and want to stay close to the actual product.</p>
     </div>
-    <p class="location-note">SF Bay Area, hybrid or in-person.</p>
+    <p class="followup">SF Bay Area, hybrid or in-person.</p>
   </section>
 
   <section class="block" id="contact">
     <div class="section-head">
-      <div class="label">Contact</div>
+      <span class="num mono">07</span>
       <h2>I'd love to hear from you.</h2>
     </div>
-    <div class="contact-block">
-      <a class="contact-chip" href="mailto:spgadegone@gmail.com">
-        <span class="key">Email</span>
-        <span class="val">spgadegone@gmail.com</span>
+    <div class="contact-list">
+      <a class="contact-row" href="mailto:spgadegone@gmail.com">
+        <span><span class="key mono">EMAIL</span><br><span class="val">spgadegone@gmail.com</span></span>
+        <span class="arrow">&rarr;</span>
       </a>
-      <a class="contact-chip" href="https://linkedin.com/in/susannapage" target="_blank" rel="noopener">
-        <span class="key">LinkedIn</span>
-        <span class="val">linkedin.com/in/susannapage</span>
+      <a class="contact-row" href="https://linkedin.com/in/susannapage" target="_blank" rel="noopener">
+        <span><span class="key mono">LINKEDIN</span><br><span class="val">linkedin.com/in/susannapage</span></span>
+        <span class="arrow">&rarr;</span>
       </a>
-      <a class="contact-chip" href="https://github.com/susangadegone" target="_blank" rel="noopener">
-        <span class="key">GitHub</span>
-        <span class="val">github.com/susangadegone</span>
+      <a class="contact-row" href="https://github.com/susangadegone" target="_blank" rel="noopener">
+        <span><span class="key mono">GITHUB</span><br><span class="val">github.com/susangadegone</span></span>
+        <span class="arrow">&rarr;</span>
       </a>
-      <a class="contact-chip" href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">
-        <span class="key">Substack</span>
-        <span class="val">@suzanhi2products</span>
+      <a class="contact-row" href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">
+        <span><span class="key mono">SUBSTACK</span><br><span class="val">@suzanhi2products</span></span>
+        <span class="arrow">&rarr;</span>
       </a>
     </div>
   </section>
-
 </div>
 
 <footer class="foot">
-  <div class="foot-wrap">
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
     <span>Susan Gadegone &middot; San Francisco Bay Area</span>
-    <a href="mailto:spgadegone@gmail.com" class="muted-foot">spgadegone@gmail.com</a>
+    <a href="mailto:spgadegone@gmail.com">spgadegone@gmail.com</a>
   </div>
 </footer>
 
@@ -757,15 +409,8 @@
   reveals.forEach(el => el.classList.add('reveal'));
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   reveals.forEach(el => io.observe(el));
-
-  const carousel = document.getElementById('carousel');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const scrollAmount = () => Math.min(300, carousel.clientWidth * 0.8);
-  prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
-  nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
 
   const root = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
