@@ -106,14 +106,14 @@
   .followup a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .followup a:hover { text-decoration: underline; }
 
-  /* Translation: plain rows, not cards */
-  .translate-list { display: flex; flex-direction: column; }
-  .translate-row { padding: 22px 0; border-top: 1px solid var(--rule); }
-  .translate-row:last-child { border-bottom: 1px solid var(--rule); }
-  .translate-row .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
-  .translate-row .from { font-size: 14.5px; color: var(--muted); margin-bottom: 10px; }
-  .translate-row .to { font-size: 15.5px; color: var(--ink); }
-  .translate-row .to .to-lbl { color: var(--accent); font-weight: 700; }
+  /* Translation: boxed cards */
+  .translate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .translate-card { border: 1px solid var(--rule); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
+  .translate-card.span-2 { grid-column: 1 / -1; }
+  .translate-card .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 14px; }
+  .translate-card .from { font-size: 14.5px; color: var(--muted); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+  .translate-card .to { font-size: 15.5px; color: var(--ink); }
+  .translate-card .to .to-lbl { color: var(--accent); font-weight: 700; }
 
   /* Experience: plain rows */
   .exp-list { display: flex; flex-direction: column; }
@@ -186,6 +186,7 @@
     .nav-right { width: 100%; justify-content: space-between; order: 3; }
     .topbar nav { gap: 14px; flex-wrap: wrap; }
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
+    .translate-grid { grid-template-columns: 1fr; }
     .work-row { grid-template-columns: 24px 1fr; }
     .work-row .go { display: none; }
     footer.foot { flex-direction: column; gap: 8px; }
@@ -224,9 +225,10 @@
     <h1>Trust and safety work, built on real <span class="accent-text">product instinct</span>.</h1>
     <p class="lede">
       I came to product to <strong>help people at scale</strong>, not one at a time,
-      and keep them <strong>safe</strong> getting there &mdash; the work I did for years
-      as a peer mentor. I'm <strong>skeptical of AI</strong>. I also
-      <strong>believe it can help</strong>. Both are true.
+      and keep them <strong>safe</strong> while I did it. That's the same job I had
+      for five years as a peer mentor, just with different tools now. I'm
+      <strong>skeptical of AI</strong>. I also <strong>think it can genuinely help
+      people</strong>. Both are true, and I've stopped trying to pick one.
     </p>
     <div class="cta-row">
       <a href="#translation" class="link-cta">How this translates</a>
@@ -240,7 +242,7 @@
       <h2>I know your user before they open the app.</h2>
     </div>
     <div class="prose">
-      <p>I went into product to help people at scale, not one at a time. That comes from five-plus years of trauma-informed peer mentor work with youth and families, where I learned what safety actually requires when someone is in crisis. I brought that into building three wellness apps, and now into trust and safety, where the question is how you protect people at scale while the systems meant to help them keep changing. I'm skeptical of AI and I believe it can help, both at once, and I don't try to resolve that. That combination of caution and belief is what makes me useful on a team, whether the role is product, trust and safety, or something between the two.</p>
+      <p>I went into product to help people at scale, not one at a time. That comes from five-plus years of trauma-informed peer mentor work with youth and families in San Francisco, where I learned what safety actually requires when someone is in crisis, not what a policy document says it requires. I carried that into three wellness apps I built myself, and now into trust and safety, where the real question is how you protect people at scale while the systems meant to help them keep shifting under you. I'm skeptical of AI. I also believe it can help. Neither one has won yet, and I don't need it to. On a team, that shows up as someone who asks the uncomfortable question before launch, not after the incident report.</p>
     </div>
     <p class="followup">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact">let's talk</a>.</p>
   </section>
@@ -251,7 +253,7 @@
       <h2>I've seen what happens when a product doesn't have someone's back.</h2>
     </div>
     <div class="prose">
-      <p>Several of the young adults I mentored went on to try online dating, and I watched, up close, what happens when the product isn't built to protect them: a catfish that took months to untangle, a match running a scam, someone talked into sending money before they'd ever met in real life. None of that gets fixed with better microcopy &mdash; it's a trust and safety problem, exactly the kind of thing five years of peer mentor work trained me to see coming, not clean up after. Online dating asks people to be adventurous with strangers, on purpose. That adventure only holds up if what someone shares along the way is protected by people who know what unsafe actually looks like in someone's life, before launch.</p>
+      <p>Several of the young adults I mentored went on to try online dating, and I watched, up close, what happens when a product isn't built to protect them. One got catfished for months before anyone helped her see it. Another sent money to a match he'd never met in person, because by the time she asked, he already trusted her. Better microcopy doesn't fix that. It's a trust and safety problem, and it's exactly the kind of thing five years of peer mentor work trained me to see coming instead of clean up after. Online dating asks people to be adventurous with strangers, on purpose. That only holds up if what someone shares along the way gets protected, before launch, by people who already know what unsafe looks like in a person's actual life.</p>
     </div>
     <p class="followup">If your product asks people to trust a stranger, <a href="#contact">let's talk</a>.</p>
   </section>
@@ -262,21 +264,21 @@
       <h2>How peer mentor work becomes product instinct.</h2>
     </div>
     <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">Not hypotheticals. This is what I'd actually be doing on your team.</p>
-    <div class="translate-list">
-      <div class="translate-row">
+    <div class="translate-grid">
+      <div class="translate-card">
         <div class="idx mono">01 &middot; Safety escalation</div>
         <div class="from">Decided when a safety concern had to go up the chain and when it didn't, knowing a wrong call in either direction could hurt someone.</div>
         <div class="to"><span class="to-lbl">At your company:</span> When your trust and safety team debates where the line is for self-harm content, I've made that call with a real person in front of me.</div>
       </div>
-      <div class="translate-row">
+      <div class="translate-card">
         <div class="idx mono">02 &middot; Consent</div>
         <div class="from">Explained confidentiality and its limits to scared teenagers before they'd tell me anything.</div>
-        <div class="to"><span class="to-lbl">At your company:</span> I know the difference between consent someone understood and consent someone clicked through &mdash; the line trust and safety review boards spend weeks debating.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> I know the difference between consent someone understood and consent someone just clicked through. That's the exact line trust and safety review boards spend weeks arguing about.</div>
       </div>
-      <div class="translate-row">
+      <div class="translate-card span-2">
         <div class="idx mono">03 &middot; Dark patterns</div>
         <div class="from">Practiced trauma-informed care, where you never use shame or fear as a lever.</div>
-        <div class="to"><span class="to-lbl">At your company:</span> I can tell you which mechanics motivate your user and which tip into the dark patterns trust and safety ends up cleaning up later.</div>
+        <div class="to"><span class="to-lbl">At your company:</span> I can tell you which mechanics motivate your user and which ones tip into the dark patterns trust and safety ends up cleaning up later.</div>
       </div>
     </div>
     <p class="followup">If your team needs this, <a href="#contact">let's talk</a>.</p>
@@ -292,7 +294,7 @@
         <div class="when">5+ YRS &middot; SF</div>
         <div>
           <h3>Lead Peer Mentor, trauma-informed care</h3>
-          <p>Worked directly with youth and families in San Francisco. Led and trained a team of peer partners. Made escalation calls on safety concerns.</p>
+          <p>Worked directly with youth and families in San Francisco, then led and trained a team of peer partners doing the same. Made the escalation calls when a safety concern couldn't wait for a meeting.</p>
         </div>
       </div>
       <div class="exp-item">
@@ -338,7 +340,7 @@
         <span class="go">View &rarr;</span>
       </a>
     </div>
-    <p class="work-more">Plus 9 more prototypes and in-progress builds &mdash; <a href="https://github.com/susangadegone" target="_blank" rel="noopener">see them all on GitHub</a>.</p>
+    <p class="work-more">Plus 9 more prototypes and in-progress builds, all viewable on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
 
     <div class="screens-group">
       <div class="screens-group-head">
@@ -366,7 +368,7 @@
       <h2>What I want next is simple.</h2>
     </div>
     <div class="prose">
-      <p><strong>Product, end to end</strong> &mdash; not research or writing in isolation. <strong>Health, specifically</strong> &mdash; digital health, mental health, or care-adjacent, where getting it right isn't optional. <strong>Building, not just planning</strong> &mdash; I ship my own apps and want to stay close to the actual product.</p>
+      <p>I want product, end to end, instead of handing research or writing off to someone else and waiting for the recap. I want it in health specifically: digital health, mental health, or something care-adjacent, where getting it wrong actually costs someone something. And I want to keep building. I ship my own apps because staying that close to the product is the only way I trust what I'm building.</p>
     </div>
     <p class="followup">SF Bay Area, hybrid or in-person.</p>
   </section>
