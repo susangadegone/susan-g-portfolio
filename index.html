@@ -155,12 +155,27 @@
   .screens-group-head .app-name { font-weight: 700; font-size: 15px; }
   .screens-group-head .app-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-left: 8px; }
   .screens-row { display: flex; flex-wrap: wrap; gap: 20px; }
-  .screen-item { display: flex; flex-direction: column; gap: 8px; flex: 0 1 140px; width: 140px; }
+  .screen-item { display: flex; flex-direction: column; gap: 8px; flex: 0 1 190px; width: 190px; }
   .screen-item img {
     width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; display: block;
-    border-radius: 10px; border: 1px solid var(--rule);
+    border-radius: 10px; border: 1px solid var(--rule); cursor: zoom-in;
+    transition: border-color 0.15s ease;
   }
+  .screen-item img:hover { border-color: var(--accent); }
   .screen-item figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); text-align: center; }
+
+  /* Lightbox */
+  .lightbox {
+    display: none; position: fixed; inset: 0; background: rgba(10, 9, 6, 0.86);
+    z-index: 100; align-items: center; justify-content: center; padding: 40px 20px;
+    cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: min(92vw, 480px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 24px; background: none; border: none;
+    color: #f2efe6; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
+  }
 
   /* Looking for: plain list */
   .role-list { display: flex; flex-direction: column; }
@@ -375,7 +390,7 @@
       <h2>What I want next is simple.</h2>
     </div>
     <div class="prose">
-      <p><strong>Product, end to end.</strong> Not research or writing pulled out and handled somewhere else. <strong>Health, specifically.</strong> Digital health, mental health, or something care-adjacent, where trust, safety, and privacy aren't optional. <strong>Building, not planning from a distance.</strong> I ship my own apps and want to stay close to the actual product.</p>
+      <p><strong>Product, end to end.</strong> Not research or writing pulled out and handled somewhere else. <strong>Trust, safety, and privacy built into the product, not bolted on after launch</strong> &mdash; health, care, dating, anywhere a design decision can cost someone something real. <strong>Building, not planning from a distance.</strong> I ship my own apps, and I spent five years reading a room for danger before anyone said a word. I want to keep doing both.</p>
     </div>
     <p class="followup">SF Bay Area, hybrid or in-person.</p>
   </section>
@@ -410,6 +425,11 @@
   </section>
 </div>
 
+<div class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <footer class="foot">
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
     <span>Susan Gadegone &middot; San Francisco Bay Area</span>
@@ -440,6 +460,24 @@
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const openLightbox = (src, alt) => {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('open');
+  };
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  };
+  document.querySelectorAll('.screen-item img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 
 </body>
