@@ -196,8 +196,10 @@
     footer.foot { flex-direction: column; gap: 8px; }
   }
 
-  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
@@ -422,6 +424,10 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
   reveals.forEach(el => io.observe(el));
+  // Safety net: guarantee every section is visible shortly after load even if
+  // IntersectionObserver never fires (e.g. headless screenshot/preview tools
+  // that render the page without a real scroll).
+  setTimeout(() => reveals.forEach(el => el.classList.add('in')), 1200);
 
   const root = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
