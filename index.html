@@ -172,6 +172,7 @@
   }
   .lightbox.open { display: flex; }
   .lightbox img { max-width: min(92vw, 480px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox img.wide { max-width: min(92vw, 640px); }
   .lightbox-close {
     position: absolute; top: 20px; right: 24px; background: none; border: none;
     color: #f2efe6; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
@@ -182,6 +183,22 @@
   .role-row { padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; }
   .role-list .role-row:last-child { border-bottom: 1px solid var(--rule); }
   .role-row .role-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 6px; }
+
+  /* Resume preview */
+  .resume-preview {
+    border: 1px solid var(--rule); border-radius: 14px; overflow: hidden;
+    background: var(--card); margin-bottom: 22px; transition: border-color 0.2s ease;
+  }
+  .resume-preview:hover { border-color: var(--accent); }
+  .resume-preview img {
+    width: 100%; display: block; cursor: zoom-in; border-bottom: 1px solid var(--rule);
+  }
+  .resume-preview .resume-caption {
+    padding: 14px 18px; font-size: 13px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .resume-preview .resume-caption a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .resume-preview .resume-caption a:hover { text-decoration: underline; }
 
   /* Contact: plain list */
   .contact-list { display: flex; flex-direction: column; }
@@ -390,7 +407,7 @@
       <h2>What I want next is simple.</h2>
     </div>
     <div class="prose">
-      <p>I read AI products the way someone who's sat with people in crisis reads risk: what could go wrong, and who it could hurt. <strong>Product, end to end</strong> &mdash; not research or writing split off and handed to someone else to build. <strong>Health, specifically</strong> &mdash; mental health, crisis support, anywhere AI is making a call about someone at their worst moment. <strong>Trust, safety, and privacy as the actual job</strong>, not a compliance step after the product ships. I've built three apps solo, so I know what these tradeoffs cost from the inside, not from a deck.</p>
+      <p>What I want next is a product role where I own the whole thing, not just the research or the write-up. I want to work in <strong>mental health</strong> or somewhere close to it, because that's where I already understand the stakes. For five years I was a lead peer mentor, deciding in the moment whether a safety issue needed a clinician right away or could wait, and explaining confidentiality limits to teenagers before they'd tell me anything. I look at <strong>AI products</strong> the same way now: what could the model get wrong, and who would that hurt first. I've built three apps on my own since 2023, so I've had to live with the tradeoffs I'm describing, not just point them out.</p>
     </div>
     <p class="followup">SF Bay Area, hybrid or in-person.</p>
   </section>
@@ -400,9 +417,16 @@
       <span class="num mono">07</span>
       <h2>I'd love to hear from you.</h2>
     </div>
+    <div class="resume-preview">
+      <img src="assets/susan-gadegone-resume-preview.png" alt="Preview of Susan Gadegone's resume" loading="lazy">
+      <div class="resume-caption">
+        <span>Full resume &middot; 1 page</span>
+        <a href="assets/susan-gadegone-resume.pdf" target="_blank" rel="noopener">Open PDF &rarr;</a>
+      </div>
+    </div>
     <div class="contact-list">
       <a class="contact-row" href="assets/susan-gadegone-resume.pdf" target="_blank" rel="noopener">
-        <span><span class="key mono">RESUME</span><br><span class="val">Download PDF</span></span>
+        <span><span class="key mono">RESUME</span><br><span class="val">Open PDF in new tab</span></span>
         <span class="arrow">&rarr;</span>
       </a>
       <a class="contact-row" href="mailto:spgadegone@gmail.com">
@@ -472,8 +496,11 @@
     lightbox.classList.remove('open');
     lightboxImg.src = '';
   };
-  document.querySelectorAll('.screen-item img').forEach(img => {
-    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  document.querySelectorAll('.screen-item img, .resume-preview img').forEach(img => {
+    img.addEventListener('click', () => {
+      openLightbox(img.src, img.alt);
+      lightboxImg.classList.toggle('wide', img.closest('.resume-preview') !== null);
+    });
   });
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
