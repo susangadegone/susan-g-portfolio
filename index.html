@@ -171,7 +171,7 @@
     cursor: zoom-out;
   }
   .lightbox.open { display: flex; }
-  .lightbox img { max-width: min(92vw, 480px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox img { max-width: min(92vw, 860px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
   .lightbox-close {
     position: absolute; top: 20px; right: 24px; background: none; border: none;
     color: #f2efe6; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
@@ -182,6 +182,16 @@
   .role-row { padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; }
   .role-list .role-row:last-child { border-bottom: 1px solid var(--rule); }
   .role-row .role-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 6px; }
+
+  /* Resume preview */
+  .resume-preview { margin-bottom: 28px; }
+  .resume-preview img {
+    width: 200px; height: auto; display: block; border-radius: 10px; cursor: zoom-in;
+    border: 1px solid var(--rule); box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    transition: border-color 0.15s ease;
+  }
+  .resume-preview img:hover { border-color: var(--accent); }
+  .resume-preview figcaption { margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
 
   /* Contact: plain list */
   .contact-list { display: flex; flex-direction: column; }
@@ -389,6 +399,10 @@
       <span class="num mono">06</span>
       <h2>I'd love to hear from you.</h2>
     </div>
+    <figure class="resume-preview">
+      <img src="assets/susan-gadegone-resume-preview.png" alt="Preview of Susan Gadegone's resume" loading="lazy">
+      <figcaption>Preview &middot; click to enlarge</figcaption>
+    </figure>
     <div class="contact-list">
       <a class="contact-row" href="assets/susan-gadegone-resume.pdf" target="_blank" rel="noopener">
         <span><span class="key mono">RESUME</span><br><span class="val">Download PDF</span></span>
@@ -461,7 +475,7 @@
     lightbox.classList.remove('open');
     lightboxImg.src = '';
   };
-  document.querySelectorAll('.screen-item img').forEach(img => {
+  document.querySelectorAll('.screen-item img, .resume-preview img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src, img.alt));
   });
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
