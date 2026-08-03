@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Susan Gadegone</title>
-<meta name="description" content="Product work, sharpened by real trust, safety, and privacy instinct. Susan Gadegone. San Francisco Bay Area.">
+<meta name="description" content="I build for the moment before someone gets help. Susan Gadegone. San Francisco Bay Area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -108,6 +108,15 @@
   .followup a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .followup a:hover { text-decoration: underline; }
 
+  .quote {
+    margin-top: 22px; font-size: 15px; font-style: italic; color: var(--muted);
+    border-left: 2px solid var(--accent); padding-left: 16px;
+  }
+  .quote cite {
+    display: block; margin-top: 8px; font-style: normal;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted);
+  }
+
   /* Translation: cards */
   .translate-list { display: flex; flex-direction: column; gap: 16px; }
   .translate-row {
@@ -141,6 +150,8 @@
   .work-row .name { font-weight: 700; font-size: 16.5px; }
   .work-row .status { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
   .work-row .desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .work-row .call { font-size: 13.5px; color: var(--ink); margin-top: 8px; }
+  .work-row .call .call-lbl { color: var(--accent); font-weight: 700; }
   .work-row .go { font-size: 13px; color: var(--accent); opacity: 0; transition: opacity 0.15s; white-space: nowrap; }
   .work-row:hover .go { opacity: 1; }
   .work-row:hover .name { color: var(--accent); }
@@ -253,11 +264,11 @@
       <img src="assets/susan.jpg" alt="Susan Gadegone">
       <div class="who">Hi, I'm <strong>Susan</strong></div>
     </div>
-    <h1>Product work, sharpened by real <span class="accent-text">trust, safety, and privacy instinct</span>.</h1>
+    <h1>I build for <span class="accent-text">the moment before someone gets help</span>.</h1>
     <p class="lede">
-      <strong>Five years deciding, in real time, what was safe to say to youth in
-      crisis.</strong> That's why I build products where safety is designed in, not
-      left to chance.
+      <strong>Five years running the floor of a youth drop-in center, where people
+      walked in with no plan and no idea what to ask for.</strong> That's who I
+      build software for now.
     </p>
     <div class="cta-row">
       <a href="#translation" class="link-cta">How this translates</a>
@@ -268,18 +279,18 @@
   <section class="block" id="about">
     <div class="section-head">
       <span class="num mono">01</span>
-      <h2>I know your user before they open the app.</h2>
+      <h2>I build for the person who doesn't know where to start.</h2>
     </div>
     <div class="prose">
-      <p><strong>Five years as a trauma-informed peer mentor taught me to read a room for danger before anyone said a word.</strong> I built three wellness apps to test whether that judgment holds up in software.</p>
+      <p><strong>Five years running a youth drop-in center taught me what it looks like when someone needs help and has no idea how to ask for it</strong> &mdash; no plan, no vocabulary, no idea what's even available. I built three wellness apps to test whether that judgment translates into software.</p>
     </div>
-    <p class="followup">I'm most useful to a team building something that helps people get care they'd otherwise go without.</p>
+    <p class="followup">I'm most useful to a team building for the person who hasn't engaged yet, not the one already fluent in what they need.</p>
   </section>
 
   <section class="block" id="translation">
     <div class="section-head">
       <span class="num mono">02</span>
-      <h2>How peer mentor work becomes product instinct.</h2>
+      <h2>How peer mentor work becomes product judgment.</h2>
     </div>
     <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">What this looks like in practice:</p>
     <div class="translate-list">
@@ -304,7 +315,7 @@
   <section class="block" id="experience">
     <div class="section-head">
       <span class="num mono">03</span>
-      <h2>Where this comes from.</h2>
+      <h2>Background.</h2>
     </div>
     <div class="exp-list">
       <div class="exp-item">
@@ -318,10 +329,17 @@
         <div class="when">5+ YRS &middot; SF</div>
         <div>
           <h3>Lead Peer Mentor, trauma-informed care</h3>
-          <p>Ran the floor of an SF youth drop-in center: food, hygiene, homework help, daily safety calls &mdash; roughly 300 youth over five years, 10+ person team. Grew outreach 200% and built the center's Instagram to 550 followers.</p>
+          <p>Ran the floor of an SF youth drop-in center: food, hygiene, homework help, daily safety calls &mdash; roughly 300 youth over five years, 10+ person team. Grew outreach 200%.</p>
         </div>
       </div>
     </div>
+    <div class="prose" style="margin-top: 28px;">
+      <p><strong>When in-person services shut down, I moved the center to a fully virtual format.</strong> I had to work out which parts of walking through the door actually mattered and which were just habit, then rebuild those in tools that weren't built for it. I learned the platforms well enough to make real decisions instead of guessing. People kept showing up.</p>
+    </div>
+    <blockquote class="quote">
+      &ldquo;She worked tirelessly to deepen her understanding of tech-based mental health approaches, ensuring that our virtual Drop-in Center not only functioned, but truly thrived.&rdquo;
+      <cite>&mdash; Shelby</cite>
+    </blockquote>
   </section>
 
   <section class="block" id="built">
@@ -337,6 +355,7 @@
         <span>
           <span class="name">Cozy</span>
           <div class="desc">Chore management without the guilt trip most chore apps run on.</div>
+          <div class="call"><span class="call-lbl">The call:</span> no streaks, no red mark for a missed day &mdash; even though streaks are the easiest retention mechanic in the category.</div>
         </span>
         <span class="go">View &rarr;</span>
       </a>
@@ -345,6 +364,7 @@
         <span>
           <span class="name">Roam</span>
           <div class="desc">Wellness resources across the Bay Area, for someone who doesn't know where to start.</div>
+          <div class="call"><span class="call-lbl">The call:</span> organized by what you can do today, not by category &mdash; when you're struggling, you don't browse.</div>
         </span>
         <span class="go">View &rarr;</span>
       </a>
@@ -353,6 +373,7 @@
         <span>
           <span class="name">Cal Mood Tracker</span>
           <div class="desc">Checking in with yourself, tied to the calendar you already keep.</div>
+          <div class="call"><span class="call-lbl">The call:</span> no new app to remember to open &mdash; a check-in attached to a habit you already have beats one that depends on a habit you don't.</div>
         </span>
         <span class="go">View &rarr;</span>
       </a>
@@ -384,9 +405,9 @@
       <h2>What I want next is simple.</h2>
     </div>
     <div class="prose">
-      <p><strong>I want a product role in trust and safety &mdash; owning something from idea through to shipped.</strong> I read AI products the way I once judged safety cases: where it could go wrong, and who pays for it.</p>
+      <p><strong>I want product work built around the person who hasn't figured out what they need yet</strong> &mdash; user research, conversation design, member experience. That's the discovery work I already practiced for five years, in person, before I had a title for it.</p>
     </div>
-    <p class="followup">California, with the Bay Area preferred.</p>
+    <p class="followup">Trust and safety is a direction this leads, later &mdash; not what I'm applying to this week. California, with the Bay Area preferred.</p>
   </section>
 
   <section class="block" id="contact">
