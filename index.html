@@ -171,7 +171,7 @@
     cursor: zoom-out;
   }
   .lightbox.open { display: flex; }
-  .lightbox img { max-width: min(92vw, 480px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox img { max-width: min(92vw, 860px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
   .lightbox-close {
     position: absolute; top: 20px; right: 24px; background: none; border: none;
     color: #f2efe6; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
@@ -182,6 +182,16 @@
   .role-row { padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; }
   .role-list .role-row:last-child { border-bottom: 1px solid var(--rule); }
   .role-row .role-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 6px; }
+
+  /* Resume preview */
+  .resume-preview { margin-bottom: 28px; }
+  .resume-preview img {
+    width: 200px; height: auto; display: block; border-radius: 10px; cursor: zoom-in;
+    border: 1px solid var(--rule); box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    transition: border-color 0.15s ease;
+  }
+  .resume-preview img:hover { border-color: var(--accent); }
+  .resume-preview figcaption { margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
 
   /* Contact: plain list */
   .contact-list { display: flex; flex-direction: column; }
@@ -225,9 +235,9 @@
     <div class="nav-right">
       <nav>
         <a href="#about">About</a>
-        <a href="#translation">Translation</a>
-        <a href="#built">Built</a>
-        <a href="#looking">Looking For</a>
+        <a href="#translation">How I Work</a>
+        <a href="#built">What I've Built</a>
+        <a href="#looking">What I Want</a>
         <a href="#contact">Contact</a>
       </nav>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -238,19 +248,16 @@
   </header>
 
   <section class="hero" id="top">
-    <div class="eyebrow mono">San Francisco Bay Area &middot; Open to work</div>
+    <div class="eyebrow mono">California &middot; Bay Area preferred &middot; Open to work</div>
     <div class="id-row">
       <img src="assets/susan.jpg" alt="Susan Gadegone">
       <div class="who">Hi, I'm <strong>Susan</strong></div>
     </div>
     <h1>Product work, sharpened by real <span class="accent-text">trust, safety, and privacy instinct</span>.</h1>
     <p class="lede">
-      I came to product to <strong>help people at scale</strong> instead of one at a time.
-      Before that, for over five years, I sat across from teenagers in the worst moment
-      of their week and had to decide, in real time, what was <strong>safe</strong> to say
-      and what wasn't. I'm <strong>skeptical of AI</strong>. I also
-      <strong>think it can help</strong>. I've stopped trying to make those two positions
-      shake hands.
+      <strong>Five years deciding, in real time, what was safe to say to youth in
+      crisis.</strong> That's why I build products where safety is designed in, not
+      left to chance.
     </p>
     <div class="cta-row">
       <a href="#translation" class="link-cta">How this translates</a>
@@ -264,66 +271,54 @@
       <h2>I know your user before they open the app.</h2>
     </div>
     <div class="prose">
-      <p>Five years as a trauma-informed peer mentor taught me things no product course will. I learned to read a room for danger before anyone said a word. I learned the difference between a teenager who actually understood what confidentiality meant and one who just nodded because that's what you do when an adult asks you something. Both are judgment calls made under pressure, with someone's actual safety riding on getting it right. I built three wellness apps after that, to see whether the same judgment held up once it was software instead of a conversation. Now when I look at a product, the question in my head isn't whether it's clever. It's who the product fails first, and what that costs them.</p>
+      <p><strong>Five years as a trauma-informed peer mentor taught me to read a room for danger before anyone said a word.</strong> I built three wellness apps to test whether that judgment holds up in software.</p>
     </div>
-    <p class="followup">If you're building something that helps people get care they wouldn't otherwise have access to, <a href="#contact">let's talk</a>.</p>
-  </section>
-
-  <section class="block" id="why">
-    <div class="section-head">
-      <span class="num mono">02</span>
-      <h2>I've seen what happens when a product doesn't have someone's back.</h2>
-    </div>
-    <div class="prose">
-      <p>Several of the young adults I mentored started online dating. I watched, closer than I wanted to, what happens when the product wasn't built to protect them. One spent months untangling a catfish. Another sent money to someone he'd never met, talked into it slowly enough that it didn't feel like a mistake until it already was. You don't fix that with better microcopy. Five years of peer mentor work trained me to see a trust and safety problem coming, not clean up after one. Online dating asks people to be adventurous with strangers on purpose. That only works if whoever built the product understood what unsafe actually looks like in someone's life before it shipped, not after someone reports it.</p>
-    </div>
-    <p class="followup">If your product asks people to trust a stranger, <a href="#contact">let's talk</a>.</p>
+    <p class="followup">I'm most useful to a team building something that helps people get care they'd otherwise go without.</p>
   </section>
 
   <section class="block" id="translation">
     <div class="section-head">
-      <span class="num mono">03</span>
+      <span class="num mono">02</span>
       <h2>How peer mentor work becomes product instinct.</h2>
     </div>
-    <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">Not hypotheticals. This is what I'd actually be doing on your team.</p>
+    <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">What this looks like in practice:</p>
     <div class="translate-list">
       <div class="translate-row">
         <div class="idx mono">01 &middot; Safety escalation</div>
-        <div class="from">Decided when a safety concern had to go up the chain and when it didn't, knowing a wrong call in either direction could hurt someone.</div>
-        <div class="to"><span class="to-lbl">At your company:</span> I'd build the escalation rule into the moderation queue itself, not a policy doc nobody opens under pressure. Some flags wait. Some interrupt someone's shift immediately. The system has to already know the difference.</div>
+        <div class="from">I triaged crisis cases daily, coordinating clinical, legal, and county teams.</div>
+        <div class="to"><span class="to-lbl">In a product:</span> Deciding whether a report goes to a human now or waits is the same call, made daily.</div>
       </div>
       <div class="translate-row">
         <div class="idx mono">02 &middot; Consent &amp; privacy</div>
-        <div class="from">Explained confidentiality and its limits to scared teenagers before they'd tell me anything.</div>
-        <div class="to"><span class="to-lbl">At your company:</span> I'd move your consent screen's real disclosure out from under the checkbox, somewhere a person would actually read it before clicking through. I'd hold your privacy policy to the same bar. Agreement isn't the same as understanding, and I can tell the difference in how a screen is built.</div>
+        <div class="from">I explained privacy limits to people who agreed without fully understanding them.</div>
+        <div class="to"><span class="to-lbl">In a product:</span> A user tapping "I agree" without reading is that same gap &mdash; closing it is work I've done face to face.</div>
       </div>
       <div class="translate-row">
-        <div class="idx mono">03 &middot; Dark patterns</div>
-        <div class="from">Practiced trauma-informed care, where you never use shame or fear as a lever.</div>
-        <div class="to"><span class="to-lbl">At your company:</span> I'd flag the growth mechanic in design review, before it ships, not after support tickets start piling up. I can tell a nudge from a dark pattern by looking at a Figma file, the same way I could tell a real question from a leading one across a mentoring table.</div>
+        <div class="idx mono">03 &middot; Pressured, not persuaded</div>
+        <div class="from">Trauma-informed care meant never using shame or fear to move someone.</div>
+        <div class="to"><span class="to-lbl">In a product:</span> A buried cancel button or guilt-trip pop-up crosses that same line.</div>
       </div>
     </div>
-    <p class="followup">If your team needs this, <a href="#contact">let's talk</a>.</p>
   </section>
 
   <section class="block" id="experience">
     <div class="section-head">
-      <span class="num mono">04</span>
+      <span class="num mono">03</span>
       <h2>Where this comes from.</h2>
     </div>
     <div class="exp-list">
       <div class="exp-item">
-        <div class="when">5+ YRS &middot; SF</div>
+        <div class="when">ONGOING</div>
         <div>
-          <h3>Lead Peer Mentor, trauma-informed care</h3>
-          <p>Worked the main floor of a youth drop-in center in San Francisco: homework help, food, hygiene support, daily crisis and safety calls. Worked across a team of 10+ including clinicians, case managers, and support staff, and trained new hires as they came on. Worked with roughly 300 youth over five years. Built a pandemic-era outreach program that grew participant count 200%, and started the center's first Instagram in 2022, now around 550 followers.</p>
+          <h3>Builder &amp; credentials</h3>
+          <p>Built three wellness apps independently. 2024 Neolth Innovation Challenge winner (1st of 11). Stanford AI for Good: top 8 of 30. Writes on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. BA in Psychology, ASU.</p>
         </div>
       </div>
       <div class="exp-item">
-        <div class="when">ONGOING</div>
+        <div class="when">5+ YRS &middot; SF</div>
         <div>
-          <h3>Writer &amp; credentials</h3>
-          <p>Writes about digital mental health and AI products on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. 2024 Neolth Innovation Challenge winner, 1st of 11 teams. Stanford AI for Good: selected from 230 applicants, project reached the top 8 of 30 to pitch investors. BA in Psychology, ASU.</p>
+          <h3>Lead Peer Mentor, trauma-informed care</h3>
+          <p>Ran the floor of an SF youth drop-in center: food, hygiene, homework help, daily safety calls &mdash; roughly 300 youth over five years, 10+ person team. Grew outreach 200% and built the center's Instagram to 550 followers.</p>
         </div>
       </div>
     </div>
@@ -331,7 +326,7 @@
 
   <section class="block" id="built">
     <div class="section-head">
-      <span class="num mono">05</span>
+      <span class="num mono">04</span>
       <h2>I build to understand products from the inside.</h2>
     </div>
     <p class="intro" style="margin-top: -18px; margin-bottom: 10px;">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -341,7 +336,7 @@
         <span class="n mono">01</span>
         <span>
           <span class="name">Cozy</span>
-          <div class="desc">A chore app for people who want a calm home, not a guilt trip.</div>
+          <div class="desc">Chore management without the guilt trip most chore apps run on.</div>
         </span>
         <span class="go">View &rarr;</span>
       </a>
@@ -349,7 +344,7 @@
         <span class="n mono">02</span>
         <span>
           <span class="name">Roam</span>
-          <div class="desc">A Bay Area wellness resource directory for people who don't know where to start.</div>
+          <div class="desc">Wellness resources across the Bay Area, for someone who doesn't know where to start.</div>
         </span>
         <span class="go">View &rarr;</span>
       </a>
@@ -357,7 +352,7 @@
         <span class="n mono">03</span>
         <span>
           <span class="name">Cal Mood Tracker</span>
-          <div class="desc">A wellness tool for checking in with yourself, built around the calendar you already keep.</div>
+          <div class="desc">Checking in with yourself, tied to the calendar you already keep.</div>
         </span>
         <span class="go">View &rarr;</span>
       </a>
@@ -370,7 +365,6 @@
       </div>
       <div class="screens-row">
         <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
-        <figure class="screen-item"><img src="assets/shots/cozy-chores.png" alt="Cozy chore library screen" loading="lazy"><figcaption>Chores</figcaption></figure>
       </div>
     </div>
     <div class="screens-group">
@@ -386,20 +380,24 @@
 
   <section class="block" id="looking">
     <div class="section-head">
-      <span class="num mono">06</span>
+      <span class="num mono">05</span>
       <h2>What I want next is simple.</h2>
     </div>
     <div class="prose">
-      <p><strong>Product, end to end.</strong> Not research or writing pulled out and handled somewhere else. <strong>Trust, safety, and privacy built into the product, not bolted on after launch</strong> &mdash; health, care, dating, anywhere a design decision can cost someone something real. <strong>Building, not planning from a distance.</strong> I ship my own apps, and I spent five years reading a room for danger before anyone said a word. I want to keep doing both.</p>
+      <p><strong>I want a product role in trust and safety &mdash; owning something from idea through to shipped.</strong> I read AI products the way I once judged safety cases: where it could go wrong, and who pays for it.</p>
     </div>
-    <p class="followup">SF Bay Area, hybrid or in-person.</p>
+    <p class="followup">California, with the Bay Area preferred.</p>
   </section>
 
   <section class="block" id="contact">
     <div class="section-head">
-      <span class="num mono">07</span>
+      <span class="num mono">06</span>
       <h2>I'd love to hear from you.</h2>
     </div>
+    <figure class="resume-preview">
+      <img src="assets/susan-gadegone-resume-preview.png" alt="Preview of Susan Gadegone's resume" loading="lazy">
+      <figcaption>Preview &middot; click to enlarge</figcaption>
+    </figure>
     <div class="contact-list">
       <a class="contact-row" href="assets/susan-gadegone-resume.pdf" target="_blank" rel="noopener">
         <span><span class="key mono">RESUME</span><br><span class="val">Download PDF</span></span>
@@ -472,7 +470,7 @@
     lightbox.classList.remove('open');
     lightboxImg.src = '';
   };
-  document.querySelectorAll('.screen-item img').forEach(img => {
+  document.querySelectorAll('.screen-item img, .resume-preview img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src, img.alt));
   });
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
