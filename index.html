@@ -7,47 +7,52 @@
 <meta name="description" content="I build environments — products and practices — where people have control over their own calm. Susan Gadegone. San Francisco Bay Area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f5f0;
-    --ink: #17140f;
-    --muted: #6e675a;
-    --rule: #e2ddd0;
-    --accent: #a8452b;
-    --card: #fdfcf9;
+    --bg: #f1f4ee;
+    --ink: #101d18;
+    --muted: #56685e;
+    --rule: #ccd6c6;
+    --accent: #0e6e57;
+    --card: #ffffff;
   }
   :root[data-theme="dark"] {
-    --bg: #14120e;
-    --ink: #f2efe6;
-    --muted: #a89f8e;
-    --rule: #2c2820;
-    --accent: #d97a52;
-    --card: #1b1811;
+    --bg: #0b1512;
+    --ink: #edf3ee;
+    --muted: #8ea89b;
+    --rule: #23342c;
+    --accent: #3fdcb4;
+    --card: #111e19;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #14120e; --ink: #f2efe6; --muted: #a89f8e; --rule: #2c2820; --accent: #d97a52; --card: #1b1811;
+      --bg: #0b1512; --ink: #edf3ee; --muted: #8ea89b; --rule: #23342c; --accent: #3fdcb4; --card: #111e19;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
     background: var(--bg); color: var(--ink); line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     transition: background 0.2s ease, color 0.2s ease;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  .accent-bar { height: 4px; background: var(--accent); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
   a { color: inherit; }
   .mono { font-family: 'IBM Plex Mono', monospace; }
+  .serif { font-family: 'Fraunces', serif; }
 
   /* Nav */
   .topbar {
-    padding: 26px 0; display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 0; display: flex; justify-content: space-between; align-items: center;
     border-bottom: 1px solid var(--rule);
   }
-  .brand { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--ink); }
+  .brand {
+    text-decoration: none; color: var(--ink); font-family: 'Fraunces', serif;
+    font-weight: 700; font-style: italic; font-size: 19px; letter-spacing: -0.01em;
+  }
   .nav-right { display: flex; align-items: center; gap: 24px; }
   .topbar nav { display: flex; gap: 20px; }
   .topbar nav a {
@@ -65,21 +70,23 @@
   :root[data-theme="dark"] .theme-toggle .moon { display: none; }
   :root[data-theme="dark"] .theme-toggle .sun { display: block; }
 
-  /* Hero */
-  .hero { padding: 60px 0 48px; }
+  /* Hero — breaks the grid on purpose */
+  .hero { padding: 68px 0 52px; }
   .hero .eyebrow {
-    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted); margin-bottom: 22px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted); margin-bottom: 24px;
+    letter-spacing: 0.02em;
   }
-  .hero .id-row { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+  .hero .id-row { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
   .hero .id-row img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
   .hero .id-row .who { font-size: 14px; color: var(--muted); }
   .hero .id-row .who strong { color: var(--ink); font-weight: 700; }
   .hero h1 {
-    font-weight: 800; letter-spacing: -0.02em; font-size: clamp(30px, 5vw, 44px);
-    line-height: 1.2; margin-bottom: 26px; max-width: 600px;
+    font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em;
+    font-size: clamp(32px, 5.6vw, 50px);
+    line-height: 1.18; margin-bottom: 28px; max-width: 660px;
   }
-  .hero h1 .accent-text { color: var(--accent); }
-  .hero p.lede { font-size: 17px; line-height: 1.7; max-width: 540px; color: var(--muted); margin-bottom: 30px; }
+  .hero h1 .accent-text { color: var(--accent); font-style: italic; font-weight: 700; }
+  .hero p.lede { font-size: 17.5px; line-height: 1.7; max-width: 540px; color: var(--muted); margin-bottom: 32px; }
   .hero p.lede strong { color: var(--ink); font-weight: 700; }
   .hero .cta-row { display: flex; gap: 26px; align-items: center; }
   .link-cta {
@@ -90,11 +97,19 @@
   .link-cta.quiet { color: var(--muted); border-color: var(--rule); }
   .link-cta.quiet:hover { color: var(--accent); border-color: var(--accent); }
 
-  section.block { padding: 40px 0; border-top: 1px solid var(--rule); }
-  .section-head { margin-bottom: 34px; display: flex; align-items: baseline; gap: 14px; }
-  .section-head .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); }
-  .section-head h2 { font-weight: 800; letter-spacing: -0.01em; font-size: clamp(21px, 2.6vw, 27px); line-height: 1.3; }
-  .section-head p.intro { font-size: 15px; color: var(--muted); margin-top: 6px; }
+  /* Section grid — asymmetric rail + content */
+  section.block { padding: 48px 0; border-top: 1px solid var(--rule); }
+  .block-grid { display: grid; grid-template-columns: 96px 1fr; column-gap: 32px; }
+  .rail { border-right: 1px solid var(--rule); }
+  .rail .num {
+    font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600;
+    color: var(--accent); letter-spacing: 0.03em;
+  }
+  .content h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em;
+    font-size: clamp(22px, 2.9vw, 29px); line-height: 1.28; margin-bottom: 14px;
+  }
+  .content p.intro { font-size: 15px; color: var(--muted); margin-bottom: 26px; }
   p.intro a { color: var(--accent); text-decoration: none; font-weight: 600; }
   p.intro a:hover { text-decoration: underline; }
 
@@ -108,13 +123,14 @@
   .followup a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .followup a:hover { text-decoration: underline; }
 
-  /* Translation: cards */
-  .translate-list { display: flex; flex-direction: column; gap: 16px; }
+  /* Translation: sharp-edged, accent-striped rows */
+  .translate-list { display: flex; flex-direction: column; gap: 14px; }
   .translate-row {
-    padding: 24px; border: 1px solid var(--rule); border-radius: 14px; background: var(--card);
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    padding: 22px 26px; border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+    border-radius: 2px; background: var(--card);
+    transition: border-color 0.15s ease, border-left-width 0.15s ease;
   }
-  .translate-row:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .translate-row:hover { border-color: var(--accent); border-left-width: 6px; }
   .translate-row .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
   .translate-row .from { font-size: 14.5px; color: var(--muted); margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
   .translate-row .to { font-size: 15.5px; color: var(--ink); }
@@ -122,10 +138,10 @@
 
   /* Experience: plain rows */
   .exp-list { display: flex; flex-direction: column; }
-  .exp-item { display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 20px 0; border-top: 1px solid var(--rule); }
+  .exp-item { display: grid; grid-template-columns: 130px 1fr; gap: 22px; padding: 18px 0; border-top: 1px solid var(--rule); }
   .exp-list .exp-item:last-child { border-bottom: 1px solid var(--rule); }
-  .exp-item .when { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); padding-top: 3px; }
-  .exp-item h3 { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .exp-item .when { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); padding-top: 4px; }
+  .exp-item h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 16.5px; margin-bottom: 7px; }
   .exp-item p { font-size: 14.5px; color: var(--muted); }
   .exp-item p a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .exp-item p a:hover { text-decoration: underline; }
@@ -133,12 +149,12 @@
   /* Built: plain numbered list */
   .work-list { display: flex; flex-direction: column; }
   .work-row {
-    display: grid; grid-template-columns: 36px 1fr auto; gap: 18px; align-items: baseline;
-    padding: 20px 0; border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
+    display: grid; grid-template-columns: 30px 1fr auto; gap: 18px; align-items: baseline;
+    padding: 18px 0; border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
   }
   .work-list .work-row:last-child { border-bottom: 1px solid var(--rule); }
   .work-row .n { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
-  .work-row .name { font-weight: 700; font-size: 16.5px; }
+  .work-row .name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; }
   .work-row .status { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
   .work-row .desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
   .work-row .go { font-size: 13px; color: var(--accent); opacity: 0; transition: opacity 0.15s; white-space: nowrap; }
@@ -150,15 +166,15 @@
 
   /* Screens */
   .screens-group { margin-top: 40px; }
-  .screens-group:first-of-type { margin-top: 8px; }
+  .screens-group:first-of-type { margin-top: 10px; }
   .screens-group-head { margin-bottom: 18px; }
-  .screens-group-head .app-name { font-weight: 700; font-size: 15px; }
+  .screens-group-head .app-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 15.5px; }
   .screens-group-head .app-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-left: 8px; }
   .screens-row { display: flex; flex-wrap: wrap; gap: 20px; }
   .screen-item { display: flex; flex-direction: column; gap: 8px; flex: 0 1 190px; width: 190px; }
   .screen-item img {
     width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; display: block;
-    border-radius: 10px; border: 1px solid var(--rule); cursor: zoom-in;
+    border-radius: 4px; border: 1px solid var(--rule); cursor: zoom-in;
     transition: border-color 0.15s ease;
   }
   .screen-item img:hover { border-color: var(--accent); }
@@ -166,27 +182,21 @@
 
   /* Lightbox */
   .lightbox {
-    display: none; position: fixed; inset: 0; background: rgba(10, 9, 6, 0.86);
+    display: none; position: fixed; inset: 0; background: rgba(6, 10, 8, 0.88);
     z-index: 100; align-items: center; justify-content: center; padding: 40px 20px;
     cursor: zoom-out;
   }
   .lightbox.open { display: flex; }
-  .lightbox img { max-width: min(92vw, 860px); max-height: 90vh; width: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox img { max-width: min(92vw, 860px); max-height: 90vh; width: auto; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
   .lightbox-close {
     position: absolute; top: 20px; right: 24px; background: none; border: none;
-    color: #f2efe6; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
+    color: #edf3ee; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
   }
-
-  /* Looking for: plain list */
-  .role-list { display: flex; flex-direction: column; }
-  .role-row { padding: 18px 0; border-top: 1px solid var(--rule); font-size: 16px; }
-  .role-list .role-row:last-child { border-bottom: 1px solid var(--rule); }
-  .role-row .role-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 6px; }
 
   /* Resume preview */
   .resume-preview { margin-bottom: 28px; }
   .resume-preview img {
-    width: 200px; height: auto; display: block; border-radius: 10px; cursor: zoom-in;
+    width: 200px; height: auto; display: block; border-radius: 4px; cursor: zoom-in;
     border: 1px solid var(--rule); box-shadow: 0 2px 14px rgba(0,0,0,0.08);
     transition: border-color 0.15s ease;
   }
@@ -196,7 +206,7 @@
   /* Contact: plain list */
   .contact-list { display: flex; flex-direction: column; }
   .contact-row {
-    display: flex; justify-content: space-between; align-items: center; padding: 16px 0;
+    display: flex; justify-content: space-between; align-items: center; padding: 15px 0;
     border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
   }
   .contact-list .contact-row:last-child { border-bottom: 1px solid var(--rule); }
@@ -210,13 +220,18 @@
   footer.foot a { color: var(--muted); text-decoration: none; }
   footer.foot a:hover { color: var(--accent); }
 
+  @media (max-width: 700px) {
+    .block-grid { grid-template-columns: 1fr; row-gap: 12px; }
+    .rail { border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+  }
+
   @media (max-width: 640px) {
     .topbar { flex-wrap: wrap; gap: 14px 0; padding: 20px 0; }
     .topbar .brand { flex: 1 0 auto; }
     .nav-right { width: 100%; justify-content: space-between; order: 3; }
     .topbar nav { gap: 14px; flex-wrap: wrap; }
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
-    .work-row { grid-template-columns: 24px 1fr; }
+    .work-row { grid-template-columns: 22px 1fr; }
     .work-row .go { display: none; }
     footer.foot { flex-direction: column; gap: 8px; }
   }
@@ -228,6 +243,8 @@
 </style>
 </head>
 <body>
+
+<div class="accent-bar"></div>
 
 <div class="wrap">
   <header class="topbar">
@@ -266,160 +283,172 @@
   </section>
 
   <section class="block" id="about">
-    <div class="section-head">
-      <span class="num mono">01</span>
-      <h2>Give people control. Don't take it from them.</h2>
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">01</span></div>
+      <div class="content">
+        <h2>Give people control. Don't take it from them.</h2>
+        <div class="prose">
+          <p><strong>Whether it's a product or a daily practice, I care about the same thing:</strong> does someone have control over the big and small moments of their day, or is the system making that call for them. I built three wellness apps to test whether that instinct holds up outside a crisis room.</p>
+        </div>
+        <p class="followup">I'm most useful to a team building something that hands people back a sense of control over their own day.</p>
+      </div>
     </div>
-    <div class="prose">
-      <p><strong>Whether it's a product or a daily practice, I care about the same thing:</strong> does someone have control over the big and small moments of their day, or is the system making that call for them. I built three wellness apps to test whether that instinct holds up outside a crisis room.</p>
-    </div>
-    <p class="followup">I'm most useful to a team building something that hands people back a sense of control over their own day.</p>
   </section>
 
   <section class="block" id="translation">
-    <div class="section-head">
-      <span class="num mono">02</span>
-      <h2>How peer mentor work becomes product instinct.</h2>
-    </div>
-    <p class="intro" style="margin-top: -18px; margin-bottom: 28px;">What this looks like in practice:</p>
-    <div class="translate-list">
-      <div class="translate-row">
-        <div class="idx mono">01 &middot; Safety escalation</div>
-        <div class="from">I triaged crisis cases daily, coordinating clinical, legal, and county teams.</div>
-        <div class="to"><span class="to-lbl">In a product:</span> Deciding whether a report goes to a human now or waits is the same call, made daily.</div>
-      </div>
-      <div class="translate-row">
-        <div class="idx mono">02 &middot; Consent &amp; privacy</div>
-        <div class="from">I explained privacy limits to people who agreed without fully understanding them.</div>
-        <div class="to"><span class="to-lbl">In a product:</span> A user tapping "I agree" without reading is that same gap &mdash; closing it is work I've done face to face.</div>
-      </div>
-      <div class="translate-row">
-        <div class="idx mono">03 &middot; Pressured, not persuaded</div>
-        <div class="from">Trauma-informed care meant never using shame or fear to move someone.</div>
-        <div class="to"><span class="to-lbl">In a product:</span> A buried cancel button or guilt-trip pop-up crosses that same line.</div>
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">02</span></div>
+      <div class="content">
+        <h2>How peer mentor work becomes product instinct.</h2>
+        <p class="intro">What this looks like in practice:</p>
+        <div class="translate-list">
+          <div class="translate-row">
+            <div class="idx mono">01 &middot; Safety escalation</div>
+            <div class="from">I triaged crisis cases daily, coordinating clinical, legal, and county teams.</div>
+            <div class="to"><span class="to-lbl">In a product:</span> Deciding whether a report goes to a human now or waits is the same call, made daily.</div>
+          </div>
+          <div class="translate-row">
+            <div class="idx mono">02 &middot; Consent &amp; privacy</div>
+            <div class="from">I explained privacy limits to people who agreed without fully understanding them.</div>
+            <div class="to"><span class="to-lbl">In a product:</span> A user tapping "I agree" without reading is that same gap &mdash; closing it is work I've done face to face.</div>
+          </div>
+          <div class="translate-row">
+            <div class="idx mono">03 &middot; Pressured, not persuaded</div>
+            <div class="from">Trauma-informed care meant never using shame or fear to move someone.</div>
+            <div class="to"><span class="to-lbl">In a product:</span> A buried cancel button or guilt-trip pop-up crosses that same line.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="block" id="experience">
-    <div class="section-head">
-      <span class="num mono">03</span>
-      <h2>Where I learned it.</h2>
-    </div>
-    <div class="exp-list">
-      <div class="exp-item">
-        <div class="when">ONGOING</div>
-        <div>
-          <h3>Builder &amp; credentials</h3>
-          <p>Built three wellness apps independently. 2024 Neolth Innovation Challenge winner (1st of 11). Stanford AI for Good: top 8 of 30. Writes on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. BA in Psychology, ASU.</p>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="when">5+ YRS &middot; SF</div>
-        <div>
-          <h3>Lead Peer Mentor, trauma-informed care</h3>
-          <p>Ran the floor of an SF youth drop-in center: food, hygiene, homework help, daily safety calls &mdash; roughly 300 youth over five years, 10+ person team. Grew outreach 200%.</p>
-          <p style="margin-top: 10px;">When in-person services shut down, I moved the center to a fully virtual format &mdash; working out which parts of walking through the door actually mattered and rebuilding those in tools that weren't built for it, until I knew the platforms well enough to make real decisions instead of guessing. People kept showing up.</p>
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">03</span></div>
+      <div class="content">
+        <h2>Where I learned it.</h2>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="when">ONGOING</div>
+            <div>
+              <h3>Builder &amp; credentials</h3>
+              <p>Built three wellness apps independently. 2024 Neolth Innovation Challenge winner (1st of 11). Stanford AI for Good: top 8 of 30. Writes on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. BA in Psychology, ASU.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="when">5+ YRS &middot; SF</div>
+            <div>
+              <h3>Lead Peer Mentor, trauma-informed care</h3>
+              <p>Ran the floor of an SF youth drop-in center: food, hygiene, homework help, daily safety calls &mdash; roughly 300 youth over five years, 10+ person team. Grew outreach 200%.</p>
+              <p style="margin-top: 10px;">When in-person services shut down, I moved the center to a fully virtual format &mdash; working out which parts of walking through the door actually mattered and rebuilding those in tools that weren't built for it, until I knew the platforms well enough to make real decisions instead of guessing. People kept showing up.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="block" id="built">
-    <div class="section-head">
-      <span class="num mono">04</span>
-      <h2>I build to understand products from the inside.</h2>
-    </div>
-    <p class="intro" style="margin-top: -18px; margin-bottom: 10px;">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">04</span></div>
+      <div class="content">
+        <h2>I build to understand products from the inside.</h2>
+        <p class="intro">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
 
-    <div class="work-list">
-      <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
-        <span class="n mono">01</span>
-        <span>
-          <span class="name">Cozy</span>
-          <div class="desc">Chore management without the guilt trip most chore apps run on.</div>
-        </span>
-        <span class="go">View &rarr;</span>
-      </a>
-      <a class="work-row" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">
-        <span class="n mono">02</span>
-        <span>
-          <span class="name">Roam</span>
-          <div class="desc">Wellness resources across the Bay Area, for someone who doesn't know where to start.</div>
-        </span>
-        <span class="go">View &rarr;</span>
-      </a>
-      <a class="work-row" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">
-        <span class="n mono">03</span>
-        <span>
-          <span class="name">Cal Mood Tracker</span>
-          <div class="desc">Checking in with yourself, tied to the calendar you already keep.</div>
-        </span>
-        <span class="go">View &rarr;</span>
-      </a>
-    </div>
-    <p class="work-more">More builds and experiments live on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
+        <div class="work-list">
+          <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
+            <span class="n mono">01</span>
+            <span>
+              <span class="name">Cozy</span>
+              <div class="desc">Chore management without the guilt trip most chore apps run on.</div>
+            </span>
+            <span class="go">View &rarr;</span>
+          </a>
+          <a class="work-row" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">
+            <span class="n mono">02</span>
+            <span>
+              <span class="name">Roam</span>
+              <div class="desc">Wellness resources across the Bay Area, for someone who doesn't know where to start.</div>
+            </span>
+            <span class="go">View &rarr;</span>
+          </a>
+          <a class="work-row" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">
+            <span class="n mono">03</span>
+            <span>
+              <span class="name">Cal Mood Tracker</span>
+              <div class="desc">Checking in with yourself, tied to the calendar you already keep.</div>
+            </span>
+            <span class="go">View &rarr;</span>
+          </a>
+        </div>
+        <p class="work-more">More builds and experiments live on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
 
-    <div class="screens-group">
-      <div class="screens-group-head">
-        <span class="app-name">Cozy</span><span class="app-sub mono">App Store</span>
-      </div>
-      <div class="screens-row">
-        <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
-      </div>
-    </div>
-    <div class="screens-group">
-      <div class="screens-group-head">
-        <span class="app-name">Roam</span><span class="app-sub mono">App Store</span>
-      </div>
-      <div class="screens-row">
-        <figure class="screen-item"><img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy"><figcaption>Home</figcaption></figure>
-        <figure class="screen-item"><img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy"><figcaption>Map</figcaption></figure>
+        <div class="screens-group">
+          <div class="screens-group-head">
+            <span class="app-name">Cozy</span><span class="app-sub mono">App Store</span>
+          </div>
+          <div class="screens-row">
+            <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+          </div>
+        </div>
+        <div class="screens-group">
+          <div class="screens-group-head">
+            <span class="app-name">Roam</span><span class="app-sub mono">App Store</span>
+          </div>
+          <div class="screens-row">
+            <figure class="screen-item"><img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+            <figure class="screen-item"><img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy"><figcaption>Map</figcaption></figure>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="block" id="looking">
-    <div class="section-head">
-      <span class="num mono">05</span>
-      <h2>What I want next is simple.</h2>
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">05</span></div>
+      <div class="content">
+        <h2>What I want next is simple.</h2>
+        <div class="prose">
+          <p><strong>I want a product role where the work is giving people back control</strong> &mdash; wellness, mental health, trust and safety, wherever a system currently decides for someone instead of the person deciding for themselves. I read products the way I once judged safety cases: where it could go wrong, and who pays for it.</p>
+        </div>
+        <p class="followup">California, with the Bay Area preferred.</p>
+      </div>
     </div>
-    <div class="prose">
-      <p><strong>I want a product role where the work is giving people back control</strong> &mdash; wellness, mental health, trust and safety, wherever a system currently decides for someone instead of the person deciding for themselves. I read products the way I once judged safety cases: where it could go wrong, and who pays for it.</p>
-    </div>
-    <p class="followup">California, with the Bay Area preferred.</p>
   </section>
 
   <section class="block" id="contact">
-    <div class="section-head">
-      <span class="num mono">06</span>
-      <h2>I'd love to hear from you.</h2>
-    </div>
-    <figure class="resume-preview">
-      <img src="assets/susan-gadegone-resume-preview.png" alt="Preview of Susan Gadegone's resume" loading="lazy">
-      <figcaption>Preview &middot; click to enlarge</figcaption>
-    </figure>
-    <div class="contact-list">
-      <a class="contact-row" href="assets/susan-gadegone-resume.pdf" target="_blank" rel="noopener">
-        <span><span class="key mono">RESUME</span><br><span class="val">Download PDF</span></span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <a class="contact-row" href="mailto:spgadegone@gmail.com">
-        <span><span class="key mono">EMAIL</span><br><span class="val">spgadegone@gmail.com</span></span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <a class="contact-row" href="https://linkedin.com/in/susannapage" target="_blank" rel="noopener">
-        <span><span class="key mono">LINKEDIN</span><br><span class="val">linkedin.com/in/susannapage</span></span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <a class="contact-row" href="https://github.com/susangadegone" target="_blank" rel="noopener">
-        <span><span class="key mono">GITHUB</span><br><span class="val">github.com/susangadegone</span></span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <a class="contact-row" href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">
-        <span><span class="key mono">SUBSTACK</span><br><span class="val">@suzanhi2products</span></span>
-        <span class="arrow">&rarr;</span>
-      </a>
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">06</span></div>
+      <div class="content">
+        <h2>I'd love to hear from you.</h2>
+        <figure class="resume-preview">
+          <img src="assets/susan-gadegone-resume-preview.png" alt="Preview of Susan Gadegone's resume" loading="lazy">
+          <figcaption>Preview &middot; click to enlarge</figcaption>
+        </figure>
+        <div class="contact-list">
+          <a class="contact-row" href="assets/susan-gadegone-resume.pdf" target="_blank" rel="noopener">
+            <span><span class="key mono">RESUME</span><br><span class="val">Download PDF</span></span>
+            <span class="arrow">&rarr;</span>
+          </a>
+          <a class="contact-row" href="mailto:spgadegone@gmail.com">
+            <span><span class="key mono">EMAIL</span><br><span class="val">spgadegone@gmail.com</span></span>
+            <span class="arrow">&rarr;</span>
+          </a>
+          <a class="contact-row" href="https://linkedin.com/in/susannapage" target="_blank" rel="noopener">
+            <span><span class="key mono">LINKEDIN</span><br><span class="val">linkedin.com/in/susannapage</span></span>
+            <span class="arrow">&rarr;</span>
+          </a>
+          <a class="contact-row" href="https://github.com/susangadegone" target="_blank" rel="noopener">
+            <span><span class="key mono">GITHUB</span><br><span class="val">github.com/susangadegone</span></span>
+            <span class="arrow">&rarr;</span>
+          </a>
+          <a class="contact-row" href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">
+            <span><span class="key mono">SUBSTACK</span><br><span class="val">@suzanhi2products</span></span>
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </div>
