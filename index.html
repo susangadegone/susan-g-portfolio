@@ -146,39 +146,78 @@
   .exp-item p a { color: var(--accent); text-decoration: none; font-weight: 600; }
   .exp-item p a:hover { text-decoration: underline; }
 
-  /* Built: plain numbered list */
-  .work-list { display: flex; flex-direction: column; }
-  .work-row {
-    display: grid; grid-template-columns: 30px 1fr auto; gap: 18px; align-items: baseline;
-    padding: 18px 0; border-top: 1px solid var(--rule); text-decoration: none; color: inherit;
-  }
-  .work-list .work-row:last-child { border-bottom: 1px solid var(--rule); }
-  .work-row .n { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
-  .work-row .name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; }
-  .work-row .status { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
-  .work-row .desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
-  .work-row .go { font-size: 13px; color: var(--accent); opacity: 0; transition: opacity 0.15s; white-space: nowrap; }
-  .work-row:hover .go { opacity: 1; }
-  .work-row:hover .name { color: var(--accent); }
-  .work-more { margin-top: 20px; font-size: 14px; color: var(--muted); }
-  .work-more a { color: var(--accent); text-decoration: none; font-weight: 600; }
-  .work-more a:hover { text-decoration: underline; }
+  /* Built: staggered project entries */
+  .build-note { font-size: 15.5px; line-height: 1.7; color: var(--muted); max-width: 600px; margin-bottom: 8px; }
+  .build-note strong { color: var(--ink); font-weight: 600; }
+  .build-note a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .build-note a:hover { text-decoration: underline; }
 
-  /* Screens */
-  .screens-group { margin-top: 40px; }
-  .screens-group:first-of-type { margin-top: 10px; }
-  .screens-group-head { margin-bottom: 18px; }
-  .screens-group-head .app-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 15.5px; }
-  .screens-group-head .app-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-left: 8px; }
-  .screens-row { display: flex; flex-wrap: wrap; gap: 20px; }
-  .screen-item { display: flex; flex-direction: column; gap: 8px; flex: 0 1 190px; width: 190px; }
-  .screen-item img {
-    width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; display: block;
-    border-radius: 4px; border: 1px solid var(--rule); cursor: zoom-in;
-    transition: border-color 0.15s ease;
+  .projects { display: flex; flex-direction: column; }
+  .project {
+    display: grid; gap: 24px 36px; align-items: start;
+    padding: 34px 0; border-top: 1px solid var(--rule);
   }
-  .screen-item img:hover { border-color: var(--accent); }
-  .screen-item figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); text-align: center; }
+  .projects .project:last-child { border-bottom: 1px solid var(--rule); }
+
+  /* Cozy leads: widest shots, text left */
+  .project--lead { grid-template-columns: minmax(0, 1fr) 390px; }
+  .project--lead .shot { width: 187px; }
+  /* Roam inverts: smaller shots, pulled to the left edge */
+  .project--flip { grid-template-columns: 318px minmax(0, 1fr); }
+  .project--flip .project-body { grid-column: 2; grid-row: 1; }
+  .project--flip .project-shots { grid-column: 1; grid-row: 1; }
+  .project--flip .shot { width: 152px; }
+  /* Nothing to show yet — compact, no filler */
+  .project--plain { grid-template-columns: minmax(0, 1fr); padding: 24px 0; }
+
+  .project-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .project-n { font-size: 12px; color: var(--muted); }
+  .project-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+  .project-tag {
+    font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--rule); border-radius: 2px; padding: 3px 7px;
+  }
+  .project-desc { font-size: 15.5px; line-height: 1.65; margin-bottom: 12px; }
+  .project-detail { font-size: 14.5px; line-height: 1.65; color: var(--muted); max-width: 460px; }
+  .project-detail em { color: var(--ink); font-style: normal; font-weight: 600; }
+  .project-link {
+    display: inline-block; margin-top: 16px; font-size: 13.5px; font-weight: 700;
+    color: var(--ink); text-decoration: none;
+    border-bottom: 1.5px solid var(--rule); padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .project-link:hover, .project-link:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .project-link .chev { display: inline-block; transition: transform 0.15s ease; }
+  .project-link:hover .chev { transform: translateX(3px); }
+
+  .project-shots { display: flex; gap: 16px; }
+  .shot { display: flex; flex-direction: column; gap: 8px; }
+  .shot img {
+    width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; object-position: top;
+    display: block; border-radius: 3px; border: 1px solid var(--rule); cursor: zoom-in;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .shot img:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .shot img:active { transform: translateY(-1px); }
+  .shot figcaption {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  a:focus-visible, button:focus-visible, .shot img:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px;
+  }
+
+  @media (max-width: 860px) {
+    .project--lead, .project--flip { grid-template-columns: minmax(0, 1fr); }
+    .project--flip .project-body, .project--flip .project-shots { grid-column: 1; grid-row: auto; }
+    .project--lead .shot, .project--flip .shot { width: 148px; }
+    .project-shots { flex-wrap: wrap; gap: 14px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shot img, .shot img:hover, .project-link .chev { transform: none; }
+  }
 
   /* Lightbox */
   .lightbox {
@@ -355,52 +394,70 @@
       <div class="rail"><span class="num mono">04</span></div>
       <div class="content">
         <h2>I build to understand products from the inside.</h2>
-        <p class="intro">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p class="build-note">
+          <strong>I'm not a fast learner.</strong> I take my time with a new tool
+          before it clicks. Once it does, I go further with it than people who
+          picked it up quicker. These are that pattern, not an exception to it &mdash;
+          all on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.
+        </p>
 
-        <div class="work-list">
-          <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
-            <span class="n mono">01</span>
-            <span>
-              <span class="name">Cozy</span>
-              <div class="desc">Chore management without the guilt trip most chore apps run on.</div>
-            </span>
-            <span class="go">View &rarr;</span>
-          </a>
-          <a class="work-row" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">
-            <span class="n mono">02</span>
-            <span>
-              <span class="name">Roam</span>
-              <div class="desc">Wellness resources across the Bay Area, for someone who doesn't know where to start.</div>
-            </span>
-            <span class="go">View &rarr;</span>
-          </a>
-          <a class="work-row" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">
-            <span class="n mono">03</span>
-            <span>
-              <span class="name">Cal Mood Tracker</span>
-              <div class="desc">Checking in with yourself, tied to the calendar you already keep.</div>
-            </span>
-            <span class="go">View &rarr;</span>
-          </a>
-        </div>
-        <p class="work-more">More builds and experiments live on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>. I'm not a fast learner &mdash; I take my time with a new tool or platform before it clicks. But once it does, I go further with it than people who picked it up quicker. These three apps are that pattern, not an exception to it.</p>
+        <div class="projects">
 
-        <div class="screens-group">
-          <div class="screens-group-head">
-            <span class="app-name">Cozy</span><span class="app-sub mono">App Store</span>
-          </div>
-          <div class="screens-row">
-            <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
-          </div>
-        </div>
-        <div class="screens-group">
-          <div class="screens-group-head">
-            <span class="app-name">Roam</span><span class="app-sub mono">App Store</span>
-          </div>
-          <div class="screens-row">
-            <figure class="screen-item"><img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy"><figcaption>Home</figcaption></figure>
-            <figure class="screen-item"><img src="assets/shots/roam-map.png" alt="Roam map screen" loading="lazy"><figcaption>Map</figcaption></figure>
-          </div>
+          <article class="project project--lead">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="project-n mono">01</span>
+                <h3 class="project-name">Cozy</h3>
+                <span class="project-tag mono">On the App Store</span>
+              </div>
+              <p class="project-desc">Chore management without the guilt trip most chore apps run on.</p>
+              <p class="project-detail">
+                The decision that shaped it: <em>an empty day is a good day.</em> Finish
+                everything and Cozy says "nothing due today &mdash; a quiet morning, enjoy it,"
+                instead of pushing you toward the next task. The chore library suggests
+                by room and lets you take only what you want.
+              </p>
+              <a class="project-link" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">Source on GitHub <span class="chev" aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="project-shots">
+              <figure class="shot"><img src="assets/shots/cozy-home.png" alt="Cozy home screen showing an empty day" loading="lazy"><figcaption>Home</figcaption></figure>
+              <figure class="shot"><img src="assets/shots/cozy-chores.png" alt="Cozy chore library grouped by room" loading="lazy"><figcaption>Chore library</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="project project--flip">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="project-n mono">02</span>
+                <h3 class="project-name">Roam</h3>
+                <span class="project-tag mono">On the App Store</span>
+              </div>
+              <p class="project-desc">Wellness resources across the Bay Area, for someone who doesn't know where to start.</p>
+              <p class="project-detail">
+                Every listing shows cost before you tap it &mdash; <em>free, donation, sliding
+                scale.</em> Nobody finds out something is out of reach after getting their
+                hopes up. Suggestions follow your check-in, so a low day surfaces smaller asks.
+              </p>
+              <a class="project-link" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">Source on GitHub <span class="chev" aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="project-shots">
+              <figure class="shot"><img src="assets/shots/roam-home.png" alt="Roam home screen with suggested resources" loading="lazy"><figcaption>Home</figcaption></figure>
+              <figure class="shot"><img src="assets/shots/roam-map.png" alt="Roam map of Bay Area resources" loading="lazy"><figcaption>Map</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="project project--plain">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="project-n mono">03</span>
+                <h3 class="project-name">Cal Mood Tracker</h3>
+                <span class="project-tag mono">In progress</span>
+              </div>
+              <p class="project-desc">Checking in with yourself, tied to the calendar you already keep &mdash; no separate habit to maintain.</p>
+              <a class="project-link" href="https://github.com/susangadegone/cal-mood-tracker" target="_blank" rel="noopener">Source on GitHub <span class="chev" aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
         </div>
       </div>
     </div>
@@ -502,7 +559,7 @@
     lightbox.classList.remove('open');
     lightboxImg.src = '';
   };
-  document.querySelectorAll('.screen-item img, .resume-preview img').forEach(img => {
+  document.querySelectorAll('.shot img, .resume-preview img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src, img.alt));
   });
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
