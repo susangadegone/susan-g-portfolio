@@ -10,24 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f1f4ee;
-    --ink: #101d18;
-    --muted: #56685e;
-    --rule: #ccd6c6;
-    --accent: #0e6e57;
+    --bg: #f2efe9;
+    --ink: #1f2229;
+    --muted: #767a86;
+    --rule: #ddd7cb;
+    --accent: #a04f2f;
     --card: #ffffff;
   }
   :root[data-theme="dark"] {
-    --bg: #0b1512;
-    --ink: #edf3ee;
-    --muted: #8ea89b;
-    --rule: #23342c;
-    --accent: #3fdcb4;
-    --card: #111e19;
+    --bg: #16181c;
+    --ink: #ece9e3;
+    --muted: #9a9ea8;
+    --rule: #2b2e35;
+    --accent: #d98a63;
+    --card: #1d2025;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0b1512; --ink: #edf3ee; --muted: #8ea89b; --rule: #23342c; --accent: #3fdcb4; --card: #111e19;
+      --bg: #16181c; --ink: #ece9e3; --muted: #9a9ea8; --rule: #2b2e35; --accent: #d98a63; --card: #1d2025;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -182,7 +182,7 @@
 
   /* Lightbox */
   .lightbox {
-    display: none; position: fixed; inset: 0; background: rgba(6, 10, 8, 0.88);
+    display: none; position: fixed; inset: 0; background: rgba(12, 13, 16, 0.88);
     z-index: 100; align-items: center; justify-content: center; padding: 40px 20px;
     cursor: zoom-out;
   }
@@ -190,7 +190,7 @@
   .lightbox img { max-width: min(92vw, 860px); max-height: 90vh; width: auto; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
   .lightbox-close {
     position: absolute; top: 20px; right: 24px; background: none; border: none;
-    color: #edf3ee; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
+    color: #ece9e3; font-size: 28px; line-height: 1; cursor: pointer; padding: 8px;
   }
 
   /* Resume preview */
