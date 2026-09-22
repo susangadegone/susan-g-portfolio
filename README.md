@@ -6,14 +6,15 @@ Built as a single static `index.html`. No framework, no build step.
 
 ## About
 
-Susan Gadegone. San Francisco Bay Area. Five years in trauma-informed mental
-health care before product work. Builds wellness and productivity apps to
-understand products from the inside, writer at
+Susan Gadegone. San Francisco Bay Area. Five years running a youth drop-in
+center in San Francisco: roughly 300 young people, a team of 10, participation
+up 200%, and a full rebuild of the service for virtual delivery when in-person
+shut down. Builds wellness apps on the side, writer at
 [@suzanhi2products](https://substack.com/@suzanhi2products).
 
-Looking for a Product Specialist, Customer Insights / Member Experience, or
-Content Strategist role at an AI or digital health company. SF Bay Area,
-hybrid or in-person.
+Looking for a Wellness Program Manager role at a digital health company or
+inside a company running its own wellness program. SF Bay Area, hybrid or
+in-person.
 
 Reach me: spgadegone@gmail.com
 

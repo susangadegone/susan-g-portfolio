@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Susan Gadegone</title>
-<meta name="description" content="I build environments — products and practices — where people have control over their own calm. Susan Gadegone. San Francisco Bay Area.">
+<title>Susan Gadegone — Wellness Program Manager</title>
+<meta name="description" content="Wellness program manager. Five years running a youth drop-in center in San Francisco: roughly 300 young people, a team of 10, participation up 200%. Susan Gadegone, San Francisco Bay Area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -220,9 +220,44 @@
   footer.foot a { color: var(--muted); text-decoration: none; }
   footer.foot a:hover { color: var(--accent); }
 
+  /* Case studies: problem / action / result */
+  .case-list { display: flex; flex-direction: column; gap: 16px; }
+  .case {
+    padding: 24px 26px; border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+    border-radius: 2px; background: var(--card);
+    transition: border-color 0.15s ease, border-left-width 0.15s ease;
+  }
+  .case:hover { border-color: var(--accent); border-left-width: 6px; }
+  .case .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .case h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; line-height: 1.3; margin-bottom: 16px; }
+  .case .step { display: grid; grid-template-columns: 74px 1fr; gap: 16px; padding: 10px 0; }
+  .case .step + .step { border-top: 1px solid var(--rule); }
+  .case .step .lbl {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted);
+    padding-top: 3px; letter-spacing: 0.02em;
+  }
+  .case .step .txt { font-size: 15px; line-height: 1.65; }
+  .case .step.result .lbl { color: var(--accent); font-weight: 600; }
+  .case .step.result .txt { font-weight: 600; }
+  .case .note { margin-top: 14px; font-size: 13.5px; color: var(--muted); font-style: italic; }
+  .case-pending {
+    padding: 18px 26px; border: 1px dashed var(--rule); border-radius: 2px;
+    font-size: 14px; color: var(--muted);
+  }
+  /* Skills matrix */
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 32px; }
+  .skill-group .skill-head {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent);
+    font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    padding-bottom: 9px; margin-bottom: 11px; border-bottom: 1px solid var(--rule);
+  }
+  .skill-group ul { list-style: none; }
+  .skill-group li { font-size: 14.5px; line-height: 1.55; color: var(--ink); padding: 3px 0; }
+
   @media (max-width: 700px) {
     .block-grid { grid-template-columns: 1fr; row-gap: 12px; }
     .rail { border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+    .skills-grid { grid-template-columns: 1fr; gap: 22px; }
   }
 
   @media (max-width: 640px) {
@@ -231,6 +266,9 @@
     .nav-right { width: 100%; justify-content: space-between; order: 3; }
     .topbar nav { gap: 14px; flex-wrap: wrap; }
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
+    .case { padding: 20px 18px; }
+    .case .step { grid-template-columns: 1fr; gap: 4px; }
+    .case .step .lbl { padding-top: 0; }
     .work-row { grid-template-columns: 22px 1fr; }
     .work-row .go { display: none; }
     footer.foot { flex-direction: column; gap: 8px; }
@@ -253,7 +291,8 @@
       <nav>
         <a href="#about">About</a>
         <a href="#translation">How I Work</a>
-        <a href="#built">What I've Built</a>
+        <a href="#cases">Programs</a>
+        <a href="#skills">Skills</a>
         <a href="#looking">What I Want</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -265,19 +304,20 @@
   </header>
 
   <section class="hero" id="top">
-    <div class="eyebrow mono">California &middot; Bay Area preferred &middot; Open to work</div>
+    <div class="eyebrow mono">Wellness Program Manager &middot; California, Bay Area preferred &middot; Open to work</div>
     <div class="id-row">
       <img src="assets/susan.jpg" alt="Susan Gadegone">
       <div class="who">Hi, I'm <strong>Susan</strong></div>
     </div>
-    <h1>I build environments where people can find <span class="accent-text">their own calm</span>.</h1>
+    <h1>I run wellness programs <span class="accent-text">people come back to</span>.</h1>
     <p class="lede">
-      <strong>That's the through-line &mdash; not mental health work itself.</strong>
-      Five years running crisis support for youth and families is where I learned
-      it. It's not the whole story anymore.
+      <strong>Five years running a youth drop-in center in San Francisco taught me
+      what a program lives or dies on: whether someone comes back.</strong>
+      Roughly 300 young people. A team of 10. Participation up 200%, then the
+      whole thing rebuilt when the doors closed.
     </p>
     <div class="cta-row">
-      <a href="#translation" class="link-cta">How this translates</a>
+      <a href="#cases" class="link-cta">See the programs</a>
       <a href="#contact" class="link-cta quiet">Get in touch</a>
     </div>
   </section>
@@ -288,9 +328,11 @@
       <div class="content">
         <h2>Give people control. Don't take it from them.</h2>
         <div class="prose">
-          <p><strong>Whether it's a product or a daily practice, I care about the same thing:</strong> does someone have control over the big and small moments of their day, or is the system making that call for them. I built three wellness apps to test whether that instinct holds up outside a crisis room.</p>
+          <p><strong>Whether it's a program or a product, I care about the same thing:</strong> does someone have control over the big and small moments of their day, or is the system making that call for them.</p>
+          <p>Most wellness programs get participation by pressure. A challenge board, a leaderboard, a gift card, a nudge that's really a nag. That works for about three weeks. What holds is when showing up is the easiest thing on someone's list.</p>
+          <p>I'd rather remove five reasons not to come than add one reason to.</p>
         </div>
-        <p class="followup">I'm most useful to a team building something that hands people back a sense of control over their own day.</p>
+        <p class="followup">I'm most useful to a team that wants a program people keep choosing, not one that has to be sold internally every quarter.</p>
       </div>
     </div>
   </section>
@@ -299,24 +341,91 @@
     <div class="block-grid">
       <div class="rail"><span class="num mono">02</span></div>
       <div class="content">
-        <h2>How peer mentor work becomes product instinct.</h2>
+        <h2>What running a floor teaches you about running a program.</h2>
         <p class="intro">What this looks like in practice:</p>
         <div class="translate-list">
           <div class="translate-row">
-            <div class="idx mono">01 &middot; Safety escalation</div>
-            <div class="from">I triaged crisis cases daily, coordinating clinical, legal, and county teams.</div>
-            <div class="to"><span class="to-lbl">In a product:</span> Deciding whether a report goes to a human now or waits is the same call, made daily.</div>
+            <div class="idx mono">01 &middot; Escalation</div>
+            <div class="from">I triaged crisis cases daily, working across the clinicians, the county intake team, and legal, sometimes inside the same hour.</div>
+            <div class="to"><span class="to-lbl">In a program:</span> Knowing whether a member needs an app, a person, or a clinician <em>now</em> is the same call. Most wellness stacks get it wrong by defaulting to the app.</div>
           </div>
           <div class="translate-row">
             <div class="idx mono">02 &middot; Consent &amp; privacy</div>
             <div class="from">I explained privacy limits to people who agreed without fully understanding them.</div>
-            <div class="to"><span class="to-lbl">In a product:</span> A user tapping "I agree" without reading is that same gap &mdash; closing it is work I've done face to face.</div>
+            <div class="to"><span class="to-lbl">In a program:</span> Someone tapping "I agree" on a health platform is that same gap. If people don't trust where their data goes, your participation numbers are fiction.</div>
           </div>
           <div class="translate-row">
             <div class="idx mono">03 &middot; Pressured, not persuaded</div>
             <div class="from">Trauma-informed care meant never using shame or fear to move someone.</div>
-            <div class="to"><span class="to-lbl">In a product:</span> A buried cancel button or guilt-trip pop-up crosses that same line.</div>
+            <div class="to"><span class="to-lbl">In a program:</span> Step challenges, leaderboards, and a manager forwarding the sign-up link a third time cross that same line. They move the number this quarter and cost you the next one.</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="cases">
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">03</span></div>
+      <div class="content">
+        <h2>Programs I've run, and what each one taught me.</h2>
+        <p class="intro">The problem, what I did about it, and what happened.</p>
+        <div class="case-list">
+
+          <div class="case">
+            <div class="idx mono">01 &middot; Service redesign</div>
+            <h3>Rebuilding a drop-in center that couldn't have a door.</h3>
+            <div class="step">
+              <div class="lbl">PROBLEM</div>
+              <div class="txt">The center's whole value was physical. Food, hygiene, homework help, someone noticing your face when you walked in. In-person services shut down and none of that had a remote version.</div>
+            </div>
+            <div class="step">
+              <div class="lbl">WHAT I DID</div>
+              <div class="txt">Broke down what walking through the door actually gave someone, piece by piece, and rebuilt each piece in tools that weren't built for it. Learned those platforms well enough to make real calls instead of guessing at them.</div>
+            </div>
+            <div class="step result">
+              <div class="lbl">RESULT</div>
+              <div class="txt">People kept showing up.</div>
+            </div>
+            <p class="note">This is the same problem every digital health program has: the thing that works in a room, delivered through a screen.</p>
+          </div>
+
+          <div class="case">
+            <div class="idx mono">02 &middot; Outreach &amp; participation</div>
+            <h3>Participation up 200%, without a single incentive.</h3>
+            <div class="step">
+              <div class="lbl">PROBLEM</div>
+              <div class="txt">Mid-pandemic, the young people who needed the center most had no way to find it, and no reason to believe it was still open.</div>
+            </div>
+            <div class="step">
+              <div class="lbl">WHAT I DID</div>
+              <div class="txt">Built an outreach program from scratch and started the center's first Instagram in 2022, now around 550 followers. Went to where people already were instead of waiting for them to come to us.</div>
+            </div>
+            <div class="step result">
+              <div class="lbl">RESULT</div>
+              <div class="txt">Participant count up 200%.</div>
+            </div>
+            <p class="note">No gift cards, no challenge board. Being findable, and being worth finding.</p>
+          </div>
+
+          <div class="case">
+            <div class="idx mono">03 &middot; Testing the instinct</div>
+            <h3>Building three wellness apps to check whether I was right.</h3>
+            <div class="step">
+              <div class="lbl">PROBLEM</div>
+              <div class="txt">I believed that giving people control is what makes them come back. I didn't know whether that held up outside a crisis room, or whether it was just something I'd decided was true.</div>
+            </div>
+            <div class="step">
+              <div class="lbl">WHAT I DID</div>
+              <div class="txt">Built Cozy, Roam, and a calendar mood tracker from scratch. Ran interviews for each one, then changed features based on what people actually did, not what they said they'd do.</div>
+            </div>
+            <div class="step result">
+              <div class="lbl">RESULT</div>
+              <div class="txt">Won the 2024 Neolth Innovation Challenge, 1st of 11 teams. Picked for Stanford's AI for Good cohort, 230 applicants down to 30, then top 8 to pitch investors.</div>
+            </div>
+            <p class="note">These are prototypes on TestFlight, not shipped products with a user base. I built them to learn, and they did their job.</p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -324,23 +433,23 @@
 
   <section class="block" id="experience">
     <div class="block-grid">
-      <div class="rail"><span class="num mono">03</span></div>
+      <div class="rail"><span class="num mono">04</span></div>
       <div class="content">
         <h2>Where I learned it.</h2>
         <div class="exp-list">
           <div class="exp-item">
             <div class="when">ONGOING</div>
             <div>
-              <h3>Builder &amp; credentials</h3>
-              <p>Built three wellness apps independently. 2024 Neolth Innovation Challenge winner (1st of 11). Stanford AI for Good: top 8 of 30. Writes on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. BA in Psychology, ASU.</p>
+              <h3>Independent builder &amp; credentials</h3>
+              <p>Built three wellness apps on my own. 2024 Neolth Innovation Challenge winner (1st of 11). Stanford AI for Good: top 8 of 30. Writes about digital health and product on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a>. BA in Psychology, ASU.</p>
             </div>
           </div>
           <div class="exp-item">
             <div class="when">5+ YRS &middot; SF</div>
             <div>
-              <h3>Lead Peer Mentor, trauma-informed care</h3>
-              <p>Ran the floor of an SF youth drop-in center: food, hygiene, homework help, daily safety calls &mdash; roughly 300 youth over five years, 10+ person team. Grew outreach 200%.</p>
-              <p style="margin-top: 10px;">When in-person services shut down, I moved the center to a fully virtual format &mdash; working out which parts of walking through the door actually mattered and rebuilding those in tools that weren't built for it, until I knew the platforms well enough to make real decisions instead of guessing. People kept showing up.</p>
+              <h3>Lead Peer Mentor &mdash; ran the program floor</h3>
+              <p>Ran daily operations at an SF youth drop-in center: food, hygiene, homework help, safety and crisis calls. Roughly 300 young people over five years. Worked across a team of 10 including clinicians, case managers, and support staff, and trained new hires as they came on.</p>
+              <p style="margin-top: 10px;">Coordinated escalation with the clinical team, the county, and legal, often inside the same hour. Built the outreach program that grew participation 200%, and rebuilt the entire service for virtual delivery when in-person shut down.</p>
             </div>
           </div>
         </div>
@@ -350,10 +459,10 @@
 
   <section class="block" id="built">
     <div class="block-grid">
-      <div class="rail"><span class="num mono">04</span></div>
+      <div class="rail"><span class="num mono">05</span></div>
       <div class="content">
-        <h2>I build to understand products from the inside.</h2>
-        <p class="intro">Wellness apps, built from scratch. All on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
+        <h2>The builds behind that last one.</h2>
+        <p class="intro">Wellness apps, built from scratch, all on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>. Prototypes, not shipped products.</p>
 
         <div class="work-list">
           <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
@@ -385,7 +494,7 @@
 
         <div class="screens-group">
           <div class="screens-group-head">
-            <span class="app-name">Cozy</span><span class="app-sub mono">App Store</span>
+            <span class="app-name">Cozy</span><span class="app-sub mono">TestFlight</span>
           </div>
           <div class="screens-row">
             <figure class="screen-item"><img src="assets/shots/cozy-home.png" alt="Cozy home screen" loading="lazy"><figcaption>Home</figcaption></figure>
@@ -393,7 +502,7 @@
         </div>
         <div class="screens-group">
           <div class="screens-group-head">
-            <span class="app-name">Roam</span><span class="app-sub mono">App Store</span>
+            <span class="app-name">Roam</span><span class="app-sub mono">TestFlight</span>
           </div>
           <div class="screens-row">
             <figure class="screen-item"><img src="assets/shots/roam-home.png" alt="Roam home screen" loading="lazy"><figcaption>Home</figcaption></figure>
@@ -404,13 +513,67 @@
     </div>
   </section>
 
+  <section class="block" id="skills">
+    <div class="block-grid">
+      <div class="rail"><span class="num mono">06</span></div>
+      <div class="content">
+        <h2>What I bring to the role.</h2>
+        <p class="intro">Program work on the left, the domain on the right.</p>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <div class="skill-head">Running programs</div>
+            <ul>
+              <li>Program design and rollout</li>
+              <li>Outreach and enrollment</li>
+              <li>Participation and return-rate tracking</li>
+              <li>Risk and safety escalation</li>
+              <li>Vendor and partner coordination</li>
+              <li>Training and onboarding new staff</li>
+              <li>Process documentation</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-head">Wellness domain</div>
+            <ul>
+              <li>Trauma-informed program design</li>
+              <li>Behavioral health escalation</li>
+              <li>Consent and privacy communication</li>
+              <li>Access and equity</li>
+              <li>Peer support models</li>
+              <li>Crisis response</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-head">Measurement</div>
+            <ul>
+              <li>User research and interviews</li>
+              <li>Survey and intake design</li>
+              <li>Reading participation data</li>
+              <li>Framing value beyond cost savings</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-head">Tools</div>
+            <ul>
+              <li>Figma, Notion, Airtable</li>
+              <li>Some SQL</li>
+              <li>AI-assisted development</li>
+              <li>SwiftUI, Supabase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="looking">
     <div class="block-grid">
-      <div class="rail"><span class="num mono">05</span></div>
+      <div class="rail"><span class="num mono">07</span></div>
       <div class="content">
         <h2>What I want next is simple.</h2>
         <div class="prose">
-          <p><strong>I want to help a team give people that relief</strong> &mdash; through what we build or how we build it. I want to be part of the reason someone can feel calm and centered enough to get through their day, or to ask for help, without being as scared. That's usually a product role. It doesn't have to be.</p>
+          <p><strong>A wellness program manager role, at a digital health company or inside a company that takes its own people seriously.</strong> I want to be part of the reason someone can feel calm and centered enough to get through their day, or to ask for help, without being as scared.</p>
+          <p>I'd rather run a program that fewer people love than one everybody was told to sign up for.</p>
         </div>
         <p class="followup">California, with the Bay Area preferred.</p>
       </div>
@@ -419,7 +582,7 @@
 
   <section class="block" id="contact">
     <div class="block-grid">
-      <div class="rail"><span class="num mono">06</span></div>
+      <div class="rail"><span class="num mono">08</span></div>
       <div class="content">
         <h2>I'd love to hear from you.</h2>
         <figure class="resume-preview">
