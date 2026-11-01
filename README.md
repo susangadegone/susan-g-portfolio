@@ -11,9 +11,8 @@ health care before product work. Builds wellness and productivity apps to
 understand products from the inside, writer at
 [@suzanhi2products](https://substack.com/@suzanhi2products).
 
-Looking for a Product Specialist, Customer Insights / Member Experience, or
-Content Strategist role at an AI or digital health company. SF Bay Area,
-hybrid or in-person.
+Looking for an Employee Wellness or Workforce Health Program Manager role at
+a health system or large employer. SF Bay Area, onsite or hybrid.
 
 Reach me: spgadegone@gmail.com
 
