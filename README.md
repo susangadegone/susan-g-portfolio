@@ -6,7 +6,7 @@ Built as a single static `index.html`. No framework, no build step.
 
 ## About
 
-Susan Gadegone. San Francisco Bay Area. Five years in trauma-informed mental
+Susan Gadegone. San Francisco Bay Area. Four years in trauma-informed mental
 health care before product work. Builds wellness and productivity apps to
 understand products from the inside, writer at
 [@suzanhi2products](https://substack.com/@suzanhi2products).
