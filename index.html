@@ -182,6 +182,31 @@
   .screen-item img:hover { border-color: var(--accent); }
   .screen-item figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); text-align: center; }
 
+  /* Hero tags and counts */
+  .hero .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+  .hero .tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 999px; padding: 4px 12px;
+  }
+  .hero .counts { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 30px; }
+
+  /* Work grid */
+  .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .proj {
+    padding: 22px 24px; border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+    border-radius: 2px; background: var(--card); display: flex; flex-direction: column; gap: 10px;
+  }
+  .proj.wide { grid-column: 1 / -1; }
+  .proj .tagline { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+  .proj h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; }
+  .proj p { font-size: 14.5px; color: var(--muted); }
+  .proj a.view { font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-top: auto; }
+  .proj a.view:hover { text-decoration: underline; }
+  .proj .demo-video { max-width: 100%; margin-top: 4px; }
+  .proj .shot { width: 150px; aspect-ratio: 1206 / 2622; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); cursor: zoom-in; }
+  .side-note { margin-top: 26px; font-size: 14px; color: var(--muted); max-width: 620px; }
+  @media (max-width: 640px) { .work-grid { grid-template-columns: 1fr; } }
+
   /* Lightbox */
   .lightbox {
     display: none; position: fixed; inset: 0; background: rgba(6, 10, 8, 0.88);
@@ -253,10 +278,8 @@
     <a href="#top" class="brand">Susan Gadegone</a>
     <div class="nav-right">
       <nav>
-        <a href="#about">About</a>
-        <a href="#bring">What I Bring</a>
-        <a href="#experience">Experience</a>
-        <a href="#tools">Products</a>
+        <a href="#do">What I Do</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -274,183 +297,93 @@
     </div>
     <h1>Behavioral health background. <span class="accent-text">Wellness program and health product work.</span></h1>
     <p class="lede">
-      <strong>Four years in trauma-informed behavioral health care, leading peer teams in the Bay Area.</strong>
-      Two drop-in centers, roughly 300 young adults, yearly events, and a program
-      I rebuilt for COVID without losing the people in it. I now bring that to
-      employee wellness and health products.
+      <strong>Four years leading youth and family care teams in the Bay Area.</strong>
+      Now applying that to employee wellness and building health apps.
     </p>
+    <div class="tags">
+      <span class="tag">Open to: employee wellness programs</span>
+      <span class="tag">Open to: digital health products</span>
+    </div>
+    <div class="counts">Roughly 300 youth supported &middot; 5+ counselors trained &middot; 10+ person team &middot; 2 centers</div>
     <div class="cta-row">
-      <a href="#bring" class="link-cta">What I bring</a>
-      <a href="#contact" class="link-cta quiet">Get in touch</a>
+      <a href="assets/susan-gadegone-resume.pdf" class="link-cta" target="_blank" rel="noopener">Resume</a>
+      <a href="#contact" class="link-cta quiet">Contact</a>
     </div>
   </section>
 
-  <section class="block" id="about">
+  <section class="block" id="do">
     <div class="block-grid">
       <div class="rail"><span class="num mono">01</span></div>
       <div class="content">
-        <h2>Participation without pressure.</h2>
-        <div class="prose">
-          <p><strong>The hardest part of a wellness program is getting people to come when they don't have to.</strong> Nobody in a workforce reports to the wellness team. Trauma-informed care taught me how to earn showing up instead of demanding it: make the first step small, be clear about what happens to someone's information, and never use guilt or fear to fill a room.</p>
-          <p>That's how I worked for four years leading peer teams at two youth drop-in centers. It's how I'd run an employee wellbeing program, and how I judge the digital tools that go with it.</p>
+        <h2>What I do.</h2>
+        <div class="translate-list">
+          <div class="translate-row">
+            <div class="idx mono">01 &middot; Run programs people show up for</div>
+            <div class="from">Four yearly events people chose to come to, and a COVID rebuild that moved in-person services to delivery and online without losing the people in them.</div>
+            <div class="to"><span class="to-lbl">How it carries over to wellness:</span> Campaigns and challenges people join by choice, kept going after the kickoff email.</div>
+            <div class="to"><span class="to-lbl">For a product team:</span> A feel for what makes someone come back to something they aren't required to use.</div>
+          </div>
+          <div class="translate-row">
+            <div class="idx mono">02 &middot; Build and test wellness products</div>
+            <div class="from">Roam, Cozy and a calendar mood tracker, with user interviews for each. I rework features based on what people do, not what they say. Neolth Innovation Challenge 2024 All Star Award; Stanford AI for Good cohort.</div>
+            <div class="to"><span class="to-lbl">How it carries over to wellness:</span> I can judge a wellness vendor or platform from the employee's side, not just the demo.</div>
+            <div class="to"><span class="to-lbl">For a product team:</span> Research-led decisions and safety-aware design, like crisis help one tap away.</div>
+          </div>
+          <div class="translate-row">
+            <div class="idx mono">03 &middot; Lead teams and partners</div>
+            <div class="from">Supervised peer partners across two centers inside a 10+ person team of clinicians and case managers: hiring, scheduling, training. Wrote data reports for executives and fed program data into grant proposals.</div>
+            <div class="to"><span class="to-lbl">How it carries over to wellness:</span> Getting HR, leaders and vendors behind one program, and showing leadership what's working.</div>
+            <div class="to"><span class="to-lbl">For a product team:</span> Working alongside clinical and operations partners, and turning feedback into decisions.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="bring">
+  <section class="block" id="work">
     <div class="block-grid">
       <div class="rail"><span class="num mono">02</span></div>
       <div class="content">
-        <h2>What four years of behavioral health program work looks like in a wellness role.</h2>
-        <div class="translate-list">
-          <div class="translate-row">
-            <div class="idx mono">01 &middot; Running programs</div>
-            <div class="from">I owned the yearly events (Back to School, Hoodie Haul, Thanksgiving Dinner) plus other center events. When COVID shut down in-person services, I rebuilt them into delivery and online programming, and people kept showing up.</div>
-            <div class="to"><span class="to-lbl">In a wellness program:</span> Launching a campaign or challenge, and keeping it going after the kickoff email.</div>
-          </div>
-          <div class="translate-row">
-            <div class="idx mono">02 &middot; Leading people</div>
-            <div class="from">I supervised peer partners across two centers, handled hiring, scheduling and staffing decisions, set program priorities, and built the new-hire training program, which cut ramp-up time by roughly 25%. I trained 5+ new peer counselors.</div>
-            <div class="to"><span class="to-lbl">In a wellness program:</span> Training and supporting wellness champions, managers and staff at every level.</div>
-          </div>
-          <div class="translate-row">
-            <div class="idx mono">03 &middot; Partners &amp; budgets</div>
-            <div class="from">I coordinated care plans across clinicians, case managers and county teams, worked with outside partners, helped plan program budgets, and fed program data into grant proposals.</div>
-            <div class="to"><span class="to-lbl">In a wellness program:</span> Getting HR, leaders, physicians and vendors behind one program, inside a budget.</div>
-          </div>
-          <div class="translate-row">
-            <div class="idx mono">04 &middot; Measuring what works</div>
-            <div class="from">I gathered feedback through surveys and interviews, wrote data reports for executives, and fixed workflow gaps with leadership. Drop-in participation rose roughly 20% and case resolution got roughly 50% faster.</div>
-            <div class="to"><span class="to-lbl">In a wellness program:</span> Participation data and a dashboard that tells leadership what to keep and what to cut.</div>
-          </div>
+        <h2>Things I've built.</h2>
+        <div class="work-grid">
+          <article class="proj wide">
+            <span class="tagline">SheBuilds Learning Edition 2026 &middot; prototype, sample data</span>
+            <h3>Take Care</h3>
+            <p>An app for families sharing the care of a person with Parkinson's disease.</p>
+            <video class="demo-video" controls muted loop autoplay playsinline preload="metadata" poster="assets/takecare-poster.jpg" aria-label="Walkthrough of the Take Care prototype: today's schedule, calendar, and a caregiver self-care page">
+              <source src="assets/takecare-demo.mp4" type="video/mp4">
+            </video>
+            <a class="view" href="https://oktakecareapp.lovable.app/welcome" target="_blank" rel="noopener">Try the prototype &rarr;</a>
+          </article>
+          <article class="proj">
+            <span class="tagline">App Store</span>
+            <h3>Roam</h3>
+            <p>Pick what's going on and get one coping skill to try, with one tap to crisis help.</p>
+            <img class="shot" src="assets/shots/roam-crisis.png" alt="Roam crisis support sheet with 988 and 911" loading="lazy">
+            <a class="view" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">View &rarr;</a>
+          </article>
+          <article class="proj">
+            <span class="tagline">App Store</span>
+            <h3>Cozy</h3>
+            <p>Keeping up with chores and routines without the guilt trip most chore apps run on.</p>
+            <a class="view" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">View &rarr;</a>
+          </article>
+          <article class="proj wide">
+            <span class="tagline">Make SF Better Hackathon 2026</span>
+            <h3>Free legal aid assistant</h3>
+            <p>Team co-lead on a design for a free legal aid assistant for San Francisco.</p>
+          </article>
         </div>
-        <p class="work-more">Percentages are my own estimates from before-and-after observation.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="experience">
-    <div class="block-grid">
-      <div class="rail"><span class="num mono">03</span></div>
-      <div class="content">
-        <h2>Where I learned it.</h2>
-        <div class="exp-list">
-          <div class="exp-item">
-            <div class="when">2019 &ndash; 2023</div>
-            <div>
-              <h3>Lead Peer Partner, Edgewood Center for Children and Families</h3>
-              <p>Supervised two peer partner teams across two drop-in centers in San Mateo County, inside a 10+ person team: hiring, scheduling, training and day-to-day oversight of the center floor. Supported roughly 300 transitional-age youth (18 to 25) with food, hygiene, homework help, and daily safety and crisis calls. Started the center's first Instagram, now about 550 followers.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="when">2023 &ndash; NOW</div>
-            <div>
-              <h3>Independent builder, wellness apps</h3>
-              <p>Built Roam, Cozy, a calendar mood tracker and a Chrome focus plug-in, interviewing users for each. Neolth Innovation Challenge 2024 All Star Award. Stanford AI for Good cohort: 1 of 30 chosen from 230 applicants, top 8 to pitch investors.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="when">ADVOCACY</div>
-            <div>
-              <h3>San Francisco Mental Health Board, Consumer Seat (2016&ndash;2017)</h3>
-              <p>Also with Young Minds Advocacy and California Youth Connection. Writes about digital health on <a href="https://substack.com/@suzanhi2products" target="_blank" rel="noopener">Substack</a> and produces the <em>Shipped Anyway</em> podcast.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="when">EDUCATION</div>
-            <div>
-              <h3>BA, Psychology, Arizona State University</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="tools">
-    <div class="block-grid">
-      <div class="rail"><span class="num mono">04</span></div>
-      <div class="content">
-        <h2>I also build health products, so I can judge them from the user's side.</h2>
-        <p class="intro">Wellness apps built from scratch and tested with real users, plus two recent team projects. More on <a href="https://github.com/susangadegone" target="_blank" rel="noopener">GitHub</a>.</p>
-
-        <div class="work-list">
-          <a class="work-row" href="https://github.com/susangadegone/roam" target="_blank" rel="noopener">
-            <span class="n mono">01</span>
-            <span>
-              <span class="name">Roam</span>
-              <div class="desc">Pick what's going on and get one coping skill to try, with one tap to crisis help. The same problem as an employee who never finds the EAP.</div>
-            </span>
-            <span class="go">View &rarr;</span>
-          </a>
-          <a class="work-row" href="https://github.com/susangadegone/Cozy" target="_blank" rel="noopener">
-            <span class="n mono">02</span>
-            <span>
-              <span class="name">Cozy</span>
-              <div class="desc">Keeping up with chores and routines without the guilt trip most chore apps run on.</div>
-            </span>
-            <span class="go">View &rarr;</span>
-          </a>
-          <a class="work-row" href="https://oktakecareapp.lovable.app/welcome" target="_blank" rel="noopener">
-            <span class="n mono">03</span>
-            <span>
-              <span class="name">Take Care <span class="status">&middot; SheBuilds Learning Edition 2026</span></span>
-              <div class="desc">Prototype for families sharing the care of a person with Parkinson's disease.</div>
-            </span>
-            <span class="go">View &rarr;</span>
-          </a>
-          <div class="work-row">
-            <span class="n mono">04</span>
-            <span>
-              <span class="name">Free legal aid assistant <span class="status">&middot; Make SF Better Hackathon 2026</span></span>
-              <div class="desc">Team co-lead on a design for a free legal aid assistant for San Francisco.</div>
-            </span>
-            <span class="go"></span>
-          </div>
-        </div>
-
-        <div class="screens-group">
-          <div class="screens-group-head">
-            <span class="app-name">Take Care</span><span class="app-sub mono">Prototype walkthrough &middot; sample data</span>
-          </div>
-          <video class="demo-video" controls muted playsinline preload="none" poster="assets/takecare-poster.jpg" aria-label="Walkthrough of the Take Care prototype: today's schedule, calendar, and a caregiver self-care page">
-            <source src="assets/takecare-demo.mp4" type="video/mp4">
-          </video>
-        </div>
-
-        <div class="screens-group">
-          <div class="screens-group-head">
-            <span class="app-name">Roam</span><span class="app-sub mono">App Store</span>
-          </div>
-          <div class="screens-row">
-            <figure class="screen-item"><img src="assets/shots/roam-start.png" alt="Roam screen asking what's going on right now" loading="lazy"><figcaption>Check-in</figcaption></figure>
-            <figure class="screen-item"><img src="assets/shots/roam-skill.png" alt="Roam coping skill screen for 4-7-8 breathing" loading="lazy"><figcaption>Coping skill</figcaption></figure>
-            <figure class="screen-item"><img src="assets/shots/roam-crisis.png" alt="Roam crisis support sheet with 988 and 911" loading="lazy"><figcaption>Crisis support</figcaption></figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="looking">
-    <div class="block-grid">
-      <div class="rail"><span class="num mono">05</span></div>
-      <div class="content">
-        <h2>What I'm looking for.</h2>
-        <div class="prose">
-          <p><strong>Employee wellness and workforce health program roles</strong> at health systems and large employers. I want to design, run and measure programs that help people feel well enough to do their jobs, and safe enough to ask for help when they need it.</p>
-        </div>
-        <p class="followup">San Francisco Bay Area, onsite or hybrid.</p>
       </div>
     </div>
   </section>
 
   <section class="block" id="contact">
     <div class="block-grid">
-      <div class="rail"><span class="num mono">06</span></div>
+      <div class="rail"><span class="num mono">03</span></div>
       <div class="content">
-        <h2>I'd love to hear from you.</h2>
+        <h2>Open to employee wellness and health product roles.</h2>
+        <p class="intro">San Francisco Bay Area, onsite or hybrid.</p>
         <figure class="resume-preview">
           <img src="assets/susan-gadegone-resume-preview.png" alt="Preview of Susan Gadegone's resume" loading="lazy">
           <figcaption>Preview &middot; click to enlarge</figcaption>
@@ -477,6 +410,7 @@
             <span class="arrow">&rarr;</span>
           </a>
         </div>
+        <p class="side-note">Also: I produce <em>Shipped Anyway</em>, a podcast and YouTube channel on product and mental health, have logged 8,000+ Calm sessions, and have advocated for youth mental health since 2014. The resume has the rest.</p>
       </div>
     </div>
   </section>
@@ -529,7 +463,7 @@
     lightbox.classList.remove('open');
     lightboxImg.src = '';
   };
-  document.querySelectorAll('.screen-item img, .resume-preview img').forEach(img => {
+  document.querySelectorAll('.shot, .resume-preview img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src, img.alt));
   });
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
