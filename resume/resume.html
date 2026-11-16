@@ -9,36 +9,35 @@
     --no-pdf-header-footer --print-to-pdf=assets/susan-gadegone-resume.pdf "file://$PWD/resume/resume.html"
 -->
 <style>
-  @page { size: Letter; margin: 0.35in 0.5in; }
+  @page { size: Letter; margin: 0.4in 0.55in; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: Arial, Helvetica, sans-serif; color: #1b1b1b;
-    font-size: 9.3pt; line-height: 1.25;
+    font-size: 9.4pt; line-height: 1.28;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  .page { max-width: 7.3in; margin: 0 auto; }
-  header { border-bottom: 1px solid #ddd8d2; padding-bottom: 7px; margin-bottom: 4px; }
-  h1 { font-size: 21pt; letter-spacing: 0.01em; line-height: 1.1; }
-  .tagline { font-size: 10.5pt; font-weight: 700; color: #b0472a; margin-top: 3px; }
-  .contact { font-size: 9pt; color: #5c5650; margin-top: 4px; }
+  .page { max-width: 7.4in; margin: 0 auto; }
+  header { text-align: center; padding-bottom: 7px; border-bottom: 1.5px solid #4f6f55; }
+  h1 { font-size: 20pt; letter-spacing: 0.06em; line-height: 1.1; }
+  .tagline { font-size: 10.5pt; font-weight: 700; color: #4f6f55; margin-top: 3px; }
+  .contact { font-size: 8.8pt; color: #555; margin-top: 4px; }
   h2 {
-    font-size: 10.5pt; color: #b0472a; letter-spacing: 0.08em; text-transform: uppercase;
-    margin: 8px 0 3px;
+    font-size: 10pt; color: #4f6f55; letter-spacing: 0.1em; text-transform: uppercase;
+    margin: 10px 0 4px; padding-bottom: 2px; border-bottom: 1px solid #d9dfd9;
   }
-  .role { display: flex; justify-content: space-between; align-items: baseline; margin-top: 2px; }
-  .role h3 { font-size: 10.6pt; }
-  .role .when { font-size: 9.2pt; color: #5c5650; font-style: italic; white-space: nowrap; padding-left: 12px; }
-  .org { font-size: 9.5pt; color: #5c5650; margin-bottom: 3px; }
-  ul { padding-left: 15px; }
-  li { margin: 1px 0; }
-  li::marker { color: #b0472a; }
-  .apps { list-style: none; padding-left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3px 18px; margin: 3px 0 4px; }
-  .apps li { border-left: 2.5px solid #b0472a; padding-left: 7px; margin: 0; }
-  .apps b { display: block; }
-  .apps span { font-size: 9pt; color: #3d3935; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .row h3 { font-size: 10.3pt; }
+  .when { font-size: 9pt; color: #555; white-space: nowrap; }
+  .org { font-size: 9.3pt; color: #555; margin: 1px 0 3px; }
+  h4 { font-size: 8.6pt; letter-spacing: 0.06em; text-transform: uppercase; color: #777; margin: 5px 0 1px; }
+  ul { padding-left: 14px; }
+  li { margin: 1.5px 0; }
+  li::marker { color: #4f6f55; }
   p.summary { margin-top: 2px; }
-  .line { margin: 1.5px 0; }
-  .line b { color: #1b1b1b; }
+  .item { display: flex; justify-content: space-between; gap: 12px; margin: 2.5px 0; }
+  .item .what b { color: #1b1b1b; }
+  .item .yr { font-size: 9pt; color: #555; white-space: nowrap; }
+  .line { margin: 2px 0; }
 </style>
 </head>
 <body>
@@ -46,62 +45,57 @@
   <header>
     <h1>SUSAN GADEGONE</h1>
     <div class="tagline">Wellness Programs &middot; Behavioral Health &middot; Digital Health</div>
-    <div class="contact">San Francisco Bay Area &middot; spgadegone@gmail.com &middot; linkedin.com/in/susannapage &middot; susangadegone.github.io/susan-g-portfolio &middot; substack.com/@suzanhi2products</div>
+    <div class="contact">San Francisco Bay Area &middot; spgadegone@gmail.com &middot; linkedin.com/in/susannapage &middot; susangadegone.github.io/susan-g-portfolio</div>
   </header>
 
   <h2>Summary</h2>
-  <p class="summary">Four years on the front line of behavioral health, leading a peer support team at a walk-in center for young adults. I planned the center's yearly events, trained new staff and wrote the data reports our executive team used. Since 2023 I've designed wellness app prototypes, and I'm bringing both to wellness program and digital health work.</p>
+  <p class="summary">I help people get the support they need, in person, online and through the apps I design. Four years leading peer support at a walk-in center for young adults, where reach grew during COVID and all three yearly events grew. Seeking wellness program and health product roles.</p>
 
   <h2>Experience</h2>
-  <div class="role" style="margin-top: 2px;"><h3>Lead Peer Partner</h3><span class="when">2019 &ndash; 2023</span></div>
+  <div class="row"><h3>Lead Peer Partner</h3><span class="when">2019 &ndash; 2023</span></div>
   <div class="org">Edgewood Center for Children and Families &middot; San Mateo County, CA</div>
+
+  <h4>Programs and events</h4>
+  <ul>
+    <li><b>Planned three yearly events</b> (Back to School, Hoodie Haul, Thanksgiving Dinner) on <b>$500&ndash;$2,000 budgets</b> plus donations and partners; <b>all three grew year over year</b>, the largest from <b>~50 to ~80 people</b></li>
+    <li><b>Helped move services to delivery and online</b> during COVID-19, running deliveries and online sessions; <b>reach grew to 125+ youth in a year</b>, above a typical in-person year, and most regulars stayed</li>
+    <li><b>Helped gather youth and staff feedback</b> that led the center to run <b>game night in person and online</b> after reopening</li>
+  </ul>
+
+  <h4>People and team</h4>
   <ul>
     <li><b>Supported ~300</b> transitional-age youth (18&ndash;25); coordinated care plans with clinicians, case managers and county teams on a <b>10+ person team</b></li>
-    <li><b>Planned three yearly events</b> (Back to School, Hoodie Haul, Thanksgiving Dinner) on <b>$500&ndash;$2,000 budgets</b> plus donations from local businesses, community organizations and donors; handled outreach; <b>all three grew year over year</b>, the largest from <b>~50 to ~80 people</b></li>
-    <li><b>Supported staff wellbeing</b> in a high-burnout role: debriefs after hard days, regular team check-ins and staff events</li>
-    <li><b>Helped move services to delivery and online</b> during COVID-19; set up parts of the process, ran deliveries and led online sessions; <b>reach grew to 125+ youth in about a year</b>, more than a typical in-person year, and most regulars stayed</li>
-    <li><b>Led peer partners</b> across two centers as the go-to lead: <b>trained and onboarded 5+</b> new staff, set schedules, ran the center floor and gave input on hiring</li>
-    <li><b>Wrote data reports</b> from Excel, Google Sheets, surveys and the records system that the executive team used for decisions and workflow fixes; <b>supplied program data</b> for a <b>funded grant</b> covering COVID response and health and wellness events</li>
-    <li><b>Helped gather feedback</b> through youth and staff surveys and interviews, which led the center to run <b>game night in person and online</b> after reopening, so youth who couldn't come in could still join</li>  </ul>
+    <li><b>Led peer partners</b> across two centers: <b>trained 5+</b> new staff, set schedules, ran the floor and gave input on hiring</li>
+    <li><b>Supported staff wellbeing</b> in a high-burnout role through debriefs after hard days, team check-ins and staff events</li>
+  </ul>
 
-  <div class="role" style="margin-top: 8px;"><h3>Independent Builder, Wellness Apps</h3><span class="when">2023 &ndash; Present</span></div>
-  <ul class="apps">
-    <li><b>Roam</b><span>Mental health resource finder for SF and the East Bay: free and low-cost places to go, or coping skills to try right now (prototype)</span></li>
-    <li><b>Cozy</b><span>Chore and routine app built on encouragement, not guilt (prototype)</span></li>
-    <li><b>Cal Mood Tracker</b><span>Quick mood check-ins tied to your calendar</span></li>
-    <li><b>Focus plug-in</b><span>Chrome extension for staying accountable without distractions</span></li>
-  </ul>
+  <h4>Data and reporting</h4>
   <ul>
-    <li>Designed each app from problem to working prototype; built with SwiftUI, Supabase and AI-assisted development tools</li>
+    <li><b>Wrote data reports</b> (Excel, Google Sheets, surveys, records system) the executive team used for decisions; supplied data for a <b>funded grant</b> covering COVID response and wellness events</li>
   </ul>
+
+  <h2>Product &amp; Innovation <span style="float:right;font-weight:400;letter-spacing:0;text-transform:none;color:#555;font-size:9pt">2023 &ndash; Present</span></h2>
+  <div class="item"><span class="what"><b>Stanford AI for Good:</b> selected as 1 of 30 from 230 applicants; came up with and led <b>MindMate</b>, an AI coping-skills companion for ages 13&ndash;25, to the top 8 teams pitching investors</span><span class="yr">2024</span></div>
+  <div class="item"><span class="what"><b>Neolth Innovation Challenge, All Star Award:</b> mental health toolkit concept for young adults, later the starting point for Roam</span><span class="yr">2024</span></div>
+  <div class="item"><span class="what"><b>Roam:</b> mental health resource finder for SF and the East Bay, with free and low-cost places to go or coping skills to try right now (prototype)</span><span class="yr"></span></div>
+  <div class="item"><span class="what"><b>Take Care, SheBuilds Learning Edition:</b> app for families sharing the care of someone with Parkinson's disease (prototype)</span><span class="yr">2026</span></div>
+  <div class="item"><span class="what"><b>Make SF Better Hackathon:</b> team co-lead; designed a free legal aid assistant for San Francisco</span><span class="yr">2026</span></div>
+  <div class="item"><span class="what"><b>Also built:</b> Cozy (chore and routine app built on encouragement, not guilt), Cal Mood Tracker and a Focus Chrome extension, using SwiftUI, Supabase and AI-assisted tools</span><span class="yr"></span></div>
 
   <h2>Advocacy &amp; Writing</h2>
-  <ul>
-    <li><b>San Francisco Mental Health Board</b>, Consumer Seat (2016&ndash;2017)</li>
-    <li><b>Young Minds Advocacy</b>, blogger, speaker and mental health advocate (2014&ndash;2017)</li>
-    <li><b>California Youth Connection</b>, peer mentor and Leadership Academy lead (2016&ndash;2017)</li>
-    <li><b>Substack</b>, <i>Suzan's Product Club</i>: writing on digital health and AI product design</li>
-  </ul>
+  <div class="item"><span class="what"><b>San Francisco Mental Health Board,</b> Consumer Seat</span><span class="yr">2016 &ndash; 2017</span></div>
+  <div class="item"><span class="what"><b>California Youth Connection,</b> peer mentor and Leadership Academy lead</span><span class="yr">2016 &ndash; 2017</span></div>
+  <div class="item"><span class="what"><b>Young Minds Advocacy,</b> blogger, speaker and mental health advocate</span><span class="yr">2014 &ndash; 2017</span></div>
+  <div class="item"><span class="what"><b>Suzan's Product Club</b> (Substack), writing on digital health and AI product design</span><span class="yr">Ongoing</span></div>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><b>SheBuilds Learning Edition (2026):</b> building Take Care, an app for families sharing care for a person with Parkinson's disease</li>
-    <li><b>Make SF Better Hackathon (2026):</b> team co-lead; designed a free legal aid assistant for San Francisco</li>
-  </ul>
-
-  <h2>Recognition</h2>
-  <ul>
-    <li><b>Neolth Innovation Challenge 2024 All Star Award</b> for a mental health toolkit concept for young adults, later the starting point for Roam</li>
-    <li><b>Stanford AI for Good</b> cohort: selected as 1 of 30 from 230 applicants; my project, MindMate (coping skills tailored to young people's changing needs, ages 13&ndash;25), reached the top 8 to pitch investors</li>  </ul>
-
-  <h2>Education</h2>
-  <p class="line">BA, Psychology, Arizona State University</p>
+  <h2>Education &amp; Training</h2>
+  <p class="line"><b>BA, Psychology,</b> Arizona State University</p>
+  <p class="line"><b>Training:</b> trauma-informed care; previously certified in Mental Health First Aid and CPR</p>
 
   <h2>Skills</h2>
-  <p class="line"><b>Programs:</b> event planning, facilitation, training &amp; onboarding, needs assessment (surveys, interviews), data reporting, grant proposal support, stakeholder coordination</p>
-  <p class="line"><b>Wellness:</b> trauma-informed care, peer support, crisis response, resource navigation, behavioral health</p>
+  <p class="line"><b>Programs:</b> event planning, facilitation, training and onboarding, needs assessment (surveys, interviews), data reporting, grant support, stakeholder coordination</p>
+  <p class="line"><b>Wellness:</b> trauma-informed care, peer support, crisis response, resource navigation, staff wellbeing</p>
   <p class="line"><b>Tools:</b> Excel, Google Sheets, survey tools, Notion, Airtable, Figma, SwiftUI, Supabase, Claude</p>
-  <p class="line"><b>Training:</b> Trauma-informed care; previously certified in Mental Health First Aid and CPR</p>
 </div>
 </body>
 </html>
