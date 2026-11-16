@@ -1,6 +1,6 @@
 # susangadegone.github.io
 
-Personal portfolio. Live at
+Personal portfolio. Live at https://susangadegone.github.io/susan-g-portfolio/
 
 Built as a single static `index.html`. No framework, no build step.
 
